@@ -21,12 +21,14 @@ export type StateData =
       name: string;
       year: number;
       source: string;
+      allocationsSource: string;
       taxType: "flat" | "progressive";
       standardDeduction: number;
       flatRate?: number;
       brackets?: Bracket[];
       noIncomeTax: false;
       allocations: Allocation[];
+      note?: string;
     }
   | {
       name: string;

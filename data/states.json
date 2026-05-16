@@ -1,216 +1,2808 @@
 {
+  "AK": {
+    "name": "Alaska",
+    "year": 2025,
+    "source": "https://taxfoundation.org/data/all/state/state-income-tax-rates/",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "Alaska has no state income tax; revenue comes primarily from oil and gas severance taxes, federal transfers, and investment earnings from the Permanent Fund."
+  },
+  "AL": {
+    "name": "Alabama",
+    "year": 2025,
+    "source": "https://www.revenue.alabama.gov/individual-corporate/individual-income-tax/",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 3000,
+    "brackets": [
+      {
+        "rate": 0.02,
+        "min": 0,
+        "max": 500
+      },
+      {
+        "rate": 0.04,
+        "min": 500,
+        "max": 3000
+      },
+      {
+        "rate": 0.05,
+        "min": 3000,
+        "max": null
+      }
+    ],
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.47,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.06,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.2,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.06,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.21,
+        "icon": "📦"
+      }
+    ]
+  },
+  "AR": {
+    "name": "Arkansas",
+    "year": 2025,
+    "source": "https://www.dfa.arkansas.gov/income-tax/individual-income-tax/",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 2340,
+    "brackets": [
+      {
+        "rate": 0.02,
+        "min": 0,
+        "max": 4500
+      },
+      {
+        "rate": 0.03,
+        "min": 4500,
+        "max": 8900
+      },
+      {
+        "rate": 0.039,
+        "min": 8900,
+        "max": null
+      }
+    ],
+    "note": "Arkansas uses a tiered structure with different schedules by income range; the top rate was reduced to 3.9% effective 2025.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.41,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.22,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.14,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.03,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.07,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.13,
+        "icon": "📦"
+      }
+    ]
+  },
+  "AZ": {
+    "name": "Arizona",
+    "year": 2025,
+    "source": "https://azdor.gov/forms/individual",
+    "taxType": "flat",
+    "noIncomeTax": false,
+    "standardDeduction": 14600,
+    "flatRate": 0.025,
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.45,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.13,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.07,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.08,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.02,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.25,
+        "icon": "📦"
+      }
+    ]
+  },
   "CA": {
     "name": "California",
     "year": 2025,
-    "source": "https://www.ftb.ca.gov + https://ebudget.ca.gov",
+    "source": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.html",
     "taxType": "progressive",
+    "noIncomeTax": false,
     "standardDeduction": 5540,
     "brackets": [
-      { "rate": 0.010, "min": 0,       "max": 10756 },
-      { "rate": 0.020, "min": 10756,   "max": 25499 },
-      { "rate": 0.040, "min": 25499,   "max": 40245 },
-      { "rate": 0.060, "min": 40245,   "max": 55866 },
-      { "rate": 0.080, "min": 55866,   "max": 70606 },
-      { "rate": 0.093, "min": 70606,   "max": 360659 },
-      { "rate": 0.103, "min": 360659,  "max": 432787 },
-      { "rate": 0.113, "min": 432787,  "max": 721314 },
-      { "rate": 0.123, "min": 721314,  "max": null }
+      {
+        "rate": 0.01,
+        "min": 0,
+        "max": 10756
+      },
+      {
+        "rate": 0.02,
+        "min": 10756,
+        "max": 25499
+      },
+      {
+        "rate": 0.04,
+        "min": 25499,
+        "max": 40245
+      },
+      {
+        "rate": 0.06,
+        "min": 40245,
+        "max": 55866
+      },
+      {
+        "rate": 0.08,
+        "min": 55866,
+        "max": 70606
+      },
+      {
+        "rate": 0.093,
+        "min": 70606,
+        "max": 360659
+      },
+      {
+        "rate": 0.103,
+        "min": 360659,
+        "max": 432787
+      },
+      {
+        "rate": 0.113,
+        "min": 432787,
+        "max": 721314
+      },
+      {
+        "rate": 0.123,
+        "min": 721314,
+        "max": null
+      }
     ],
-    "noIncomeTax": false,
+    "note": "An additional 1% Mental Health Services Tax applies to taxable income over $1,000,000.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "allocations": [
-      { "category": "K-12 Education",         "pct": 0.28, "icon": "🏫" },
-      { "category": "Health & Human Services","pct": 0.30, "icon": "🩺" },
-      { "category": "Higher Education",       "pct": 0.09, "icon": "🎓" },
-      { "category": "Corrections",            "pct": 0.06, "icon": "🚨" },
-      { "category": "Transportation",         "pct": 0.06, "icon": "🛣️" },
-      { "category": "Natural Resources & Environment", "pct": 0.05, "icon": "🌲" },
-      { "category": "Legislative/Judicial",   "pct": 0.03, "icon": "⚖️" },
-      { "category": "General Government",     "pct": 0.05, "icon": "🏛️" },
-      { "category": "Other",                  "pct": 0.08, "icon": "📦" }
+      {
+        "category": "K-12 Education",
+        "pct": 0.32,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.18,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.1,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.02,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.07,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.01,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.3,
+        "icon": "📦"
+      }
     ]
   },
-  "TX": {
-    "name": "Texas",
+  "CO": {
+    "name": "Colorado",
     "year": 2025,
-    "source": "https://comptroller.texas.gov",
-    "taxType": "none",
-    "noIncomeTax": true,
-    "note": "Texas has no state income tax. State revenue comes from sales tax, oil & gas severance, and federal transfers."
+    "source": "https://tax.colorado.gov/individual-income-tax",
+    "taxType": "flat",
+    "noIncomeTax": false,
+    "standardDeduction": 15000,
+    "flatRate": 0.044,
+    "note": "Colorado conforms to the federal standard deduction; rate may be temporarily reduced via TABOR refunds.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.33,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.29,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.12,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.04,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.22,
+        "icon": "📦"
+      }
+    ]
+  },
+  "CT": {
+    "name": "Connecticut",
+    "year": 2025,
+    "source": "https://portal.ct.gov/drs/individuals/individual-tax-page",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 0,
+    "brackets": [
+      {
+        "rate": 0.02,
+        "min": 0,
+        "max": 10000
+      },
+      {
+        "rate": 0.045,
+        "min": 10000,
+        "max": 50000
+      },
+      {
+        "rate": 0.055,
+        "min": 50000,
+        "max": 100000
+      },
+      {
+        "rate": 0.06,
+        "min": 100000,
+        "max": 200000
+      },
+      {
+        "rate": 0.065,
+        "min": 200000,
+        "max": 250000
+      },
+      {
+        "rate": 0.069,
+        "min": 250000,
+        "max": 500000
+      },
+      {
+        "rate": 0.0699,
+        "min": 500000,
+        "max": null
+      }
+    ],
+    "note": "Connecticut has no standard deduction but offers a personal exemption that phases out with income; high earners are subject to a recapture provision.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.21,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.25,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.04,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.02,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.03,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.45,
+        "icon": "📦"
+      }
+    ]
+  },
+  "DC": {
+    "name": "District of Columbia",
+    "year": 2025,
+    "source": "https://otr.cfo.dc.gov/page/individual-income-tax-rates",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 14600,
+    "brackets": [
+      {
+        "rate": 0.04,
+        "min": 0,
+        "max": 10000
+      },
+      {
+        "rate": 0.06,
+        "min": 10000,
+        "max": 40000
+      },
+      {
+        "rate": 0.065,
+        "min": 40000,
+        "max": 60000
+      },
+      {
+        "rate": 0.085,
+        "min": 60000,
+        "max": 250000
+      },
+      {
+        "rate": 0.0925,
+        "min": 250000,
+        "max": 500000
+      },
+      {
+        "rate": 0.0975,
+        "min": 500000,
+        "max": 1000000
+      },
+      {
+        "rate": 0.1075,
+        "min": 1000000,
+        "max": null
+      }
+    ],
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.26,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.08,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.01,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.02,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.05,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.57,
+        "icon": "📦"
+      }
+    ]
+  },
+  "DE": {
+    "name": "Delaware",
+    "year": 2025,
+    "source": "https://revenue.delaware.gov/personal-income-tax/",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 3250,
+    "brackets": [
+      {
+        "rate": 0,
+        "min": 0,
+        "max": 2000
+      },
+      {
+        "rate": 0.022,
+        "min": 2000,
+        "max": 5000
+      },
+      {
+        "rate": 0.039,
+        "min": 5000,
+        "max": 10000
+      },
+      {
+        "rate": 0.048,
+        "min": 10000,
+        "max": 20000
+      },
+      {
+        "rate": 0.052,
+        "min": 20000,
+        "max": 25000
+      },
+      {
+        "rate": 0.0555,
+        "min": 25000,
+        "max": 60000
+      },
+      {
+        "rate": 0.066,
+        "min": 60000,
+        "max": null
+      }
+    ],
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.34,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.17,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.05,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.07,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.37,
+        "icon": "📦"
+      }
+    ]
   },
   "FL": {
     "name": "Florida",
     "year": 2025,
-    "source": "https://floridarevenue.com",
+    "source": "https://floridarevenue.com/taxes/Pages/default.aspx",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "Florida has no state income tax. State revenue comes from sales tax, tourism, and federal transfers."
+    "note": "Florida has no state income tax; revenue comes primarily from sales tax, tourism-related taxes, and property taxes."
   },
-  "NY": {
-    "name": "New York",
+  "GA": {
+    "name": "Georgia",
     "year": 2025,
-    "source": "https://www.tax.ny.gov + https://www.budget.ny.gov",
-    "taxType": "progressive",
-    "standardDeduction": 8000,
-    "brackets": [
-      { "rate": 0.0400,  "min": 0,        "max": 8500 },
-      { "rate": 0.0450,  "min": 8500,     "max": 11700 },
-      { "rate": 0.0525,  "min": 11700,    "max": 13900 },
-      { "rate": 0.0550,  "min": 13900,    "max": 80650 },
-      { "rate": 0.0600,  "min": 80650,    "max": 215400 },
-      { "rate": 0.0685,  "min": 215400,   "max": 1077550 },
-      { "rate": 0.0965,  "min": 1077550,  "max": 5000000 },
-      { "rate": 0.1030,  "min": 5000000,  "max": 25000000 },
-      { "rate": 0.1090,  "min": 25000000, "max": null }
-    ],
+    "source": "https://dor.georgia.gov/individual-taxes",
+    "taxType": "flat",
     "noIncomeTax": false,
+    "standardDeduction": 12000,
+    "flatRate": 0.0519,
+    "note": "Georgia moved to a flat tax in 2024; the rate is scheduled to step down annually, reaching 5.19% in 2025.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "allocations": [
-      { "category": "Medicaid & Health",  "pct": 0.34, "icon": "🩺" },
-      { "category": "K-12 Education",     "pct": 0.22, "icon": "🏫" },
-      { "category": "Higher Education",   "pct": 0.05, "icon": "🎓" },
-      { "category": "Human Services",     "pct": 0.10, "icon": "🤝" },
-      { "category": "Transportation",     "pct": 0.08, "icon": "🛣️" },
-      { "category": "Public Safety",      "pct": 0.06, "icon": "🚨" },
-      { "category": "Mental Hygiene",     "pct": 0.05, "icon": "🧠" },
-      { "category": "General Government", "pct": 0.04, "icon": "🏛️" },
-      { "category": "Other",              "pct": 0.06, "icon": "📦" }
+      {
+        "category": "K-12 Education",
+        "pct": 0.36,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.15,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.11,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.06,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.07,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.25,
+        "icon": "📦"
+      }
     ]
   },
-  "PA": {
-    "name": "Pennsylvania",
+  "HI": {
+    "name": "Hawaii",
     "year": 2025,
-    "source": "https://www.revenue.pa.gov + https://www.budget.pa.gov",
-    "taxType": "flat",
-    "flatRate": 0.0307,
-    "standardDeduction": 0,
+    "source": "https://tax.hawaii.gov/forms/a1_b1_1indinc/",
+    "taxType": "progressive",
     "noIncomeTax": false,
+    "standardDeduction": 4400,
+    "brackets": [
+      {
+        "rate": 0.014,
+        "min": 0,
+        "max": 9600
+      },
+      {
+        "rate": 0.032,
+        "min": 9600,
+        "max": 14400
+      },
+      {
+        "rate": 0.055,
+        "min": 14400,
+        "max": 19200
+      },
+      {
+        "rate": 0.064,
+        "min": 19200,
+        "max": 24000
+      },
+      {
+        "rate": 0.068,
+        "min": 24000,
+        "max": 36000
+      },
+      {
+        "rate": 0.072,
+        "min": 36000,
+        "max": 48000
+      },
+      {
+        "rate": 0.076,
+        "min": 48000,
+        "max": 125000
+      },
+      {
+        "rate": 0.079,
+        "min": 125000,
+        "max": 175000
+      },
+      {
+        "rate": 0.0825,
+        "min": 175000,
+        "max": 225000
+      },
+      {
+        "rate": 0.09,
+        "min": 225000,
+        "max": 275000
+      },
+      {
+        "rate": 0.1,
+        "min": 275000,
+        "max": 325000
+      },
+      {
+        "rate": 0.11,
+        "min": 325000,
+        "max": null
+      }
+    ],
+    "note": "Hawaii enacted Act 46 (2024) which boosts the standard deduction and widens brackets on a multi-year schedule starting 2025.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "allocations": [
-      { "category": "K-12 Education",     "pct": 0.32, "icon": "🏫" },
-      { "category": "Medicaid & Health",  "pct": 0.26, "icon": "🩺" },
-      { "category": "Human Services",     "pct": 0.13, "icon": "🤝" },
-      { "category": "Corrections",        "pct": 0.07, "icon": "🚨" },
-      { "category": "Higher Education",   "pct": 0.05, "icon": "🎓" },
-      { "category": "Transportation",     "pct": 0.04, "icon": "🛣️" },
-      { "category": "General Government", "pct": 0.05, "icon": "🏛️" },
-      { "category": "Other",              "pct": 0.08, "icon": "📦" }
+      {
+        "category": "K-12 Education",
+        "pct": 0.22,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.07,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.06,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.03,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.61,
+        "icon": "📦"
+      }
+    ]
+  },
+  "IA": {
+    "name": "Iowa",
+    "year": 2025,
+    "source": "https://tax.iowa.gov/individual-income-tax",
+    "taxType": "flat",
+    "noIncomeTax": false,
+    "standardDeduction": 0,
+    "flatRate": 0.038,
+    "note": "Iowa accelerated its move to a flat tax; the 2025 rate is 3.8% for all filers.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.47,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.18,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.09,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.05,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.2,
+        "icon": "📦"
+      }
+    ]
+  },
+  "ID": {
+    "name": "Idaho",
+    "year": 2025,
+    "source": "https://tax.idaho.gov/taxes/income-tax/individual-income/",
+    "taxType": "flat",
+    "noIncomeTax": false,
+    "standardDeduction": 14600,
+    "flatRate": 0.053,
+    "note": "Idaho conforms to the federal standard deduction; the flat rate was reduced from 5.695% to 5.3% for 2025.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.53,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.13,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.13,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.08,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.13,
+        "icon": "📦"
+      }
     ]
   },
   "IL": {
     "name": "Illinois",
     "year": 2025,
-    "source": "https://tax.illinois.gov + https://budget.illinois.gov",
+    "source": "https://tax.illinois.gov/individuals.html",
     "taxType": "flat",
-    "flatRate": 0.0495,
+    "noIncomeTax": false,
     "standardDeduction": 2775,
-    "noIncomeTax": false,
+    "flatRate": 0.0495,
+    "note": "Illinois uses a personal exemption ($2,775 for 2025) rather than a true standard deduction; it phases out at higher incomes.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "allocations": [
-      { "category": "K-12 Education",     "pct": 0.24, "icon": "🏫" },
-      { "category": "Medicaid & Health",  "pct": 0.25, "icon": "🩺" },
-      { "category": "Pensions",           "pct": 0.18, "icon": "👵" },
-      { "category": "Human Services",     "pct": 0.10, "icon": "🤝" },
-      { "category": "Public Safety",      "pct": 0.06, "icon": "🚨" },
-      { "category": "Higher Education",   "pct": 0.04, "icon": "🎓" },
-      { "category": "Transportation",     "pct": 0.04, "icon": "🛣️" },
-      { "category": "General Government", "pct": 0.04, "icon": "🏛️" },
-      { "category": "Other",              "pct": 0.05, "icon": "📦" }
+      {
+        "category": "K-12 Education",
+        "pct": 0.21,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.1,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.05,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.04,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.6,
+        "icon": "📦"
+      }
     ]
   },
-  "OH": {
-    "name": "Ohio",
+  "IN": {
+    "name": "Indiana",
     "year": 2025,
-    "source": "https://tax.ohio.gov + https://obm.ohio.gov",
+    "source": "https://www.in.gov/dor/individual-income-taxes/",
+    "taxType": "flat",
+    "noIncomeTax": false,
+    "standardDeduction": 1000,
+    "flatRate": 0.03,
+    "note": "Indiana offers a $1,000 personal exemption rather than a standard deduction; counties levy additional local income taxes.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.47,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.19,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.11,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.04,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.19,
+        "icon": "📦"
+      }
+    ]
+  },
+  "KS": {
+    "name": "Kansas",
+    "year": 2025,
+    "source": "https://www.ksrevenue.gov/perstaxtypesii.html",
     "taxType": "progressive",
-    "standardDeduction": 0,
+    "noIncomeTax": false,
+    "standardDeduction": 3605,
     "brackets": [
-      { "rate": 0.0000, "min": 0,      "max": 26050 },
-      { "rate": 0.0275, "min": 26050,  "max": 100000 },
-      { "rate": 0.0350, "min": 100000, "max": null }
+      {
+        "rate": 0.052,
+        "min": 0,
+        "max": 23000
+      },
+      {
+        "rate": 0.0558,
+        "min": 23000,
+        "max": null
+      }
     ],
-    "noIncomeTax": false,
+    "note": "Kansas consolidated to two brackets effective 2024; standard deduction is indexed to inflation.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "allocations": [
-      { "category": "Medicaid & Health",  "pct": 0.34, "icon": "🩺" },
-      { "category": "K-12 Education",     "pct": 0.27, "icon": "🏫" },
-      { "category": "Higher Education",   "pct": 0.06, "icon": "🎓" },
-      { "category": "Human Services",     "pct": 0.08, "icon": "🤝" },
-      { "category": "Corrections",        "pct": 0.05, "icon": "🚨" },
-      { "category": "Transportation",     "pct": 0.04, "icon": "🛣️" },
-      { "category": "General Government", "pct": 0.06, "icon": "🏛️" },
-      { "category": "Other",              "pct": 0.10, "icon": "📦" }
+      {
+        "category": "K-12 Education",
+        "pct": 0.49,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.17,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.12,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.06,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.16,
+        "icon": "📦"
+      }
     ]
   },
-  "GA": {
-    "name": "Georgia",
+  "KY": {
+    "name": "Kentucky",
     "year": 2025,
-    "source": "https://dor.georgia.gov + https://opb.georgia.gov",
+    "source": "https://revenue.ky.gov/Individual/Individual-Income-Tax/Pages/default.aspx",
     "taxType": "flat",
-    "flatRate": 0.0539,
-    "standardDeduction": 12000,
     "noIncomeTax": false,
+    "standardDeduction": 3270,
+    "flatRate": 0.04,
+    "note": "Kentucky's flat rate dropped to 4.0% in 2025; further reductions are conditional on revenue triggers.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "allocations": [
-      { "category": "K-12 Education",     "pct": 0.38, "icon": "🏫" },
-      { "category": "Medicaid & Health",  "pct": 0.17, "icon": "🩺" },
-      { "category": "Higher Education",   "pct": 0.10, "icon": "🎓" },
-      { "category": "Human Services",     "pct": 0.07, "icon": "🤝" },
-      { "category": "Public Safety",      "pct": 0.07, "icon": "🚨" },
-      { "category": "Transportation",     "pct": 0.05, "icon": "🛣️" },
-      { "category": "General Government", "pct": 0.05, "icon": "🏛️" },
-      { "category": "Other",              "pct": 0.11, "icon": "📦" }
+      {
+        "category": "K-12 Education",
+        "pct": 0.37,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.17,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.11,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.06,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.29,
+        "icon": "📦"
+      }
     ]
   },
-  "NC": {
-    "name": "North Carolina",
+  "LA": {
+    "name": "Louisiana",
     "year": 2025,
-    "source": "https://www.ncdor.gov + https://www.osbm.nc.gov",
+    "source": "https://revenue.louisiana.gov/IndividualIncomeTax",
     "taxType": "flat",
-    "flatRate": 0.0425,
-    "standardDeduction": 12750,
     "noIncomeTax": false,
+    "standardDeduction": 12500,
+    "flatRate": 0.03,
+    "note": "Louisiana adopted a flat 3% rate effective January 1, 2025, replacing its prior three-bracket system; combined with a new $12,500 standard deduction.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "allocations": [
-      { "category": "K-12 Education",     "pct": 0.36, "icon": "🏫" },
-      { "category": "Medicaid & Health",  "pct": 0.21, "icon": "🩺" },
-      { "category": "Higher Education",   "pct": 0.13, "icon": "🎓" },
-      { "category": "Human Services",     "pct": 0.08, "icon": "🤝" },
-      { "category": "Public Safety",      "pct": 0.07, "icon": "🚨" },
-      { "category": "Transportation",     "pct": 0.04, "icon": "🛣️" },
-      { "category": "General Government", "pct": 0.04, "icon": "🏛️" },
-      { "category": "Other",              "pct": 0.07, "icon": "📦" }
+      {
+        "category": "K-12 Education",
+        "pct": 0.36,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.14,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.12,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.09,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.01,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.28,
+        "icon": "📦"
+      }
+    ]
+  },
+  "MA": {
+    "name": "Massachusetts",
+    "year": 2025,
+    "source": "https://www.mass.gov/info-details/massachusetts-personal-income-tax-rates",
+    "taxType": "flat",
+    "noIncomeTax": false,
+    "standardDeduction": 0,
+    "flatRate": 0.05,
+    "note": "Massachusetts levies a flat 5% on most income, plus an additional 4% surtax on taxable income over $1,083,150 (Fair Share / millionaire's tax).",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.21,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.25,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.05,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.02,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.05,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.02,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.4,
+        "icon": "📦"
+      }
+    ]
+  },
+  "MD": {
+    "name": "Maryland",
+    "year": 2025,
+    "source": "https://www.marylandtaxes.gov/individual/income/tax-info/tax-rates.php",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 2700,
+    "brackets": [
+      {
+        "rate": 0.02,
+        "min": 0,
+        "max": 1000
+      },
+      {
+        "rate": 0.03,
+        "min": 1000,
+        "max": 2000
+      },
+      {
+        "rate": 0.04,
+        "min": 2000,
+        "max": 3000
+      },
+      {
+        "rate": 0.0475,
+        "min": 3000,
+        "max": 100000
+      },
+      {
+        "rate": 0.05,
+        "min": 100000,
+        "max": 125000
+      },
+      {
+        "rate": 0.0525,
+        "min": 125000,
+        "max": 150000
+      },
+      {
+        "rate": 0.055,
+        "min": 150000,
+        "max": 250000
+      },
+      {
+        "rate": 0.0575,
+        "min": 250000,
+        "max": null
+      }
+    ],
+    "note": "Maryland counties impose additional local income taxes ranging from 2.25% to 3.20%.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.28,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.16,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.12,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.07,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.37,
+        "icon": "📦"
+      }
+    ]
+  },
+  "ME": {
+    "name": "Maine",
+    "year": 2025,
+    "source": "https://www.maine.gov/revenue/taxes/income-estate-tax/individual-income-tax",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 15150,
+    "brackets": [
+      {
+        "rate": 0.058,
+        "min": 0,
+        "max": 26800
+      },
+      {
+        "rate": 0.0675,
+        "min": 26800,
+        "max": 63450
+      },
+      {
+        "rate": 0.0715,
+        "min": 63450,
+        "max": null
+      }
+    ],
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.35,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.23,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.08,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.04,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.29,
+        "icon": "📦"
+      }
     ]
   },
   "MI": {
     "name": "Michigan",
     "year": 2025,
-    "source": "https://www.michigan.gov/treasury + https://www.michigan.gov/budget",
+    "source": "https://www.michigan.gov/taxes/iit",
     "taxType": "flat",
-    "flatRate": 0.0425,
-    "standardDeduction": 5800,
     "noIncomeTax": false,
+    "standardDeduction": 0,
+    "flatRate": 0.0425,
+    "note": "Michigan offers a personal exemption ($5,800 for 2025) rather than a standard deduction; some cities levy additional income taxes. K-12 spending shown is General-Fund only — most K-12 funding flows through Michigan's separate School Aid Fund.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "allocations": [
-      { "category": "K-12 Education",     "pct": 0.29, "icon": "🏫" },
-      { "category": "Medicaid & Health",  "pct": 0.27, "icon": "🩺" },
-      { "category": "Human Services",     "pct": 0.10, "icon": "🤝" },
-      { "category": "Higher Education",   "pct": 0.07, "icon": "🎓" },
-      { "category": "Corrections",        "pct": 0.06, "icon": "🚨" },
-      { "category": "Transportation",     "pct": 0.06, "icon": "🛣️" },
-      { "category": "General Government", "pct": 0.05, "icon": "🏛️" },
-      { "category": "Other",              "pct": 0.10, "icon": "📦" }
+      {
+        "category": "K-12 Education",
+        "pct": 0.01,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.23,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.11,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.15,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.02,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.47,
+        "icon": "📦"
+      }
     ]
+  },
+  "MN": {
+    "name": "Minnesota",
+    "year": 2025,
+    "source": "https://www.revenue.state.mn.us/minnesota-income-tax-rates-and-brackets",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 14950,
+    "brackets": [
+      {
+        "rate": 0.0535,
+        "min": 0,
+        "max": 32570
+      },
+      {
+        "rate": 0.068,
+        "min": 32570,
+        "max": 106990
+      },
+      {
+        "rate": 0.0785,
+        "min": 106990,
+        "max": 198630
+      },
+      {
+        "rate": 0.0985,
+        "min": 198630,
+        "max": null
+      }
+    ],
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.34,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.2,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.06,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.02,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.01,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.36,
+        "icon": "📦"
+      }
+    ]
+  },
+  "MO": {
+    "name": "Missouri",
+    "year": 2025,
+    "source": "https://dor.mo.gov/taxation/individual/tax-types/income/year-rates.html",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 14600,
+    "brackets": [
+      {
+        "rate": 0,
+        "min": 0,
+        "max": 1313
+      },
+      {
+        "rate": 0.02,
+        "min": 1313,
+        "max": 2626
+      },
+      {
+        "rate": 0.025,
+        "min": 2626,
+        "max": 3939
+      },
+      {
+        "rate": 0.03,
+        "min": 3939,
+        "max": 5252
+      },
+      {
+        "rate": 0.035,
+        "min": 5252,
+        "max": 6565
+      },
+      {
+        "rate": 0.04,
+        "min": 6565,
+        "max": 7878
+      },
+      {
+        "rate": 0.045,
+        "min": 7878,
+        "max": 9191
+      },
+      {
+        "rate": 0.047,
+        "min": 9191,
+        "max": null
+      }
+    ],
+    "note": "Missouri's top rate dropped to 4.7% for 2025; further reductions are tied to revenue triggers. Standard deduction matches federal.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.27,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.22,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.08,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.06,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.01,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.36,
+        "icon": "📦"
+      }
+    ]
+  },
+  "MS": {
+    "name": "Mississippi",
+    "year": 2025,
+    "source": "https://www.dor.ms.gov/individual/individual-income-tax",
+    "taxType": "flat",
+    "noIncomeTax": false,
+    "standardDeduction": 2300,
+    "flatRate": 0.044,
+    "note": "Mississippi taxes income above $10,000 at a flat 4.4% in 2025; the rate steps down to 4.0% by 2026.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.41,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.1,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.14,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.06,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.28,
+        "icon": "📦"
+      }
+    ]
+  },
+  "MT": {
+    "name": "Montana",
+    "year": 2025,
+    "source": "https://mtrevenue.gov/taxes/individual-income-tax/",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 15000,
+    "brackets": [
+      {
+        "rate": 0.047,
+        "min": 0,
+        "max": 21100
+      },
+      {
+        "rate": 0.059,
+        "min": 21100,
+        "max": null
+      }
+    ],
+    "note": "Montana adopted a two-bracket system in 2024; standard deduction conforms closely to the federal amount.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.19,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.14,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.1,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.1,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.02,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.45,
+        "icon": "📦"
+      }
+    ]
+  },
+  "NC": {
+    "name": "North Carolina",
+    "year": 2025,
+    "source": "https://www.ncdor.gov/taxes-forms/individual-income-tax",
+    "taxType": "flat",
+    "noIncomeTax": false,
+    "standardDeduction": 12750,
+    "flatRate": 0.0425,
+    "note": "North Carolina's flat rate is scheduled to step down to 3.99% by 2026.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.39,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.15,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.19,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.07,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.2,
+        "icon": "📦"
+      }
+    ]
+  },
+  "ND": {
+    "name": "North Dakota",
+    "year": 2025,
+    "source": "https://www.tax.nd.gov/individual",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 14600,
+    "brackets": [
+      {
+        "rate": 0,
+        "min": 0,
+        "max": 48475
+      },
+      {
+        "rate": 0.0195,
+        "min": 48475,
+        "max": 244825
+      },
+      {
+        "rate": 0.025,
+        "min": 244825,
+        "max": null
+      }
+    ],
+    "note": "North Dakota uses federal taxable income as its base, with a 0% bracket effectively exempting low and middle earners.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.32,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.18,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.16,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.05,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.29,
+        "icon": "📦"
+      }
+    ]
+  },
+  "NE": {
+    "name": "Nebraska",
+    "year": 2025,
+    "source": "https://revenue.nebraska.gov/individuals",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 8350,
+    "brackets": [
+      {
+        "rate": 0.0246,
+        "min": 0,
+        "max": 3700
+      },
+      {
+        "rate": 0.0351,
+        "min": 3700,
+        "max": 22170
+      },
+      {
+        "rate": 0.0501,
+        "min": 22170,
+        "max": 35730
+      },
+      {
+        "rate": 0.052,
+        "min": 35730,
+        "max": null
+      }
+    ],
+    "note": "Nebraska's top rate dropped to 5.20% for 2025; further reductions are scheduled in coming years.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.25,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.23,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.17,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.1,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.25,
+        "icon": "📦"
+      }
+    ]
+  },
+  "NH": {
+    "name": "New Hampshire",
+    "year": 2025,
+    "source": "https://www.revenue.nh.gov/",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "New Hampshire phased out its tax on interest and dividends as of January 1, 2025; revenue comes primarily from property taxes and business taxes."
+  },
+  "NJ": {
+    "name": "New Jersey",
+    "year": 2025,
+    "source": "https://www.nj.gov/treasury/taxation/taxtables.shtml",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 0,
+    "brackets": [
+      {
+        "rate": 0.014,
+        "min": 0,
+        "max": 20000
+      },
+      {
+        "rate": 0.0175,
+        "min": 20000,
+        "max": 35000
+      },
+      {
+        "rate": 0.035,
+        "min": 35000,
+        "max": 40000
+      },
+      {
+        "rate": 0.0553,
+        "min": 40000,
+        "max": 75000
+      },
+      {
+        "rate": 0.0637,
+        "min": 75000,
+        "max": 500000
+      },
+      {
+        "rate": 0.0897,
+        "min": 500000,
+        "max": 1000000
+      },
+      {
+        "rate": 0.1075,
+        "min": 1000000,
+        "max": null
+      }
+    ],
+    "note": "New Jersey has no general standard deduction; it offers a personal exemption ($1,000) and various credits.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.37,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.12,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.07,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.03,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.04,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.37,
+        "icon": "📦"
+      }
+    ]
+  },
+  "NM": {
+    "name": "New Mexico",
+    "year": 2025,
+    "source": "https://www.tax.newmexico.gov/individuals/",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 14600,
+    "brackets": [
+      {
+        "rate": 0.015,
+        "min": 0,
+        "max": 5500
+      },
+      {
+        "rate": 0.032,
+        "min": 5500,
+        "max": 16500
+      },
+      {
+        "rate": 0.043,
+        "min": 16500,
+        "max": 33500
+      },
+      {
+        "rate": 0.047,
+        "min": 33500,
+        "max": 66500
+      },
+      {
+        "rate": 0.049,
+        "min": 66500,
+        "max": 210000
+      },
+      {
+        "rate": 0.059,
+        "min": 210000,
+        "max": null
+      }
+    ],
+    "note": "New Mexico restructured its brackets effective 2025, adding new lower brackets that benefit low-income filers.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.42,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.17,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.14,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.04,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.03,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.2,
+        "icon": "📦"
+      }
+    ]
+  },
+  "NV": {
+    "name": "Nevada",
+    "year": 2025,
+    "source": "https://tax.nv.gov/",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "Nevada has no state income tax; revenue comes primarily from sales tax, gaming taxes, and tourism-related levies."
+  },
+  "NY": {
+    "name": "New York",
+    "year": 2025,
+    "source": "https://www.tax.ny.gov/pit/file/tax_tables.htm",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 8000,
+    "brackets": [
+      {
+        "rate": 0.04,
+        "min": 0,
+        "max": 8500
+      },
+      {
+        "rate": 0.045,
+        "min": 8500,
+        "max": 11700
+      },
+      {
+        "rate": 0.0525,
+        "min": 11700,
+        "max": 13900
+      },
+      {
+        "rate": 0.055,
+        "min": 13900,
+        "max": 80650
+      },
+      {
+        "rate": 0.06,
+        "min": 80650,
+        "max": 215400
+      },
+      {
+        "rate": 0.0685,
+        "min": 215400,
+        "max": 1077550
+      },
+      {
+        "rate": 0.0965,
+        "min": 1077550,
+        "max": 5000000
+      },
+      {
+        "rate": 0.103,
+        "min": 5000000,
+        "max": 25000000
+      },
+      {
+        "rate": 0.109,
+        "min": 25000000,
+        "max": null
+      }
+    ],
+    "note": "New York City and Yonkers impose additional local income taxes on residents.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.34,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.3,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.04,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.03,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.01,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.27,
+        "icon": "📦"
+      }
+    ]
+  },
+  "OH": {
+    "name": "Ohio",
+    "year": 2025,
+    "source": "https://tax.ohio.gov/individual/resources/annual-tax-rates",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 0,
+    "brackets": [
+      {
+        "rate": 0,
+        "min": 0,
+        "max": 26050
+      },
+      {
+        "rate": 0.0275,
+        "min": 26050,
+        "max": 100000
+      },
+      {
+        "rate": 0.035,
+        "min": 100000,
+        "max": null
+      }
+    ],
+    "note": "Ohio consolidated to two non-zero brackets in 2024; the first $26,050 of taxable income is exempt. Many cities levy additional local income taxes.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.35,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.24,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.1,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.09,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.21,
+        "icon": "📦"
+      }
+    ]
+  },
+  "OK": {
+    "name": "Oklahoma",
+    "year": 2025,
+    "source": "https://oklahoma.gov/tax/individuals.html",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 6350,
+    "brackets": [
+      {
+        "rate": 0.0025,
+        "min": 0,
+        "max": 1000
+      },
+      {
+        "rate": 0.0075,
+        "min": 1000,
+        "max": 2500
+      },
+      {
+        "rate": 0.0175,
+        "min": 2500,
+        "max": 3750
+      },
+      {
+        "rate": 0.0275,
+        "min": 3750,
+        "max": 4900
+      },
+      {
+        "rate": 0.0375,
+        "min": 4900,
+        "max": 7200
+      },
+      {
+        "rate": 0.0475,
+        "min": 7200,
+        "max": null
+      }
+    ],
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.48,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.08,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.1,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.06,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.28,
+        "icon": "📦"
+      }
+    ]
+  },
+  "OR": {
+    "name": "Oregon",
+    "year": 2025,
+    "source": "https://www.oregon.gov/dor/programs/individuals/Pages/PIT.aspx",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 2745,
+    "brackets": [
+      {
+        "rate": 0.0475,
+        "min": 0,
+        "max": 4300
+      },
+      {
+        "rate": 0.0675,
+        "min": 4300,
+        "max": 10750
+      },
+      {
+        "rate": 0.0875,
+        "min": 10750,
+        "max": 125000
+      },
+      {
+        "rate": 0.099,
+        "min": 125000,
+        "max": null
+      }
+    ],
+    "note": "Oregon has no general sales tax; some counties and the Portland metro impose additional local income surtaxes.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.31,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.18,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.1,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.08,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.33,
+        "icon": "📦"
+      }
+    ]
+  },
+  "PA": {
+    "name": "Pennsylvania",
+    "year": 2025,
+    "source": "https://www.revenue.pa.gov/TaxTypes/PIT/",
+    "taxType": "flat",
+    "noIncomeTax": false,
+    "standardDeduction": 0,
+    "flatRate": 0.0307,
+    "note": "Pennsylvania has no standard deduction or personal exemption; many municipalities levy additional Earned Income Taxes.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.35,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.3,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.05,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.07,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.22,
+        "icon": "📦"
+      }
+    ]
+  },
+  "RI": {
+    "name": "Rhode Island",
+    "year": 2025,
+    "source": "https://tax.ri.gov/tax-sections/personal-income-tax",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 10900,
+    "brackets": [
+      {
+        "rate": 0.0375,
+        "min": 0,
+        "max": 79900
+      },
+      {
+        "rate": 0.0475,
+        "min": 79900,
+        "max": 181650
+      },
+      {
+        "rate": 0.0599,
+        "min": 181650,
+        "max": null
+      }
+    ],
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.29,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.22,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.06,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.05,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.38,
+        "icon": "📦"
+      }
+    ]
+  },
+  "SC": {
+    "name": "South Carolina",
+    "year": 2025,
+    "source": "https://dor.sc.gov/tax/individual-income",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 14600,
+    "brackets": [
+      {
+        "rate": 0,
+        "min": 0,
+        "max": 3460
+      },
+      {
+        "rate": 0.03,
+        "min": 3460,
+        "max": 17330
+      },
+      {
+        "rate": 0.062,
+        "min": 17330,
+        "max": null
+      }
+    ],
+    "note": "South Carolina's top rate was reduced to 6.2% for 2025 and is scheduled to continue stepping down; uses federal taxable income as its base.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.3,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.13,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.1,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.06,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.01,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.4,
+        "icon": "📦"
+      }
+    ]
+  },
+  "SD": {
+    "name": "South Dakota",
+    "year": 2025,
+    "source": "https://dor.sd.gov/",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "South Dakota has no state income tax; revenue comes primarily from sales tax, excise taxes, and tourism."
+  },
+  "TN": {
+    "name": "Tennessee",
+    "year": 2025,
+    "source": "https://www.tn.gov/revenue/taxes.html",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "Tennessee has no state income tax (the Hall tax on interest and dividends was fully repealed in 2021); revenue comes primarily from a high state sales tax."
+  },
+  "TX": {
+    "name": "Texas",
+    "year": 2025,
+    "source": "https://comptroller.texas.gov/taxes/",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "Texas has no state income tax; revenue comes primarily from sales tax, property taxes (locally administered), and oil/gas severance taxes."
   },
   "UT": {
     "name": "Utah",
     "year": 2025,
-    "source": "https://tax.utah.gov + https://gomb.utah.gov",
+    "source": "https://tax.utah.gov/income",
     "taxType": "flat",
-    "flatRate": 0.0455,
-    "standardDeduction": 0,
     "noIncomeTax": false,
+    "standardDeduction": 0,
+    "flatRate": 0.0455,
+    "note": "Utah's flat rate dropped to 4.55% for 2025; the state offers a taxpayer tax credit that phases out with income rather than a standard deduction.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "allocations": [
-      { "category": "Public Education (K-12)", "pct": 0.42, "icon": "🏫" },
-      { "category": "Medicaid & Health",       "pct": 0.18, "icon": "🩺" },
-      { "category": "Higher Education",        "pct": 0.11, "icon": "🎓" },
-      { "category": "Transportation",          "pct": 0.08, "icon": "🛣️" },
-      { "category": "Corrections & Public Safety", "pct": 0.07, "icon": "🚨" },
-      { "category": "Human Services",          "pct": 0.05, "icon": "🤝" },
-      { "category": "General Government",      "pct": 0.04, "icon": "🏛️" },
-      { "category": "Other",                   "pct": 0.05, "icon": "📦" }
+      {
+        "category": "K-12 Education",
+        "pct": 0.39,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.04,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.17,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.04,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.1,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.26,
+        "icon": "📦"
+      }
     ]
+  },
+  "VA": {
+    "name": "Virginia",
+    "year": 2025,
+    "source": "https://www.tax.virginia.gov/individual-income-tax-filing",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 8500,
+    "brackets": [
+      {
+        "rate": 0.02,
+        "min": 0,
+        "max": 3000
+      },
+      {
+        "rate": 0.03,
+        "min": 3000,
+        "max": 5000
+      },
+      {
+        "rate": 0.05,
+        "min": 5000,
+        "max": 17000
+      },
+      {
+        "rate": 0.0575,
+        "min": 17000,
+        "max": null
+      }
+    ],
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.31,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.21,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.13,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.05,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.3,
+        "icon": "📦"
+      }
+    ]
+  },
+  "VT": {
+    "name": "Vermont",
+    "year": 2025,
+    "source": "https://tax.vermont.gov/individuals",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 7400,
+    "brackets": [
+      {
+        "rate": 0.0335,
+        "min": 0,
+        "max": 47900
+      },
+      {
+        "rate": 0.066,
+        "min": 47900,
+        "max": 116000
+      },
+      {
+        "rate": 0.076,
+        "min": 116000,
+        "max": 242000
+      },
+      {
+        "rate": 0.0875,
+        "min": 242000,
+        "max": null
+      }
+    ],
+    "note": "K-12 spending shown is General-Fund only — most K-12 funding flows through Vermont's separate Education Fund.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.09,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.27,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.06,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.08,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.49,
+        "icon": "📦"
+      }
+    ]
+  },
+  "WA": {
+    "name": "Washington",
+    "year": 2025,
+    "source": "https://dor.wa.gov/",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "Washington has no state income tax on wages (a 7% capital gains tax applies to long-term gains over a threshold but not wage income); revenue comes primarily from sales tax and business and occupation taxes."
+  },
+  "WI": {
+    "name": "Wisconsin",
+    "year": 2025,
+    "source": "https://www.revenue.wi.gov/Pages/Individuals/home.aspx",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 13230,
+    "brackets": [
+      {
+        "rate": 0.035,
+        "min": 0,
+        "max": 14680
+      },
+      {
+        "rate": 0.044,
+        "min": 14680,
+        "max": 29370
+      },
+      {
+        "rate": 0.053,
+        "min": 29370,
+        "max": 323290
+      },
+      {
+        "rate": 0.0765,
+        "min": 323290,
+        "max": null
+      }
+    ],
+    "note": "Wisconsin's standard deduction phases out at higher income levels and reaches zero for high earners.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.39,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.2,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.09,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.07,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0.01,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.24,
+        "icon": "📦"
+      }
+    ]
+  },
+  "WV": {
+    "name": "West Virginia",
+    "year": 2025,
+    "source": "https://tax.wv.gov/Individuals/Pages/Individuals.aspx",
+    "taxType": "progressive",
+    "noIncomeTax": false,
+    "standardDeduction": 0,
+    "brackets": [
+      {
+        "rate": 0.0222,
+        "min": 0,
+        "max": 10000
+      },
+      {
+        "rate": 0.0296,
+        "min": 10000,
+        "max": 25000
+      },
+      {
+        "rate": 0.0333,
+        "min": 25000,
+        "max": 40000
+      },
+      {
+        "rate": 0.0444,
+        "min": 40000,
+        "max": 60000
+      },
+      {
+        "rate": 0.0482,
+        "min": 60000,
+        "max": null
+      }
+    ],
+    "note": "West Virginia has no standard deduction but offers a $2,000 personal exemption; rates were reduced again in 2025 via revenue-triggered cuts.",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "allocations": [
+      {
+        "category": "K-12 Education",
+        "pct": 0.51,
+        "icon": "🏫"
+      },
+      {
+        "category": "Medicaid & Health",
+        "pct": 0.24,
+        "icon": "🩺"
+      },
+      {
+        "category": "Higher Education",
+        "pct": 0.11,
+        "icon": "🎓"
+      },
+      {
+        "category": "Public Assistance",
+        "pct": 0.01,
+        "icon": "🤝"
+      },
+      {
+        "category": "Corrections",
+        "pct": 0.08,
+        "icon": "🚨"
+      },
+      {
+        "category": "Transportation",
+        "pct": 0,
+        "icon": "🛣️"
+      },
+      {
+        "category": "All Other",
+        "pct": 0.05,
+        "icon": "📦"
+      }
+    ]
+  },
+  "WY": {
+    "name": "Wyoming",
+    "year": 2025,
+    "source": "https://revenue.wyo.gov/",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "Wyoming has no state income tax; revenue comes primarily from mineral severance taxes, federal mineral royalties, and sales tax."
   }
 }

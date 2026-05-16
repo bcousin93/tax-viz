@@ -85,7 +85,8 @@ function computeState(income: number, stateCode: string): LevelBreakdown {
     total: tax,
     effectiveRate: income > 0 ? tax / income : 0,
     jurisdiction: s.name,
-    source: s.source,
+    source: s.allocationsSource,
+    note: s.note,
     items: allocate(tax, s.allocations),
   };
 }

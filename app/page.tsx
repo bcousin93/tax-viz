@@ -55,7 +55,7 @@ export default function Home() {
             {state && (
               <p className="mt-1 text-xs text-neutral-500">
                 Detected: <span className="font-mono">{state}</span>
-                {!supported && " — state-level breakdown is approximate (not in V1 dataset yet)."}
+                {!supported && " — that ZIP isn't in our state map yet."}
               </p>
             )}
           </div>
@@ -87,7 +87,7 @@ export default function Home() {
         </form>
 
         <footer className="mt-8 text-center text-xs text-neutral-500">
-          Estimates only. Not tax advice. V1 covers federal (all states), state income tax for 10 states + Utah, and a local property-tax proxy.
+          Estimates only. Not tax advice. 2025 brackets, all 50 states + DC. Local layer is a property-tax proxy (not yet personalized).
         </footer>
       </div>
     </main>
