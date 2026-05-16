@@ -1,13 +1,20 @@
 import federal from "@/data/federal.json";
 import states from "@/data/states.json";
 import cities from "@/data/cities.json";
-import type { Bracket, CalculationResult, FederalData, LevelBreakdown, StateData, CityData, LineItem } from "./types";
+import property from "@/data/property-tax.json";
+import type { Bracket, CalculationResult, FederalData, HousingMode, LevelBreakdown, StateData, CityData, LineItem } from "./types";
 import { zipToState } from "./zip";
 import { allocate } from "./allocate";
 
 const FED = federal as unknown as FederalData;
 const STATES = states as unknown as Record<string, StateData>;
 const CITIES = cities as unknown as Record<string, CityData>;
+const PROP = property as unknown as {
+  national: number;
+  rentCapRate: number;
+  source: string;
+  states: Record<string, number>;
+};
 
 export function applyBrackets(taxable: number, brackets: Bracket[]): { tax: number; marginal: number } {
   if (taxable <= 0) return { tax: 0, marginal: 0 };
@@ -34,6 +41,11 @@ function pickCity(zip: string): { key: string; data: CityData } {
   return { key: "default", data: CITIES.default };
 }
 
+function effectiveRateFor(stateCode: string, city: CityData, cityKey: string): number {
+  if (cityKey !== "default") return city.propertyTaxRate;
+  return PROP.states[stateCode] ?? PROP.national;
+}
+
 function computeFederal(income: number): LevelBreakdown & { marginal: number } {
   const taxable = Math.max(0, income - FED.standardDeduction);
   const { tax, marginal } = applyBrackets(taxable, FED.brackets);
@@ -58,7 +70,7 @@ function computeState(income: number, stateCode: string): LevelBreakdown {
       effectiveRate: 0,
       jurisdiction: stateCode,
       source: "",
-      note: `${stateCode} not yet in V1 dataset. Coming in V2.`,
+      note: `${stateCode} not in dataset.`,
       items: [],
     };
   }
@@ -91,29 +103,76 @@ function computeState(income: number, stateCode: string): LevelBreakdown {
   };
 }
 
-function computeLocal(income: number, zip: string): LevelBreakdown & { cityKey: string } {
+type LocalInput = {
+  mode: HousingMode;
+  homeValue?: number;
+  monthlyRent?: number;
+};
+
+function computeLocal(income: number, zip: string, stateCode: string, housing: LocalInput): LevelBreakdown & { cityKey: string } {
   const { key, data } = pickCity(zip);
-  const propTax = income * data.propertyTaxRate;
+  const rate = effectiveRateFor(stateCode, data, key);
+  const ratePct = (rate * 100).toFixed(2) + "%";
+  const sourceLine = `${data.source} · effective property-tax rate ${ratePct} (${PROP.source})`;
+
+  if (housing.mode === "owner" && housing.homeValue && housing.homeValue > 0) {
+    const tax = housing.homeValue * rate;
+    return {
+      level: "Local",
+      total: tax,
+      effectiveRate: income > 0 ? tax / income : 0,
+      jurisdiction: data.name,
+      source: sourceLine,
+      note: `Estimated as home value × local effective property-tax rate (${ratePct}).`,
+      items: allocate(tax, data.allocations),
+      cityKey: key,
+    };
+  }
+
+  if (housing.mode === "renter" && housing.monthlyRent && housing.monthlyRent > 0) {
+    const annualRent = housing.monthlyRent * 12;
+    const passThrough = (rate / PROP.rentCapRate) * annualRent;
+    const passPctOfRent = ((passThrough / annualRent) * 100).toFixed(0);
+    return {
+      level: "Local",
+      total: 0,
+      effectiveRate: 0,
+      jurisdiction: data.name,
+      source: sourceLine,
+      note: `Renters don't owe property tax directly. Your landlord does, and most of it gets baked into rent — roughly ${passPctOfRent}% in this area (effective rate ${ratePct} / 6% cap rate). Shown below for context; not counted in your total.`,
+      items: [],
+      passThrough: {
+        amount: passThrough,
+        label: "Property tax embedded in your rent (informational)",
+      },
+      cityKey: key,
+    };
+  }
+
   return {
     level: "Local",
-    total: propTax,
-    effectiveRate: income > 0 ? propTax / income : 0,
+    total: 0,
+    effectiveRate: 0,
     jurisdiction: data.name,
-    source: data.source,
-    note: "Approximate. Modeled as a property-tax proxy: avg local effective rate × income. Actual liability depends on home value.",
-    items: allocate(propTax, data.allocations),
+    source: sourceLine,
+    note: "Skipped property-tax estimate. Owners and renters can enter a home value or monthly rent on the start screen.",
+    items: [],
     cityKey: key,
   };
 }
 
-export function calculate(zip: string, income: number): CalculationResult | { error: string } {
+export function calculate(
+  zip: string,
+  income: number,
+  housing: LocalInput = { mode: "skip" }
+): CalculationResult | { error: string } {
   if (!Number.isFinite(income) || income < 0) return { error: "Income must be a non-negative number." };
   const stateCode = zipToState(zip);
   if (!stateCode) return { error: "We couldn't map that ZIP code to a state." };
 
   const fed = computeFederal(income);
   const st = computeState(income, stateCode);
-  const loc = computeLocal(income, zip);
+  const loc = computeLocal(income, zip, stateCode, housing);
 
   const totalTax = fed.total + st.total + loc.total;
   const { cityKey, ...localOut } = loc;
@@ -124,6 +183,7 @@ export function calculate(zip: string, income: number): CalculationResult | { er
     income,
     state: stateCode,
     cityKey,
+    housing,
     totalTax,
     effectiveRate: income > 0 ? totalTax / income : 0,
     marginalRate: marginal,

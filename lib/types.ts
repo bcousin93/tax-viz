@@ -49,6 +49,8 @@ export type CityData = {
 
 export type LineItem = { category: string; amount: number; pct: number; icon?: string; examples?: string[] };
 
+export type HousingMode = "owner" | "renter" | "skip";
+
 export type LevelBreakdown = {
   level: "Federal" | "State" | "Local";
   total: number;
@@ -57,6 +59,7 @@ export type LevelBreakdown = {
   source: string;
   note?: string;
   items: LineItem[];
+  passThrough?: { amount: number; label: string };
 };
 
 export type CalculationResult = {
@@ -64,6 +67,7 @@ export type CalculationResult = {
   income: number;
   state: string;
   cityKey: string;
+  housing: { mode: HousingMode; homeValue?: number; monthlyRent?: number };
   totalTax: number;
   effectiveRate: number;
   marginalRate: number;

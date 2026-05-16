@@ -2,15 +2,36 @@ import Link from "next/link";
 import { calculate } from "@/lib/calculate";
 import { BreakdownChart, fmt, pct } from "@/components/BreakdownChart";
 import { ShareCard } from "@/components/ShareCard";
+import type { HousingMode } from "@/lib/types";
 
 export const dynamic = "force-static";
 
-type SearchParams = { zip?: string; income?: string };
+type SearchParams = {
+  zip?: string;
+  income?: string;
+  mode?: string;
+  home?: string;
+  rent?: string;
+};
+
+function parseHousing(sp: SearchParams): { mode: HousingMode; homeValue?: number; monthlyRent?: number } {
+  const m = sp.mode === "owner" || sp.mode === "renter" ? sp.mode : "skip";
+  if (m === "owner") {
+    const v = Number(sp.home ?? "0");
+    return { mode: "owner", homeValue: Number.isFinite(v) && v > 0 ? v : undefined };
+  }
+  if (m === "renter") {
+    const r = Number(sp.rent ?? "0");
+    return { mode: "renter", monthlyRent: Number.isFinite(r) && r > 0 ? r : undefined };
+  }
+  return { mode: "skip" };
+}
 
 export default function ResultPage({ searchParams }: { searchParams: SearchParams }) {
   const zip = (searchParams.zip ?? "").trim();
   const income = Number(searchParams.income ?? "0");
-  const result = calculate(zip, income);
+  const housing = parseHousing(searchParams);
+  const result = calculate(zip, income, housing);
 
   if ("error" in result) {
     return (
@@ -25,6 +46,7 @@ export default function ResultPage({ searchParams }: { searchParams: SearchParam
   }
 
   const takeHome = income - result.totalTax;
+  const passThrough = result.local.passThrough;
 
   return (
     <main className="min-h-screen px-4 py-10 sm:py-14">
@@ -34,6 +56,8 @@ export default function ResultPage({ searchParams }: { searchParams: SearchParam
         <section className="rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 p-6 sm:p-8">
           <p className="text-sm text-neutral-500">
             ZIP <span className="font-mono">{result.zip}</span> · {result.state} · income {fmt(result.income)}
+            {result.housing.mode === "owner" && result.housing.homeValue ? ` · home ${fmt(result.housing.homeValue)}` : null}
+            {result.housing.mode === "renter" && result.housing.monthlyRent ? ` · rent ${fmt(result.housing.monthlyRent)}/mo` : null}
           </p>
           <h1 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight">
             You paid about <span className="text-red-600 dark:text-red-400">{fmt(result.totalTax)}</span> in taxes.
@@ -43,6 +67,12 @@ export default function ResultPage({ searchParams }: { searchParams: SearchParam
             <span className="text-neutral-500">(marginal {pct(result.marginalRate)})</span>.
             You took home <strong>{fmt(takeHome)}</strong>.
           </p>
+          {passThrough && (
+            <p className="mt-2 text-sm text-neutral-500">
+              Plus an estimated <strong>{fmt(passThrough.amount)}</strong> in property tax embedded in your rent
+              (informational; not counted above).
+            </p>
+          )}
 
           <div className="mt-5 flex h-4 w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-900">
             <div className="h-full bg-blue-600" style={{ width: `${(result.federal.total / income) * 100}%` }} title={`Federal ${fmt(result.federal.total)}`} />
