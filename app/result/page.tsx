@@ -1,36 +1,31 @@
+"use client";
+
+import { Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { calculate } from "@/lib/calculate";
 import { BreakdownChart, fmt, pct } from "@/components/BreakdownChart";
 import { ShareCard } from "@/components/ShareCard";
 import type { HousingMode } from "@/lib/types";
 
-export const dynamic = "force-static";
-
-type SearchParams = {
-  zip?: string;
-  income?: string;
-  mode?: string;
-  home?: string;
-  rent?: string;
-};
-
-function parseHousing(sp: SearchParams): { mode: HousingMode; homeValue?: number; monthlyRent?: number } {
-  const m = sp.mode === "owner" || sp.mode === "renter" ? sp.mode : "skip";
+function parseHousing(get: (k: string) => string | null): { mode: HousingMode; homeValue?: number; monthlyRent?: number } {
+  const m = get("mode");
   if (m === "owner") {
-    const v = Number(sp.home ?? "0");
+    const v = Number(get("home") ?? "0");
     return { mode: "owner", homeValue: Number.isFinite(v) && v > 0 ? v : undefined };
   }
   if (m === "renter") {
-    const r = Number(sp.rent ?? "0");
+    const r = Number(get("rent") ?? "0");
     return { mode: "renter", monthlyRent: Number.isFinite(r) && r > 0 ? r : undefined };
   }
   return { mode: "skip" };
 }
 
-export default function ResultPage({ searchParams }: { searchParams: SearchParams }) {
-  const zip = (searchParams.zip ?? "").trim();
-  const income = Number(searchParams.income ?? "0");
-  const housing = parseHousing(searchParams);
+function ResultBody() {
+  const sp = useSearchParams();
+  const zip = (sp.get("zip") ?? "").trim();
+  const income = Number(sp.get("income") ?? "0");
+  const housing = parseHousing((k) => sp.get(k));
   const result = calculate(zip, income, housing);
 
   if ("error" in result) {
@@ -98,6 +93,14 @@ export default function ResultPage({ searchParams }: { searchParams: SearchParam
         </footer>
       </div>
     </main>
+  );
+}
+
+export default function ResultPage() {
+  return (
+    <Suspense fallback={<main className="min-h-screen flex items-center justify-center text-sm text-neutral-500">Crunching...</main>}>
+      <ResultBody />
+    </Suspense>
   );
 }
 
