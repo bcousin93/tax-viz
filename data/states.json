@@ -1,0 +1,216 @@
+{
+  "CA": {
+    "name": "California",
+    "year": 2025,
+    "source": "https://www.ftb.ca.gov + https://ebudget.ca.gov",
+    "taxType": "progressive",
+    "standardDeduction": 5540,
+    "brackets": [
+      { "rate": 0.010, "min": 0,       "max": 10756 },
+      { "rate": 0.020, "min": 10756,   "max": 25499 },
+      { "rate": 0.040, "min": 25499,   "max": 40245 },
+      { "rate": 0.060, "min": 40245,   "max": 55866 },
+      { "rate": 0.080, "min": 55866,   "max": 70606 },
+      { "rate": 0.093, "min": 70606,   "max": 360659 },
+      { "rate": 0.103, "min": 360659,  "max": 432787 },
+      { "rate": 0.113, "min": 432787,  "max": 721314 },
+      { "rate": 0.123, "min": 721314,  "max": null }
+    ],
+    "noIncomeTax": false,
+    "allocations": [
+      { "category": "K-12 Education",         "pct": 0.28, "icon": "🏫" },
+      { "category": "Health & Human Services","pct": 0.30, "icon": "🩺" },
+      { "category": "Higher Education",       "pct": 0.09, "icon": "🎓" },
+      { "category": "Corrections",            "pct": 0.06, "icon": "🚨" },
+      { "category": "Transportation",         "pct": 0.06, "icon": "🛣️" },
+      { "category": "Natural Resources & Environment", "pct": 0.05, "icon": "🌲" },
+      { "category": "Legislative/Judicial",   "pct": 0.03, "icon": "⚖️" },
+      { "category": "General Government",     "pct": 0.05, "icon": "🏛️" },
+      { "category": "Other",                  "pct": 0.08, "icon": "📦" }
+    ]
+  },
+  "TX": {
+    "name": "Texas",
+    "year": 2025,
+    "source": "https://comptroller.texas.gov",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "Texas has no state income tax. State revenue comes from sales tax, oil & gas severance, and federal transfers."
+  },
+  "FL": {
+    "name": "Florida",
+    "year": 2025,
+    "source": "https://floridarevenue.com",
+    "taxType": "none",
+    "noIncomeTax": true,
+    "note": "Florida has no state income tax. State revenue comes from sales tax, tourism, and federal transfers."
+  },
+  "NY": {
+    "name": "New York",
+    "year": 2025,
+    "source": "https://www.tax.ny.gov + https://www.budget.ny.gov",
+    "taxType": "progressive",
+    "standardDeduction": 8000,
+    "brackets": [
+      { "rate": 0.0400,  "min": 0,        "max": 8500 },
+      { "rate": 0.0450,  "min": 8500,     "max": 11700 },
+      { "rate": 0.0525,  "min": 11700,    "max": 13900 },
+      { "rate": 0.0550,  "min": 13900,    "max": 80650 },
+      { "rate": 0.0600,  "min": 80650,    "max": 215400 },
+      { "rate": 0.0685,  "min": 215400,   "max": 1077550 },
+      { "rate": 0.0965,  "min": 1077550,  "max": 5000000 },
+      { "rate": 0.1030,  "min": 5000000,  "max": 25000000 },
+      { "rate": 0.1090,  "min": 25000000, "max": null }
+    ],
+    "noIncomeTax": false,
+    "allocations": [
+      { "category": "Medicaid & Health",  "pct": 0.34, "icon": "🩺" },
+      { "category": "K-12 Education",     "pct": 0.22, "icon": "🏫" },
+      { "category": "Higher Education",   "pct": 0.05, "icon": "🎓" },
+      { "category": "Human Services",     "pct": 0.10, "icon": "🤝" },
+      { "category": "Transportation",     "pct": 0.08, "icon": "🛣️" },
+      { "category": "Public Safety",      "pct": 0.06, "icon": "🚨" },
+      { "category": "Mental Hygiene",     "pct": 0.05, "icon": "🧠" },
+      { "category": "General Government", "pct": 0.04, "icon": "🏛️" },
+      { "category": "Other",              "pct": 0.06, "icon": "📦" }
+    ]
+  },
+  "PA": {
+    "name": "Pennsylvania",
+    "year": 2025,
+    "source": "https://www.revenue.pa.gov + https://www.budget.pa.gov",
+    "taxType": "flat",
+    "flatRate": 0.0307,
+    "standardDeduction": 0,
+    "noIncomeTax": false,
+    "allocations": [
+      { "category": "K-12 Education",     "pct": 0.32, "icon": "🏫" },
+      { "category": "Medicaid & Health",  "pct": 0.26, "icon": "🩺" },
+      { "category": "Human Services",     "pct": 0.13, "icon": "🤝" },
+      { "category": "Corrections",        "pct": 0.07, "icon": "🚨" },
+      { "category": "Higher Education",   "pct": 0.05, "icon": "🎓" },
+      { "category": "Transportation",     "pct": 0.04, "icon": "🛣️" },
+      { "category": "General Government", "pct": 0.05, "icon": "🏛️" },
+      { "category": "Other",              "pct": 0.08, "icon": "📦" }
+    ]
+  },
+  "IL": {
+    "name": "Illinois",
+    "year": 2025,
+    "source": "https://tax.illinois.gov + https://budget.illinois.gov",
+    "taxType": "flat",
+    "flatRate": 0.0495,
+    "standardDeduction": 2775,
+    "noIncomeTax": false,
+    "allocations": [
+      { "category": "K-12 Education",     "pct": 0.24, "icon": "🏫" },
+      { "category": "Medicaid & Health",  "pct": 0.25, "icon": "🩺" },
+      { "category": "Pensions",           "pct": 0.18, "icon": "👵" },
+      { "category": "Human Services",     "pct": 0.10, "icon": "🤝" },
+      { "category": "Public Safety",      "pct": 0.06, "icon": "🚨" },
+      { "category": "Higher Education",   "pct": 0.04, "icon": "🎓" },
+      { "category": "Transportation",     "pct": 0.04, "icon": "🛣️" },
+      { "category": "General Government", "pct": 0.04, "icon": "🏛️" },
+      { "category": "Other",              "pct": 0.05, "icon": "📦" }
+    ]
+  },
+  "OH": {
+    "name": "Ohio",
+    "year": 2025,
+    "source": "https://tax.ohio.gov + https://obm.ohio.gov",
+    "taxType": "progressive",
+    "standardDeduction": 0,
+    "brackets": [
+      { "rate": 0.0000, "min": 0,      "max": 26050 },
+      { "rate": 0.0275, "min": 26050,  "max": 100000 },
+      { "rate": 0.0350, "min": 100000, "max": null }
+    ],
+    "noIncomeTax": false,
+    "allocations": [
+      { "category": "Medicaid & Health",  "pct": 0.34, "icon": "🩺" },
+      { "category": "K-12 Education",     "pct": 0.27, "icon": "🏫" },
+      { "category": "Higher Education",   "pct": 0.06, "icon": "🎓" },
+      { "category": "Human Services",     "pct": 0.08, "icon": "🤝" },
+      { "category": "Corrections",        "pct": 0.05, "icon": "🚨" },
+      { "category": "Transportation",     "pct": 0.04, "icon": "🛣️" },
+      { "category": "General Government", "pct": 0.06, "icon": "🏛️" },
+      { "category": "Other",              "pct": 0.10, "icon": "📦" }
+    ]
+  },
+  "GA": {
+    "name": "Georgia",
+    "year": 2025,
+    "source": "https://dor.georgia.gov + https://opb.georgia.gov",
+    "taxType": "flat",
+    "flatRate": 0.0539,
+    "standardDeduction": 12000,
+    "noIncomeTax": false,
+    "allocations": [
+      { "category": "K-12 Education",     "pct": 0.38, "icon": "🏫" },
+      { "category": "Medicaid & Health",  "pct": 0.17, "icon": "🩺" },
+      { "category": "Higher Education",   "pct": 0.10, "icon": "🎓" },
+      { "category": "Human Services",     "pct": 0.07, "icon": "🤝" },
+      { "category": "Public Safety",      "pct": 0.07, "icon": "🚨" },
+      { "category": "Transportation",     "pct": 0.05, "icon": "🛣️" },
+      { "category": "General Government", "pct": 0.05, "icon": "🏛️" },
+      { "category": "Other",              "pct": 0.11, "icon": "📦" }
+    ]
+  },
+  "NC": {
+    "name": "North Carolina",
+    "year": 2025,
+    "source": "https://www.ncdor.gov + https://www.osbm.nc.gov",
+    "taxType": "flat",
+    "flatRate": 0.0425,
+    "standardDeduction": 12750,
+    "noIncomeTax": false,
+    "allocations": [
+      { "category": "K-12 Education",     "pct": 0.36, "icon": "🏫" },
+      { "category": "Medicaid & Health",  "pct": 0.21, "icon": "🩺" },
+      { "category": "Higher Education",   "pct": 0.13, "icon": "🎓" },
+      { "category": "Human Services",     "pct": 0.08, "icon": "🤝" },
+      { "category": "Public Safety",      "pct": 0.07, "icon": "🚨" },
+      { "category": "Transportation",     "pct": 0.04, "icon": "🛣️" },
+      { "category": "General Government", "pct": 0.04, "icon": "🏛️" },
+      { "category": "Other",              "pct": 0.07, "icon": "📦" }
+    ]
+  },
+  "MI": {
+    "name": "Michigan",
+    "year": 2025,
+    "source": "https://www.michigan.gov/treasury + https://www.michigan.gov/budget",
+    "taxType": "flat",
+    "flatRate": 0.0425,
+    "standardDeduction": 5800,
+    "noIncomeTax": false,
+    "allocations": [
+      { "category": "K-12 Education",     "pct": 0.29, "icon": "🏫" },
+      { "category": "Medicaid & Health",  "pct": 0.27, "icon": "🩺" },
+      { "category": "Human Services",     "pct": 0.10, "icon": "🤝" },
+      { "category": "Higher Education",   "pct": 0.07, "icon": "🎓" },
+      { "category": "Corrections",        "pct": 0.06, "icon": "🚨" },
+      { "category": "Transportation",     "pct": 0.06, "icon": "🛣️" },
+      { "category": "General Government", "pct": 0.05, "icon": "🏛️" },
+      { "category": "Other",              "pct": 0.10, "icon": "📦" }
+    ]
+  },
+  "UT": {
+    "name": "Utah",
+    "year": 2025,
+    "source": "https://tax.utah.gov + https://gomb.utah.gov",
+    "taxType": "flat",
+    "flatRate": 0.0455,
+    "standardDeduction": 0,
+    "noIncomeTax": false,
+    "allocations": [
+      { "category": "Public Education (K-12)", "pct": 0.42, "icon": "🏫" },
+      { "category": "Medicaid & Health",       "pct": 0.18, "icon": "🩺" },
+      { "category": "Higher Education",        "pct": 0.11, "icon": "🎓" },
+      { "category": "Transportation",          "pct": 0.08, "icon": "🛣️" },
+      { "category": "Corrections & Public Safety", "pct": 0.07, "icon": "🚨" },
+      { "category": "Human Services",          "pct": 0.05, "icon": "🤝" },
+      { "category": "General Government",      "pct": 0.04, "icon": "🏛️" },
+      { "category": "Other",                   "pct": 0.05, "icon": "📦" }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+import Link from "next/link";
+import { calculate } from "@/lib/calculate";
+import { BreakdownChart, fmt, pct } from "@/components/BreakdownChart";
+import { ShareCard } from "@/components/ShareCard";
+
+export const dynamic = "force-static";
+
+type SearchParams = { zip?: string; income?: string };
+
+export default function ResultPage({ searchParams }: { searchParams: SearchParams }) {
+  const zip = (searchParams.zip ?? "").trim();
+  const income = Number(searchParams.income ?? "0");
+  const result = calculate(zip, income);
+
+  if ("error" in result) {
+    return (
+      <main className="min-h-screen flex items-center justify-center px-4 py-12">
+        <div className="max-w-md text-center">
+          <h1 className="text-2xl font-bold">Hmm.</h1>
+          <p className="mt-2 text-neutral-600 dark:text-neutral-400">{result.error}</p>
+          <Link href="/" className="mt-6 inline-block underline">Back to start</Link>
+        </div>
+      </main>
+    );
+  }
+
+  const takeHome = income - result.totalTax;
+
+  return (
+    <main className="min-h-screen px-4 py-10 sm:py-14">
+      <div className="mx-auto max-w-3xl space-y-6">
+        <Link href="/" className="text-sm text-neutral-500 hover:underline">← Recalculate</Link>
+
+        <section className="rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 p-6 sm:p-8">
+          <p className="text-sm text-neutral-500">
+            ZIP <span className="font-mono">{result.zip}</span> · {result.state} · income {fmt(result.income)}
+          </p>
+          <h1 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight">
+            You paid about <span className="text-red-600 dark:text-red-400">{fmt(result.totalTax)}</span> in taxes.
+          </h1>
+          <p className="mt-2 text-neutral-600 dark:text-neutral-400">
+            That's an effective rate of <strong>{pct(result.effectiveRate)}</strong>{" "}
+            <span className="text-neutral-500">(marginal {pct(result.marginalRate)})</span>.
+            You took home <strong>{fmt(takeHome)}</strong>.
+          </p>
+
+          <div className="mt-5 flex h-4 w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-900">
+            <div className="h-full bg-blue-600" style={{ width: `${(result.federal.total / income) * 100}%` }} title={`Federal ${fmt(result.federal.total)}`} />
+            <div className="h-full bg-emerald-600" style={{ width: `${(result.state_.total / income) * 100}%` }} title={`State ${fmt(result.state_.total)}`} />
+            <div className="h-full bg-amber-500" style={{ width: `${(result.local.total / income) * 100}%` }} title={`Local ${fmt(result.local.total)}`} />
+          </div>
+          <div className="mt-3 grid grid-cols-3 gap-3 text-sm">
+            <Mini color="bg-blue-600"   label="Federal" amount={result.federal.total} share={result.federal.total / income} />
+            <Mini color="bg-emerald-600" label="State"   amount={result.state_.total} share={result.state_.total / income} />
+            <Mini color="bg-amber-500"   label="Local"   amount={result.local.total}   share={result.local.total / income} />
+          </div>
+        </section>
+
+        <ShareCard zip={result.zip} income={result.income} />
+
+        <BreakdownChart level={result.federal} />
+        <BreakdownChart level={result.state_} />
+        <BreakdownChart level={result.local} />
+
+        <footer className="text-xs text-neutral-500 pb-10 space-y-1">
+          <p>Estimates only. Not tax advice. Filing single. Standard deductions applied where applicable.</p>
+          <p>Sanity check against <a className="underline" href="https://www.nationalpriorities.org" target="_blank" rel="noreferrer">nationalpriorities.org</a>.</p>
+        </footer>
+      </div>
+    </main>
+  );
+}
+
+function Mini({ color, label, amount, share }: { color: string; label: string; amount: number; share: number }) {
+  return (
+    <div className="rounded-lg border border-neutral-200 dark:border-neutral-800 p-3">
+      <div className="flex items-center gap-2">
+        <span className={`inline-block h-2 w-2 rounded-full ${color}`} />
+        <span className="text-xs uppercase tracking-wide text-neutral-500">{label}</span>
+      </div>
+      <p className="mt-1 font-mono font-semibold tabular-nums">{fmt(amount)}</p>
+      <p className="text-xs text-neutral-500">{pct(share)} of income</p>
+    </div>
+  );
+}

@@ -1,0 +1,102 @@
+{
+  "default": {
+    "name": "U.S. average municipality",
+    "source": "Census of Governments 2022 + Lincoln Institute property tax data",
+    "propertyTaxRate": 0.025,
+    "allocations": [
+      { "category": "Schools (local share)",    "pct": 0.30, "icon": "🏫" },
+      { "category": "Police",                   "pct": 0.22, "icon": "👮" },
+      { "category": "Fire & EMS",               "pct": 0.12, "icon": "🚒" },
+      { "category": "Roads & Infrastructure",   "pct": 0.10, "icon": "🛣️" },
+      { "category": "Sanitation & Utilities",   "pct": 0.06, "icon": "🚮" },
+      { "category": "Parks & Recreation",       "pct": 0.05, "icon": "🌳" },
+      { "category": "Administration",           "pct": 0.10, "icon": "🏛️" },
+      { "category": "Other",                    "pct": 0.05, "icon": "📦" }
+    ]
+  },
+  "NYC": {
+    "name": "New York City",
+    "source": "https://council.nyc.gov/budget",
+    "zips": ["100", "101", "102", "103", "104", "111", "112", "113", "114", "116"],
+    "propertyTaxRate": 0.012,
+    "allocations": [
+      { "category": "Education (DOE)",          "pct": 0.31, "icon": "🏫" },
+      { "category": "Police (NYPD)",            "pct": 0.06, "icon": "👮" },
+      { "category": "Fire & EMS (FDNY)",        "pct": 0.02, "icon": "🚒" },
+      { "category": "Social Services & Health", "pct": 0.21, "icon": "🩺" },
+      { "category": "Sanitation",               "pct": 0.02, "icon": "🚮" },
+      { "category": "Transit & Roads",          "pct": 0.05, "icon": "🚇" },
+      { "category": "Parks & Culture",          "pct": 0.02, "icon": "🌳" },
+      { "category": "Housing",                  "pct": 0.04, "icon": "🏘️" },
+      { "category": "Pensions & Debt Service",  "pct": 0.18, "icon": "💸" },
+      { "category": "Administration",           "pct": 0.09, "icon": "🏛️" }
+    ]
+  },
+  "LA": {
+    "name": "Los Angeles",
+    "source": "https://cao.lacity.org/budget",
+    "zips": ["900", "901", "902", "903", "904", "905", "906", "907", "908"],
+    "propertyTaxRate": 0.0125,
+    "allocations": [
+      { "category": "Police (LAPD)",            "pct": 0.27, "icon": "👮" },
+      { "category": "Fire & EMS (LAFD)",        "pct": 0.10, "icon": "🚒" },
+      { "category": "Schools (LAUSD share)",    "pct": 0.18, "icon": "🏫" },
+      { "category": "Public Works",             "pct": 0.08, "icon": "🛣️" },
+      { "category": "Sanitation",               "pct": 0.06, "icon": "🚮" },
+      { "category": "Parks & Recreation",       "pct": 0.04, "icon": "🌳" },
+      { "category": "Libraries & Culture",      "pct": 0.03, "icon": "📚" },
+      { "category": "Housing",                  "pct": 0.05, "icon": "🏘️" },
+      { "category": "Pensions & Debt Service",  "pct": 0.10, "icon": "💸" },
+      { "category": "Administration",           "pct": 0.09, "icon": "🏛️" }
+    ]
+  },
+  "CHI": {
+    "name": "Chicago",
+    "source": "https://www.chicago.gov/city/en/depts/obm.html",
+    "zips": ["606"],
+    "propertyTaxRate": 0.021,
+    "allocations": [
+      { "category": "Police (CPD)",             "pct": 0.21, "icon": "👮" },
+      { "category": "Fire & EMS (CFD)",         "pct": 0.07, "icon": "🚒" },
+      { "category": "Schools (CPS share)",      "pct": 0.20, "icon": "🏫" },
+      { "category": "Streets & Sanitation",     "pct": 0.06, "icon": "🚮" },
+      { "category": "Transit (CTA)",            "pct": 0.05, "icon": "🚇" },
+      { "category": "Parks & Libraries",        "pct": 0.04, "icon": "🌳" },
+      { "category": "Pensions & Debt Service",  "pct": 0.27, "icon": "💸" },
+      { "category": "Administration",           "pct": 0.10, "icon": "🏛️" }
+    ]
+  },
+  "HOU": {
+    "name": "Houston",
+    "source": "https://www.houstontx.gov/budget",
+    "zips": ["770", "771", "772"],
+    "propertyTaxRate": 0.022,
+    "allocations": [
+      { "category": "Police (HPD)",             "pct": 0.34, "icon": "👮" },
+      { "category": "Fire & EMS (HFD)",         "pct": 0.17, "icon": "🚒" },
+      { "category": "Schools (HISD share)",     "pct": 0.10, "icon": "🏫" },
+      { "category": "Public Works",             "pct": 0.10, "icon": "🛣️" },
+      { "category": "Solid Waste",              "pct": 0.04, "icon": "🚮" },
+      { "category": "Parks & Libraries",        "pct": 0.04, "icon": "🌳" },
+      { "category": "Pensions & Debt Service",  "pct": 0.14, "icon": "💸" },
+      { "category": "Administration",           "pct": 0.07, "icon": "🏛️" }
+    ]
+  },
+  "PHX": {
+    "name": "Phoenix",
+    "source": "https://www.phoenix.gov/budget",
+    "zips": ["850"],
+    "propertyTaxRate": 0.0065,
+    "allocations": [
+      { "category": "Police (PPD)",             "pct": 0.27, "icon": "👮" },
+      { "category": "Fire & EMS",               "pct": 0.13, "icon": "🚒" },
+      { "category": "Schools (local share)",    "pct": 0.12, "icon": "🏫" },
+      { "category": "Streets & Transportation", "pct": 0.10, "icon": "🛣️" },
+      { "category": "Water & Sanitation",       "pct": 0.10, "icon": "🚮" },
+      { "category": "Parks & Libraries",        "pct": 0.05, "icon": "🌳" },
+      { "category": "Aviation",                 "pct": 0.04, "icon": "✈️" },
+      { "category": "Pensions & Debt Service",  "pct": 0.10, "icon": "💸" },
+      { "category": "Administration",           "pct": 0.09, "icon": "🏛️" }
+    ]
+  }
+}
