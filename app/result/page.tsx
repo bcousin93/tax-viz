@@ -34,9 +34,11 @@ function parseFiling(v: string | null): FilingStatus {
 function ResultBody() {
   const sp = useSearchParams();
   const zip = (sp.get("zip") ?? "").trim();
-  const income = Number(sp.get("income") ?? "0");
+  const incomeRaw = Number(sp.get("income") ?? "0");
+  const income = Number.isFinite(incomeRaw) && incomeRaw > 0 ? incomeRaw : 0;
   const filingStatus = parseFiling(sp.get("filing"));
-  const numKids = Math.max(0, Math.floor(Number(sp.get("kids") ?? "0")));
+  const kidsRaw = Number(sp.get("kids") ?? "0");
+  const numKids = Number.isFinite(kidsRaw) ? Math.max(0, Math.floor(kidsRaw)) : 0;
   const housing = parseHousing((k) => sp.get(k));
   const result = calculate(zip, income, { filingStatus, numKids, housing });
 
@@ -84,14 +86,14 @@ function ResultBody() {
           )}
 
           <div className="mt-5 flex h-4 w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-900">
-            <div className="h-full bg-blue-600" style={{ width: `${(result.federal.total / income) * 100}%` }} title={`Federal ${fmt(result.federal.total)}`} />
-            <div className="h-full bg-emerald-600" style={{ width: `${(result.state_.total / income) * 100}%` }} title={`State ${fmt(result.state_.total)}`} />
-            <div className="h-full bg-amber-500" style={{ width: `${(result.local.total / income) * 100}%` }} title={`Local ${fmt(result.local.total)}`} />
+            <div className="h-full bg-blue-600" style={{ width: `${result.federal.effectiveRate * 100}%` }} title={`Federal ${fmt(result.federal.total)}`} />
+            <div className="h-full bg-emerald-600" style={{ width: `${result.state_.effectiveRate * 100}%` }} title={`State ${fmt(result.state_.total)}`} />
+            <div className="h-full bg-amber-500" style={{ width: `${result.local.effectiveRate * 100}%` }} title={`Local ${fmt(result.local.total)}`} />
           </div>
           <div className="mt-3 grid grid-cols-3 gap-3 text-sm">
-            <Mini color="bg-blue-600"   label="Federal" amount={result.federal.total} share={result.federal.total / income} />
-            <Mini color="bg-emerald-600" label="State"   amount={result.state_.total} share={result.state_.total / income} />
-            <Mini color="bg-amber-500"   label="Local"   amount={result.local.total}   share={result.local.total / income} />
+            <Mini color="bg-blue-600"   label="Federal" amount={result.federal.total} share={result.federal.effectiveRate} />
+            <Mini color="bg-emerald-600" label="State"   amount={result.state_.total} share={result.state_.effectiveRate} />
+            <Mini color="bg-amber-500"   label="Local"   amount={result.local.total}   share={result.local.effectiveRate} />
           </div>
         </section>
 

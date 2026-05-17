@@ -30,7 +30,7 @@ export default function Home() {
       return;
     }
     const n = Number(income.replace(/[,$\s]/g, ""));
-    if (!Number.isFinite(n) || n < 0) {
+    if (!Number.isFinite(n) || n <= 0) {
       setError("Enter a positive income amount.");
       return;
     }
