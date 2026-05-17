@@ -106,7 +106,7 @@ export default function Home() {
           </div>
 
           <div>
-            <label htmlFor="income" className="block text-sm font-medium mb-1">Annual income (USD)</label>
+            <label htmlFor="income" className="block text-sm font-medium mb-1">Adjusted gross income / AGI (USD)</label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500">$</span>
               <input
