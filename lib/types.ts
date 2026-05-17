@@ -21,6 +21,12 @@ export type FederalData = {
   allocations: Allocation[];
 };
 
+export type StateStatusBlock = {
+  standardDeduction: number;
+  flatRate?: number;
+  brackets?: Bracket[];
+};
+
 export type StateData =
   | {
       name: string;
@@ -28,12 +34,11 @@ export type StateData =
       source: string;
       allocationsSource: string;
       taxType: "flat" | "progressive";
-      standardDeduction: number;
-      flatRate?: number;
-      brackets?: Bracket[];
       noIncomeTax: false;
+      byStatus: Record<FilingStatus, StateStatusBlock>;
       allocations: Allocation[];
       note?: string;
+      statusNote?: string;
     }
   | {
       name: string;
@@ -42,6 +47,7 @@ export type StateData =
       taxType: "none";
       noIncomeTax: true;
       note: string;
+      statusNote?: string;
     };
 
 export type CityData = {

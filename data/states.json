@@ -11,27 +11,71 @@
     "name": "Alabama",
     "year": 2025,
     "source": "https://www.revenue.alabama.gov/individual-corporate/individual-income-tax/",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 3000,
-    "brackets": [
-      {
-        "rate": 0.02,
-        "min": 0,
-        "max": 500
+    "byStatus": {
+      "single": {
+        "standardDeduction": 3000,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 500
+          },
+          {
+            "rate": 0.04,
+            "min": 500,
+            "max": 3000
+          },
+          {
+            "rate": 0.05,
+            "min": 3000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.04,
-        "min": 500,
-        "max": 3000
+      "mfj": {
+        "standardDeduction": 3000,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 500
+          },
+          {
+            "rate": 0.04,
+            "min": 500,
+            "max": 3000
+          },
+          {
+            "rate": 0.05,
+            "min": 3000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.05,
-        "min": 3000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 3000,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 500
+          },
+          {
+            "rate": 0.04,
+            "min": 500,
+            "max": 3000
+          },
+          {
+            "rate": 0.05,
+            "min": 3000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -68,34 +112,78 @@
         "pct": 0.21,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
   },
   "AR": {
     "name": "Arkansas",
     "year": 2025,
     "source": "https://www.dfa.arkansas.gov/income-tax/individual-income-tax/",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 2340,
-    "brackets": [
-      {
-        "rate": 0.02,
-        "min": 0,
-        "max": 4500
+    "byStatus": {
+      "single": {
+        "standardDeduction": 2340,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 4500
+          },
+          {
+            "rate": 0.03,
+            "min": 4500,
+            "max": 8900
+          },
+          {
+            "rate": 0.039,
+            "min": 8900,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.03,
-        "min": 4500,
-        "max": 8900
+      "mfj": {
+        "standardDeduction": 2340,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 4500
+          },
+          {
+            "rate": 0.03,
+            "min": 4500,
+            "max": 8900
+          },
+          {
+            "rate": 0.039,
+            "min": 8900,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.039,
-        "min": 8900,
-        "max": null
+      "hoh": {
+        "standardDeduction": 2340,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 4500
+          },
+          {
+            "rate": 0.03,
+            "min": 4500,
+            "max": 8900
+          },
+          {
+            "rate": 0.039,
+            "min": 8900,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Arkansas uses a tiered structure with different schedules by income range; the top rate was reduced to 3.9% effective 2025.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -132,17 +220,31 @@
         "pct": 0.13,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Arkansas uses a tiered structure with different schedules by income range; the top rate was reduced to 3.9% effective 2025."
   },
   "AZ": {
     "name": "Arizona",
     "year": 2025,
     "source": "https://azdor.gov/forms/individual",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 14600,
-    "flatRate": 0.025,
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 14600,
+        "flatRate": 0.025
+      },
+      "mfj": {
+        "standardDeduction": 14600,
+        "flatRate": 0.025
+      },
+      "hoh": {
+        "standardDeduction": 14600,
+        "flatRate": 0.025
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -179,64 +281,168 @@
         "pct": 0.25,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
   },
   "CA": {
     "name": "California",
     "year": 2025,
     "source": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.html",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 5540,
-    "brackets": [
-      {
-        "rate": 0.01,
-        "min": 0,
-        "max": 10756
+    "byStatus": {
+      "single": {
+        "standardDeduction": 5540,
+        "brackets": [
+          {
+            "rate": 0.01,
+            "min": 0,
+            "max": 10756
+          },
+          {
+            "rate": 0.02,
+            "min": 10756,
+            "max": 25499
+          },
+          {
+            "rate": 0.04,
+            "min": 25499,
+            "max": 40245
+          },
+          {
+            "rate": 0.06,
+            "min": 40245,
+            "max": 55866
+          },
+          {
+            "rate": 0.08,
+            "min": 55866,
+            "max": 70606
+          },
+          {
+            "rate": 0.093,
+            "min": 70606,
+            "max": 360659
+          },
+          {
+            "rate": 0.103,
+            "min": 360659,
+            "max": 432787
+          },
+          {
+            "rate": 0.113,
+            "min": 432787,
+            "max": 721314
+          },
+          {
+            "rate": 0.123,
+            "min": 721314,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.02,
-        "min": 10756,
-        "max": 25499
+      "mfj": {
+        "standardDeduction": 5540,
+        "brackets": [
+          {
+            "rate": 0.01,
+            "min": 0,
+            "max": 10756
+          },
+          {
+            "rate": 0.02,
+            "min": 10756,
+            "max": 25499
+          },
+          {
+            "rate": 0.04,
+            "min": 25499,
+            "max": 40245
+          },
+          {
+            "rate": 0.06,
+            "min": 40245,
+            "max": 55866
+          },
+          {
+            "rate": 0.08,
+            "min": 55866,
+            "max": 70606
+          },
+          {
+            "rate": 0.093,
+            "min": 70606,
+            "max": 360659
+          },
+          {
+            "rate": 0.103,
+            "min": 360659,
+            "max": 432787
+          },
+          {
+            "rate": 0.113,
+            "min": 432787,
+            "max": 721314
+          },
+          {
+            "rate": 0.123,
+            "min": 721314,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.04,
-        "min": 25499,
-        "max": 40245
-      },
-      {
-        "rate": 0.06,
-        "min": 40245,
-        "max": 55866
-      },
-      {
-        "rate": 0.08,
-        "min": 55866,
-        "max": 70606
-      },
-      {
-        "rate": 0.093,
-        "min": 70606,
-        "max": 360659
-      },
-      {
-        "rate": 0.103,
-        "min": 360659,
-        "max": 432787
-      },
-      {
-        "rate": 0.113,
-        "min": 432787,
-        "max": 721314
-      },
-      {
-        "rate": 0.123,
-        "min": 721314,
-        "max": null
+      "hoh": {
+        "standardDeduction": 5540,
+        "brackets": [
+          {
+            "rate": 0.01,
+            "min": 0,
+            "max": 10756
+          },
+          {
+            "rate": 0.02,
+            "min": 10756,
+            "max": 25499
+          },
+          {
+            "rate": 0.04,
+            "min": 25499,
+            "max": 40245
+          },
+          {
+            "rate": 0.06,
+            "min": 40245,
+            "max": 55866
+          },
+          {
+            "rate": 0.08,
+            "min": 55866,
+            "max": 70606
+          },
+          {
+            "rate": 0.093,
+            "min": 70606,
+            "max": 360659
+          },
+          {
+            "rate": 0.103,
+            "min": 360659,
+            "max": 432787
+          },
+          {
+            "rate": 0.113,
+            "min": 432787,
+            "max": 721314
+          },
+          {
+            "rate": 0.123,
+            "min": 721314,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "An additional 1% Mental Health Services Tax applies to taxable income over $1,000,000.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -273,18 +479,31 @@
         "pct": 0.3,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "An additional 1% Mental Health Services Tax applies to taxable income over $1,000,000."
   },
   "CO": {
     "name": "Colorado",
     "year": 2025,
     "source": "https://tax.colorado.gov/individual-income-tax",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 15000,
-    "flatRate": 0.044,
-    "note": "Colorado conforms to the federal standard deduction; rate may be temporarily reduced via TABOR refunds.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 15000,
+        "flatRate": 0.044
+      },
+      "mfj": {
+        "standardDeduction": 15000,
+        "flatRate": 0.044
+      },
+      "hoh": {
+        "standardDeduction": 15000,
+        "flatRate": 0.044
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -321,54 +540,139 @@
         "pct": 0.22,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Colorado conforms to the federal standard deduction; rate may be temporarily reduced via TABOR refunds."
   },
   "CT": {
     "name": "Connecticut",
     "year": 2025,
     "source": "https://portal.ct.gov/drs/individuals/individual-tax-page",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 0,
-    "brackets": [
-      {
-        "rate": 0.02,
-        "min": 0,
-        "max": 10000
+    "byStatus": {
+      "single": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.045,
+            "min": 10000,
+            "max": 50000
+          },
+          {
+            "rate": 0.055,
+            "min": 50000,
+            "max": 100000
+          },
+          {
+            "rate": 0.06,
+            "min": 100000,
+            "max": 200000
+          },
+          {
+            "rate": 0.065,
+            "min": 200000,
+            "max": 250000
+          },
+          {
+            "rate": 0.069,
+            "min": 250000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0699,
+            "min": 500000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.045,
-        "min": 10000,
-        "max": 50000
+      "mfj": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.045,
+            "min": 10000,
+            "max": 50000
+          },
+          {
+            "rate": 0.055,
+            "min": 50000,
+            "max": 100000
+          },
+          {
+            "rate": 0.06,
+            "min": 100000,
+            "max": 200000
+          },
+          {
+            "rate": 0.065,
+            "min": 200000,
+            "max": 250000
+          },
+          {
+            "rate": 0.069,
+            "min": 250000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0699,
+            "min": 500000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.055,
-        "min": 50000,
-        "max": 100000
-      },
-      {
-        "rate": 0.06,
-        "min": 100000,
-        "max": 200000
-      },
-      {
-        "rate": 0.065,
-        "min": 200000,
-        "max": 250000
-      },
-      {
-        "rate": 0.069,
-        "min": 250000,
-        "max": 500000
-      },
-      {
-        "rate": 0.0699,
-        "min": 500000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.045,
+            "min": 10000,
+            "max": 50000
+          },
+          {
+            "rate": 0.055,
+            "min": 50000,
+            "max": 100000
+          },
+          {
+            "rate": 0.06,
+            "min": 100000,
+            "max": 200000
+          },
+          {
+            "rate": 0.065,
+            "min": 200000,
+            "max": 250000
+          },
+          {
+            "rate": 0.069,
+            "min": 250000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0699,
+            "min": 500000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Connecticut has no standard deduction but offers a personal exemption that phases out with income; high earners are subject to a recapture provision.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -405,53 +709,139 @@
         "pct": 0.45,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Connecticut has no standard deduction but offers a personal exemption that phases out with income; high earners are subject to a recapture provision."
   },
   "DC": {
     "name": "District of Columbia",
     "year": 2025,
     "source": "https://otr.cfo.dc.gov/page/individual-income-tax-rates",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 14600,
-    "brackets": [
-      {
-        "rate": 0.04,
-        "min": 0,
-        "max": 10000
+    "byStatus": {
+      "single": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0.04,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.06,
+            "min": 10000,
+            "max": 40000
+          },
+          {
+            "rate": 0.065,
+            "min": 40000,
+            "max": 60000
+          },
+          {
+            "rate": 0.085,
+            "min": 60000,
+            "max": 250000
+          },
+          {
+            "rate": 0.0925,
+            "min": 250000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0975,
+            "min": 500000,
+            "max": 1000000
+          },
+          {
+            "rate": 0.1075,
+            "min": 1000000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.06,
-        "min": 10000,
-        "max": 40000
+      "mfj": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0.04,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.06,
+            "min": 10000,
+            "max": 40000
+          },
+          {
+            "rate": 0.065,
+            "min": 40000,
+            "max": 60000
+          },
+          {
+            "rate": 0.085,
+            "min": 60000,
+            "max": 250000
+          },
+          {
+            "rate": 0.0925,
+            "min": 250000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0975,
+            "min": 500000,
+            "max": 1000000
+          },
+          {
+            "rate": 0.1075,
+            "min": 1000000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.065,
-        "min": 40000,
-        "max": 60000
-      },
-      {
-        "rate": 0.085,
-        "min": 60000,
-        "max": 250000
-      },
-      {
-        "rate": 0.0925,
-        "min": 250000,
-        "max": 500000
-      },
-      {
-        "rate": 0.0975,
-        "min": 500000,
-        "max": 1000000
-      },
-      {
-        "rate": 0.1075,
-        "min": 1000000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0.04,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.06,
+            "min": 10000,
+            "max": 40000
+          },
+          {
+            "rate": 0.065,
+            "min": 40000,
+            "max": 60000
+          },
+          {
+            "rate": 0.085,
+            "min": 60000,
+            "max": 250000
+          },
+          {
+            "rate": 0.0925,
+            "min": 250000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0975,
+            "min": 500000,
+            "max": 1000000
+          },
+          {
+            "rate": 0.1075,
+            "min": 1000000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -488,53 +878,138 @@
         "pct": 0.57,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
   },
   "DE": {
     "name": "Delaware",
     "year": 2025,
     "source": "https://revenue.delaware.gov/personal-income-tax/",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 3250,
-    "brackets": [
-      {
-        "rate": 0,
-        "min": 0,
-        "max": 2000
+    "byStatus": {
+      "single": {
+        "standardDeduction": 3250,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 2000
+          },
+          {
+            "rate": 0.022,
+            "min": 2000,
+            "max": 5000
+          },
+          {
+            "rate": 0.039,
+            "min": 5000,
+            "max": 10000
+          },
+          {
+            "rate": 0.048,
+            "min": 10000,
+            "max": 20000
+          },
+          {
+            "rate": 0.052,
+            "min": 20000,
+            "max": 25000
+          },
+          {
+            "rate": 0.0555,
+            "min": 25000,
+            "max": 60000
+          },
+          {
+            "rate": 0.066,
+            "min": 60000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.022,
-        "min": 2000,
-        "max": 5000
+      "mfj": {
+        "standardDeduction": 3250,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 2000
+          },
+          {
+            "rate": 0.022,
+            "min": 2000,
+            "max": 5000
+          },
+          {
+            "rate": 0.039,
+            "min": 5000,
+            "max": 10000
+          },
+          {
+            "rate": 0.048,
+            "min": 10000,
+            "max": 20000
+          },
+          {
+            "rate": 0.052,
+            "min": 20000,
+            "max": 25000
+          },
+          {
+            "rate": 0.0555,
+            "min": 25000,
+            "max": 60000
+          },
+          {
+            "rate": 0.066,
+            "min": 60000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.039,
-        "min": 5000,
-        "max": 10000
-      },
-      {
-        "rate": 0.048,
-        "min": 10000,
-        "max": 20000
-      },
-      {
-        "rate": 0.052,
-        "min": 20000,
-        "max": 25000
-      },
-      {
-        "rate": 0.0555,
-        "min": 25000,
-        "max": 60000
-      },
-      {
-        "rate": 0.066,
-        "min": 60000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 3250,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 2000
+          },
+          {
+            "rate": 0.022,
+            "min": 2000,
+            "max": 5000
+          },
+          {
+            "rate": 0.039,
+            "min": 5000,
+            "max": 10000
+          },
+          {
+            "rate": 0.048,
+            "min": 10000,
+            "max": 20000
+          },
+          {
+            "rate": 0.052,
+            "min": 20000,
+            "max": 25000
+          },
+          {
+            "rate": 0.0555,
+            "min": 25000,
+            "max": 60000
+          },
+          {
+            "rate": 0.066,
+            "min": 60000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -571,7 +1046,8 @@
         "pct": 0.37,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
   },
   "FL": {
     "name": "Florida",
@@ -585,12 +1061,23 @@
     "name": "Georgia",
     "year": 2025,
     "source": "https://dor.georgia.gov/individual-taxes",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 12000,
-    "flatRate": 0.0519,
-    "note": "Georgia moved to a flat tax in 2024; the rate is scheduled to step down annually, reaching 5.19% in 2025.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 12000,
+        "flatRate": 0.0519
+      },
+      "mfj": {
+        "standardDeduction": 12000,
+        "flatRate": 0.0519
+      },
+      "hoh": {
+        "standardDeduction": 12000,
+        "flatRate": 0.0519
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -627,79 +1114,214 @@
         "pct": 0.25,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Georgia moved to a flat tax in 2024; the rate is scheduled to step down annually, reaching 5.19% in 2025."
   },
   "HI": {
     "name": "Hawaii",
     "year": 2025,
     "source": "https://tax.hawaii.gov/forms/a1_b1_1indinc/",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 4400,
-    "brackets": [
-      {
-        "rate": 0.014,
-        "min": 0,
-        "max": 9600
+    "byStatus": {
+      "single": {
+        "standardDeduction": 4400,
+        "brackets": [
+          {
+            "rate": 0.014,
+            "min": 0,
+            "max": 9600
+          },
+          {
+            "rate": 0.032,
+            "min": 9600,
+            "max": 14400
+          },
+          {
+            "rate": 0.055,
+            "min": 14400,
+            "max": 19200
+          },
+          {
+            "rate": 0.064,
+            "min": 19200,
+            "max": 24000
+          },
+          {
+            "rate": 0.068,
+            "min": 24000,
+            "max": 36000
+          },
+          {
+            "rate": 0.072,
+            "min": 36000,
+            "max": 48000
+          },
+          {
+            "rate": 0.076,
+            "min": 48000,
+            "max": 125000
+          },
+          {
+            "rate": 0.079,
+            "min": 125000,
+            "max": 175000
+          },
+          {
+            "rate": 0.0825,
+            "min": 175000,
+            "max": 225000
+          },
+          {
+            "rate": 0.09,
+            "min": 225000,
+            "max": 275000
+          },
+          {
+            "rate": 0.1,
+            "min": 275000,
+            "max": 325000
+          },
+          {
+            "rate": 0.11,
+            "min": 325000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.032,
-        "min": 9600,
-        "max": 14400
+      "mfj": {
+        "standardDeduction": 4400,
+        "brackets": [
+          {
+            "rate": 0.014,
+            "min": 0,
+            "max": 9600
+          },
+          {
+            "rate": 0.032,
+            "min": 9600,
+            "max": 14400
+          },
+          {
+            "rate": 0.055,
+            "min": 14400,
+            "max": 19200
+          },
+          {
+            "rate": 0.064,
+            "min": 19200,
+            "max": 24000
+          },
+          {
+            "rate": 0.068,
+            "min": 24000,
+            "max": 36000
+          },
+          {
+            "rate": 0.072,
+            "min": 36000,
+            "max": 48000
+          },
+          {
+            "rate": 0.076,
+            "min": 48000,
+            "max": 125000
+          },
+          {
+            "rate": 0.079,
+            "min": 125000,
+            "max": 175000
+          },
+          {
+            "rate": 0.0825,
+            "min": 175000,
+            "max": 225000
+          },
+          {
+            "rate": 0.09,
+            "min": 225000,
+            "max": 275000
+          },
+          {
+            "rate": 0.1,
+            "min": 275000,
+            "max": 325000
+          },
+          {
+            "rate": 0.11,
+            "min": 325000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.055,
-        "min": 14400,
-        "max": 19200
-      },
-      {
-        "rate": 0.064,
-        "min": 19200,
-        "max": 24000
-      },
-      {
-        "rate": 0.068,
-        "min": 24000,
-        "max": 36000
-      },
-      {
-        "rate": 0.072,
-        "min": 36000,
-        "max": 48000
-      },
-      {
-        "rate": 0.076,
-        "min": 48000,
-        "max": 125000
-      },
-      {
-        "rate": 0.079,
-        "min": 125000,
-        "max": 175000
-      },
-      {
-        "rate": 0.0825,
-        "min": 175000,
-        "max": 225000
-      },
-      {
-        "rate": 0.09,
-        "min": 225000,
-        "max": 275000
-      },
-      {
-        "rate": 0.1,
-        "min": 275000,
-        "max": 325000
-      },
-      {
-        "rate": 0.11,
-        "min": 325000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 4400,
+        "brackets": [
+          {
+            "rate": 0.014,
+            "min": 0,
+            "max": 9600
+          },
+          {
+            "rate": 0.032,
+            "min": 9600,
+            "max": 14400
+          },
+          {
+            "rate": 0.055,
+            "min": 14400,
+            "max": 19200
+          },
+          {
+            "rate": 0.064,
+            "min": 19200,
+            "max": 24000
+          },
+          {
+            "rate": 0.068,
+            "min": 24000,
+            "max": 36000
+          },
+          {
+            "rate": 0.072,
+            "min": 36000,
+            "max": 48000
+          },
+          {
+            "rate": 0.076,
+            "min": 48000,
+            "max": 125000
+          },
+          {
+            "rate": 0.079,
+            "min": 125000,
+            "max": 175000
+          },
+          {
+            "rate": 0.0825,
+            "min": 175000,
+            "max": 225000
+          },
+          {
+            "rate": 0.09,
+            "min": 225000,
+            "max": 275000
+          },
+          {
+            "rate": 0.1,
+            "min": 275000,
+            "max": 325000
+          },
+          {
+            "rate": 0.11,
+            "min": 325000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Hawaii enacted Act 46 (2024) which boosts the standard deduction and widens brackets on a multi-year schedule starting 2025.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -736,18 +1358,31 @@
         "pct": 0.61,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Hawaii enacted Act 46 (2024) which boosts the standard deduction and widens brackets on a multi-year schedule starting 2025."
   },
   "IA": {
     "name": "Iowa",
     "year": 2025,
     "source": "https://tax.iowa.gov/individual-income-tax",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 0,
-    "flatRate": 0.038,
-    "note": "Iowa accelerated its move to a flat tax; the 2025 rate is 3.8% for all filers.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 0,
+        "flatRate": 0.038
+      },
+      "mfj": {
+        "standardDeduction": 0,
+        "flatRate": 0.038
+      },
+      "hoh": {
+        "standardDeduction": 0,
+        "flatRate": 0.038
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -784,18 +1419,31 @@
         "pct": 0.2,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Iowa accelerated its move to a flat tax; the 2025 rate is 3.8% for all filers."
   },
   "ID": {
     "name": "Idaho",
     "year": 2025,
     "source": "https://tax.idaho.gov/taxes/income-tax/individual-income/",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 14600,
-    "flatRate": 0.053,
-    "note": "Idaho conforms to the federal standard deduction; the flat rate was reduced from 5.695% to 5.3% for 2025.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 14600,
+        "flatRate": 0.053
+      },
+      "mfj": {
+        "standardDeduction": 14600,
+        "flatRate": 0.053
+      },
+      "hoh": {
+        "standardDeduction": 14600,
+        "flatRate": 0.053
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -832,18 +1480,31 @@
         "pct": 0.13,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Idaho conforms to the federal standard deduction; the flat rate was reduced from 5.695% to 5.3% for 2025."
   },
   "IL": {
     "name": "Illinois",
     "year": 2025,
     "source": "https://tax.illinois.gov/individuals.html",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 2775,
-    "flatRate": 0.0495,
-    "note": "Illinois uses a personal exemption ($2,775 for 2025) rather than a true standard deduction; it phases out at higher incomes.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 2775,
+        "flatRate": 0.0495
+      },
+      "mfj": {
+        "standardDeduction": 2775,
+        "flatRate": 0.0495
+      },
+      "hoh": {
+        "standardDeduction": 2775,
+        "flatRate": 0.0495
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -880,18 +1541,31 @@
         "pct": 0.6,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Illinois uses a personal exemption ($2,775 for 2025) rather than a true standard deduction; it phases out at higher incomes."
   },
   "IN": {
     "name": "Indiana",
     "year": 2025,
     "source": "https://www.in.gov/dor/individual-income-taxes/",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 1000,
-    "flatRate": 0.03,
-    "note": "Indiana offers a $1,000 personal exemption rather than a standard deduction; counties levy additional local income taxes.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 1000,
+        "flatRate": 0.03
+      },
+      "mfj": {
+        "standardDeduction": 1000,
+        "flatRate": 0.03
+      },
+      "hoh": {
+        "standardDeduction": 1000,
+        "flatRate": 0.03
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -928,29 +1602,64 @@
         "pct": 0.19,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Indiana offers a $1,000 personal exemption rather than a standard deduction; counties levy additional local income taxes."
   },
   "KS": {
     "name": "Kansas",
     "year": 2025,
     "source": "https://www.ksrevenue.gov/perstaxtypesii.html",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 3605,
-    "brackets": [
-      {
-        "rate": 0.052,
-        "min": 0,
-        "max": 23000
+    "byStatus": {
+      "single": {
+        "standardDeduction": 3605,
+        "brackets": [
+          {
+            "rate": 0.052,
+            "min": 0,
+            "max": 23000
+          },
+          {
+            "rate": 0.0558,
+            "min": 23000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0558,
-        "min": 23000,
-        "max": null
+      "mfj": {
+        "standardDeduction": 3605,
+        "brackets": [
+          {
+            "rate": 0.052,
+            "min": 0,
+            "max": 23000
+          },
+          {
+            "rate": 0.0558,
+            "min": 23000,
+            "max": null
+          }
+        ]
+      },
+      "hoh": {
+        "standardDeduction": 3605,
+        "brackets": [
+          {
+            "rate": 0.052,
+            "min": 0,
+            "max": 23000
+          },
+          {
+            "rate": 0.0558,
+            "min": 23000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Kansas consolidated to two brackets effective 2024; standard deduction is indexed to inflation.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -987,18 +1696,31 @@
         "pct": 0.16,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Kansas consolidated to two brackets effective 2024; standard deduction is indexed to inflation."
   },
   "KY": {
     "name": "Kentucky",
     "year": 2025,
     "source": "https://revenue.ky.gov/Individual/Individual-Income-Tax/Pages/default.aspx",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 3270,
-    "flatRate": 0.04,
-    "note": "Kentucky's flat rate dropped to 4.0% in 2025; further reductions are conditional on revenue triggers.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 3270,
+        "flatRate": 0.04
+      },
+      "mfj": {
+        "standardDeduction": 3270,
+        "flatRate": 0.04
+      },
+      "hoh": {
+        "standardDeduction": 3270,
+        "flatRate": 0.04
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1035,18 +1757,31 @@
         "pct": 0.29,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Kentucky's flat rate dropped to 4.0% in 2025; further reductions are conditional on revenue triggers."
   },
   "LA": {
     "name": "Louisiana",
     "year": 2025,
     "source": "https://revenue.louisiana.gov/IndividualIncomeTax",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 12500,
-    "flatRate": 0.03,
-    "note": "Louisiana adopted a flat 3% rate effective January 1, 2025, replacing its prior three-bracket system; combined with a new $12,500 standard deduction.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 12500,
+        "flatRate": 0.03
+      },
+      "mfj": {
+        "standardDeduction": 12500,
+        "flatRate": 0.03
+      },
+      "hoh": {
+        "standardDeduction": 12500,
+        "flatRate": 0.03
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1083,18 +1818,31 @@
         "pct": 0.28,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Louisiana adopted a flat 3% rate effective January 1, 2025, replacing its prior three-bracket system; combined with a new $12,500 standard deduction."
   },
   "MA": {
     "name": "Massachusetts",
     "year": 2025,
     "source": "https://www.mass.gov/info-details/massachusetts-personal-income-tax-rates",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 0,
-    "flatRate": 0.05,
-    "note": "Massachusetts levies a flat 5% on most income, plus an additional 4% surtax on taxable income over $1,083,150 (Fair Share / millionaire's tax).",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 0,
+        "flatRate": 0.05
+      },
+      "mfj": {
+        "standardDeduction": 0,
+        "flatRate": 0.05
+      },
+      "hoh": {
+        "standardDeduction": 0,
+        "flatRate": 0.05
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1131,59 +1879,154 @@
         "pct": 0.4,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Massachusetts levies a flat 5% on most income, plus an additional 4% surtax on taxable income over $1,083,150 (Fair Share / millionaire's tax)."
   },
   "MD": {
     "name": "Maryland",
     "year": 2025,
     "source": "https://www.marylandtaxes.gov/individual/income/tax-info/tax-rates.php",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 2700,
-    "brackets": [
-      {
-        "rate": 0.02,
-        "min": 0,
-        "max": 1000
+    "byStatus": {
+      "single": {
+        "standardDeduction": 2700,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 1000
+          },
+          {
+            "rate": 0.03,
+            "min": 1000,
+            "max": 2000
+          },
+          {
+            "rate": 0.04,
+            "min": 2000,
+            "max": 3000
+          },
+          {
+            "rate": 0.0475,
+            "min": 3000,
+            "max": 100000
+          },
+          {
+            "rate": 0.05,
+            "min": 100000,
+            "max": 125000
+          },
+          {
+            "rate": 0.0525,
+            "min": 125000,
+            "max": 150000
+          },
+          {
+            "rate": 0.055,
+            "min": 150000,
+            "max": 250000
+          },
+          {
+            "rate": 0.0575,
+            "min": 250000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.03,
-        "min": 1000,
-        "max": 2000
+      "mfj": {
+        "standardDeduction": 2700,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 1000
+          },
+          {
+            "rate": 0.03,
+            "min": 1000,
+            "max": 2000
+          },
+          {
+            "rate": 0.04,
+            "min": 2000,
+            "max": 3000
+          },
+          {
+            "rate": 0.0475,
+            "min": 3000,
+            "max": 100000
+          },
+          {
+            "rate": 0.05,
+            "min": 100000,
+            "max": 125000
+          },
+          {
+            "rate": 0.0525,
+            "min": 125000,
+            "max": 150000
+          },
+          {
+            "rate": 0.055,
+            "min": 150000,
+            "max": 250000
+          },
+          {
+            "rate": 0.0575,
+            "min": 250000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.04,
-        "min": 2000,
-        "max": 3000
-      },
-      {
-        "rate": 0.0475,
-        "min": 3000,
-        "max": 100000
-      },
-      {
-        "rate": 0.05,
-        "min": 100000,
-        "max": 125000
-      },
-      {
-        "rate": 0.0525,
-        "min": 125000,
-        "max": 150000
-      },
-      {
-        "rate": 0.055,
-        "min": 150000,
-        "max": 250000
-      },
-      {
-        "rate": 0.0575,
-        "min": 250000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 2700,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 1000
+          },
+          {
+            "rate": 0.03,
+            "min": 1000,
+            "max": 2000
+          },
+          {
+            "rate": 0.04,
+            "min": 2000,
+            "max": 3000
+          },
+          {
+            "rate": 0.0475,
+            "min": 3000,
+            "max": 100000
+          },
+          {
+            "rate": 0.05,
+            "min": 100000,
+            "max": 125000
+          },
+          {
+            "rate": 0.0525,
+            "min": 125000,
+            "max": 150000
+          },
+          {
+            "rate": 0.055,
+            "min": 150000,
+            "max": 250000
+          },
+          {
+            "rate": 0.0575,
+            "min": 250000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Maryland counties impose additional local income taxes ranging from 2.25% to 3.20%.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1220,33 +2063,79 @@
         "pct": 0.37,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Maryland counties impose additional local income taxes ranging from 2.25% to 3.20%."
   },
   "ME": {
     "name": "Maine",
     "year": 2025,
     "source": "https://www.maine.gov/revenue/taxes/income-estate-tax/individual-income-tax",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 15150,
-    "brackets": [
-      {
-        "rate": 0.058,
-        "min": 0,
-        "max": 26800
+    "byStatus": {
+      "single": {
+        "standardDeduction": 15150,
+        "brackets": [
+          {
+            "rate": 0.058,
+            "min": 0,
+            "max": 26800
+          },
+          {
+            "rate": 0.0675,
+            "min": 26800,
+            "max": 63450
+          },
+          {
+            "rate": 0.0715,
+            "min": 63450,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0675,
-        "min": 26800,
-        "max": 63450
+      "mfj": {
+        "standardDeduction": 15150,
+        "brackets": [
+          {
+            "rate": 0.058,
+            "min": 0,
+            "max": 26800
+          },
+          {
+            "rate": 0.0675,
+            "min": 26800,
+            "max": 63450
+          },
+          {
+            "rate": 0.0715,
+            "min": 63450,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0715,
-        "min": 63450,
-        "max": null
+      "hoh": {
+        "standardDeduction": 15150,
+        "brackets": [
+          {
+            "rate": 0.058,
+            "min": 0,
+            "max": 26800
+          },
+          {
+            "rate": 0.0675,
+            "min": 26800,
+            "max": 63450
+          },
+          {
+            "rate": 0.0715,
+            "min": 63450,
+            "max": null
+          }
+        ]
       }
-    ],
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1283,18 +2172,30 @@
         "pct": 0.29,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
   },
   "MI": {
     "name": "Michigan",
     "year": 2025,
     "source": "https://www.michigan.gov/taxes/iit",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 0,
-    "flatRate": 0.0425,
-    "note": "Michigan offers a personal exemption ($5,800 for 2025) rather than a standard deduction; some cities levy additional income taxes. K-12 spending shown is General-Fund only — most K-12 funding flows through Michigan's separate School Aid Fund.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 0,
+        "flatRate": 0.0425
+      },
+      "mfj": {
+        "standardDeduction": 0,
+        "flatRate": 0.0425
+      },
+      "hoh": {
+        "standardDeduction": 0,
+        "flatRate": 0.0425
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1331,38 +2232,94 @@
         "pct": 0.47,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Michigan offers a personal exemption ($5,800 for 2025) rather than a standard deduction; some cities levy additional income taxes. K-12 spending shown is General-Fund only — most K-12 funding flows through Michigan's separate School Aid Fund."
   },
   "MN": {
     "name": "Minnesota",
     "year": 2025,
     "source": "https://www.revenue.state.mn.us/minnesota-income-tax-rates-and-brackets",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 14950,
-    "brackets": [
-      {
-        "rate": 0.0535,
-        "min": 0,
-        "max": 32570
+    "byStatus": {
+      "single": {
+        "standardDeduction": 14950,
+        "brackets": [
+          {
+            "rate": 0.0535,
+            "min": 0,
+            "max": 32570
+          },
+          {
+            "rate": 0.068,
+            "min": 32570,
+            "max": 106990
+          },
+          {
+            "rate": 0.0785,
+            "min": 106990,
+            "max": 198630
+          },
+          {
+            "rate": 0.0985,
+            "min": 198630,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.068,
-        "min": 32570,
-        "max": 106990
+      "mfj": {
+        "standardDeduction": 14950,
+        "brackets": [
+          {
+            "rate": 0.0535,
+            "min": 0,
+            "max": 32570
+          },
+          {
+            "rate": 0.068,
+            "min": 32570,
+            "max": 106990
+          },
+          {
+            "rate": 0.0785,
+            "min": 106990,
+            "max": 198630
+          },
+          {
+            "rate": 0.0985,
+            "min": 198630,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0785,
-        "min": 106990,
-        "max": 198630
-      },
-      {
-        "rate": 0.0985,
-        "min": 198630,
-        "max": null
+      "hoh": {
+        "standardDeduction": 14950,
+        "brackets": [
+          {
+            "rate": 0.0535,
+            "min": 0,
+            "max": 32570
+          },
+          {
+            "rate": 0.068,
+            "min": 32570,
+            "max": 106990
+          },
+          {
+            "rate": 0.0785,
+            "min": 106990,
+            "max": 198630
+          },
+          {
+            "rate": 0.0985,
+            "min": 198630,
+            "max": null
+          }
+        ]
       }
-    ],
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1399,59 +2356,153 @@
         "pct": 0.36,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
   },
   "MO": {
     "name": "Missouri",
     "year": 2025,
     "source": "https://dor.mo.gov/taxation/individual/tax-types/income/year-rates.html",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 14600,
-    "brackets": [
-      {
-        "rate": 0,
-        "min": 0,
-        "max": 1313
+    "byStatus": {
+      "single": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 1313
+          },
+          {
+            "rate": 0.02,
+            "min": 1313,
+            "max": 2626
+          },
+          {
+            "rate": 0.025,
+            "min": 2626,
+            "max": 3939
+          },
+          {
+            "rate": 0.03,
+            "min": 3939,
+            "max": 5252
+          },
+          {
+            "rate": 0.035,
+            "min": 5252,
+            "max": 6565
+          },
+          {
+            "rate": 0.04,
+            "min": 6565,
+            "max": 7878
+          },
+          {
+            "rate": 0.045,
+            "min": 7878,
+            "max": 9191
+          },
+          {
+            "rate": 0.047,
+            "min": 9191,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.02,
-        "min": 1313,
-        "max": 2626
+      "mfj": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 1313
+          },
+          {
+            "rate": 0.02,
+            "min": 1313,
+            "max": 2626
+          },
+          {
+            "rate": 0.025,
+            "min": 2626,
+            "max": 3939
+          },
+          {
+            "rate": 0.03,
+            "min": 3939,
+            "max": 5252
+          },
+          {
+            "rate": 0.035,
+            "min": 5252,
+            "max": 6565
+          },
+          {
+            "rate": 0.04,
+            "min": 6565,
+            "max": 7878
+          },
+          {
+            "rate": 0.045,
+            "min": 7878,
+            "max": 9191
+          },
+          {
+            "rate": 0.047,
+            "min": 9191,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.025,
-        "min": 2626,
-        "max": 3939
-      },
-      {
-        "rate": 0.03,
-        "min": 3939,
-        "max": 5252
-      },
-      {
-        "rate": 0.035,
-        "min": 5252,
-        "max": 6565
-      },
-      {
-        "rate": 0.04,
-        "min": 6565,
-        "max": 7878
-      },
-      {
-        "rate": 0.045,
-        "min": 7878,
-        "max": 9191
-      },
-      {
-        "rate": 0.047,
-        "min": 9191,
-        "max": null
+      "hoh": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 1313
+          },
+          {
+            "rate": 0.02,
+            "min": 1313,
+            "max": 2626
+          },
+          {
+            "rate": 0.025,
+            "min": 2626,
+            "max": 3939
+          },
+          {
+            "rate": 0.03,
+            "min": 3939,
+            "max": 5252
+          },
+          {
+            "rate": 0.035,
+            "min": 5252,
+            "max": 6565
+          },
+          {
+            "rate": 0.04,
+            "min": 6565,
+            "max": 7878
+          },
+          {
+            "rate": 0.045,
+            "min": 7878,
+            "max": 9191
+          },
+          {
+            "rate": 0.047,
+            "min": 9191,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Missouri's top rate dropped to 4.7% for 2025; further reductions are tied to revenue triggers. Standard deduction matches federal.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1488,18 +2539,31 @@
         "pct": 0.36,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Missouri's top rate dropped to 4.7% for 2025; further reductions are tied to revenue triggers. Standard deduction matches federal."
   },
   "MS": {
     "name": "Mississippi",
     "year": 2025,
     "source": "https://www.dor.ms.gov/individual/individual-income-tax",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 2300,
-    "flatRate": 0.044,
-    "note": "Mississippi taxes income above $10,000 at a flat 4.4% in 2025; the rate steps down to 4.0% by 2026.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 2300,
+        "flatRate": 0.044
+      },
+      "mfj": {
+        "standardDeduction": 2300,
+        "flatRate": 0.044
+      },
+      "hoh": {
+        "standardDeduction": 2300,
+        "flatRate": 0.044
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1536,29 +2600,64 @@
         "pct": 0.28,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Mississippi taxes income above $10,000 at a flat 4.4% in 2025; the rate steps down to 4.0% by 2026."
   },
   "MT": {
     "name": "Montana",
     "year": 2025,
     "source": "https://mtrevenue.gov/taxes/individual-income-tax/",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 15000,
-    "brackets": [
-      {
-        "rate": 0.047,
-        "min": 0,
-        "max": 21100
+    "byStatus": {
+      "single": {
+        "standardDeduction": 15000,
+        "brackets": [
+          {
+            "rate": 0.047,
+            "min": 0,
+            "max": 21100
+          },
+          {
+            "rate": 0.059,
+            "min": 21100,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.059,
-        "min": 21100,
-        "max": null
+      "mfj": {
+        "standardDeduction": 15000,
+        "brackets": [
+          {
+            "rate": 0.047,
+            "min": 0,
+            "max": 21100
+          },
+          {
+            "rate": 0.059,
+            "min": 21100,
+            "max": null
+          }
+        ]
+      },
+      "hoh": {
+        "standardDeduction": 15000,
+        "brackets": [
+          {
+            "rate": 0.047,
+            "min": 0,
+            "max": 21100
+          },
+          {
+            "rate": 0.059,
+            "min": 21100,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Montana adopted a two-bracket system in 2024; standard deduction conforms closely to the federal amount.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1595,18 +2694,31 @@
         "pct": 0.45,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Montana adopted a two-bracket system in 2024; standard deduction conforms closely to the federal amount."
   },
   "NC": {
     "name": "North Carolina",
     "year": 2025,
     "source": "https://www.ncdor.gov/taxes-forms/individual-income-tax",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 12750,
-    "flatRate": 0.0425,
-    "note": "North Carolina's flat rate is scheduled to step down to 3.99% by 2026.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 12750,
+        "flatRate": 0.0425
+      },
+      "mfj": {
+        "standardDeduction": 12750,
+        "flatRate": 0.0425
+      },
+      "hoh": {
+        "standardDeduction": 12750,
+        "flatRate": 0.0425
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1643,34 +2755,79 @@
         "pct": 0.2,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "North Carolina's flat rate is scheduled to step down to 3.99% by 2026."
   },
   "ND": {
     "name": "North Dakota",
     "year": 2025,
     "source": "https://www.tax.nd.gov/individual",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 14600,
-    "brackets": [
-      {
-        "rate": 0,
-        "min": 0,
-        "max": 48475
+    "byStatus": {
+      "single": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 48475
+          },
+          {
+            "rate": 0.0195,
+            "min": 48475,
+            "max": 244825
+          },
+          {
+            "rate": 0.025,
+            "min": 244825,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0195,
-        "min": 48475,
-        "max": 244825
+      "mfj": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 48475
+          },
+          {
+            "rate": 0.0195,
+            "min": 48475,
+            "max": 244825
+          },
+          {
+            "rate": 0.025,
+            "min": 244825,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.025,
-        "min": 244825,
-        "max": null
+      "hoh": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 48475
+          },
+          {
+            "rate": 0.0195,
+            "min": 48475,
+            "max": 244825
+          },
+          {
+            "rate": 0.025,
+            "min": 244825,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "North Dakota uses federal taxable income as its base, with a 0% bracket effectively exempting low and middle earners.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1707,39 +2864,94 @@
         "pct": 0.29,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "North Dakota uses federal taxable income as its base, with a 0% bracket effectively exempting low and middle earners."
   },
   "NE": {
     "name": "Nebraska",
     "year": 2025,
     "source": "https://revenue.nebraska.gov/individuals",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 8350,
-    "brackets": [
-      {
-        "rate": 0.0246,
-        "min": 0,
-        "max": 3700
+    "byStatus": {
+      "single": {
+        "standardDeduction": 8350,
+        "brackets": [
+          {
+            "rate": 0.0246,
+            "min": 0,
+            "max": 3700
+          },
+          {
+            "rate": 0.0351,
+            "min": 3700,
+            "max": 22170
+          },
+          {
+            "rate": 0.0501,
+            "min": 22170,
+            "max": 35730
+          },
+          {
+            "rate": 0.052,
+            "min": 35730,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0351,
-        "min": 3700,
-        "max": 22170
+      "mfj": {
+        "standardDeduction": 8350,
+        "brackets": [
+          {
+            "rate": 0.0246,
+            "min": 0,
+            "max": 3700
+          },
+          {
+            "rate": 0.0351,
+            "min": 3700,
+            "max": 22170
+          },
+          {
+            "rate": 0.0501,
+            "min": 22170,
+            "max": 35730
+          },
+          {
+            "rate": 0.052,
+            "min": 35730,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0501,
-        "min": 22170,
-        "max": 35730
-      },
-      {
-        "rate": 0.052,
-        "min": 35730,
-        "max": null
+      "hoh": {
+        "standardDeduction": 8350,
+        "brackets": [
+          {
+            "rate": 0.0246,
+            "min": 0,
+            "max": 3700
+          },
+          {
+            "rate": 0.0351,
+            "min": 3700,
+            "max": 22170
+          },
+          {
+            "rate": 0.0501,
+            "min": 22170,
+            "max": 35730
+          },
+          {
+            "rate": 0.052,
+            "min": 35730,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Nebraska's top rate dropped to 5.20% for 2025; further reductions are scheduled in coming years.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1776,7 +2988,9 @@
         "pct": 0.25,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Nebraska's top rate dropped to 5.20% for 2025; further reductions are scheduled in coming years."
   },
   "NH": {
     "name": "New Hampshire",
@@ -1790,48 +3004,131 @@
     "name": "New Jersey",
     "year": 2025,
     "source": "https://www.nj.gov/treasury/taxation/taxtables.shtml",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 0,
-    "brackets": [
-      {
-        "rate": 0.014,
-        "min": 0,
-        "max": 20000
+    "byStatus": {
+      "single": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0.014,
+            "min": 0,
+            "max": 20000
+          },
+          {
+            "rate": 0.0175,
+            "min": 20000,
+            "max": 35000
+          },
+          {
+            "rate": 0.035,
+            "min": 35000,
+            "max": 40000
+          },
+          {
+            "rate": 0.0553,
+            "min": 40000,
+            "max": 75000
+          },
+          {
+            "rate": 0.0637,
+            "min": 75000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0897,
+            "min": 500000,
+            "max": 1000000
+          },
+          {
+            "rate": 0.1075,
+            "min": 1000000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0175,
-        "min": 20000,
-        "max": 35000
+      "mfj": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0.014,
+            "min": 0,
+            "max": 20000
+          },
+          {
+            "rate": 0.0175,
+            "min": 20000,
+            "max": 35000
+          },
+          {
+            "rate": 0.035,
+            "min": 35000,
+            "max": 40000
+          },
+          {
+            "rate": 0.0553,
+            "min": 40000,
+            "max": 75000
+          },
+          {
+            "rate": 0.0637,
+            "min": 75000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0897,
+            "min": 500000,
+            "max": 1000000
+          },
+          {
+            "rate": 0.1075,
+            "min": 1000000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.035,
-        "min": 35000,
-        "max": 40000
-      },
-      {
-        "rate": 0.0553,
-        "min": 40000,
-        "max": 75000
-      },
-      {
-        "rate": 0.0637,
-        "min": 75000,
-        "max": 500000
-      },
-      {
-        "rate": 0.0897,
-        "min": 500000,
-        "max": 1000000
-      },
-      {
-        "rate": 0.1075,
-        "min": 1000000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0.014,
+            "min": 0,
+            "max": 20000
+          },
+          {
+            "rate": 0.0175,
+            "min": 20000,
+            "max": 35000
+          },
+          {
+            "rate": 0.035,
+            "min": 35000,
+            "max": 40000
+          },
+          {
+            "rate": 0.0553,
+            "min": 40000,
+            "max": 75000
+          },
+          {
+            "rate": 0.0637,
+            "min": 75000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0897,
+            "min": 500000,
+            "max": 1000000
+          },
+          {
+            "rate": 0.1075,
+            "min": 1000000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "New Jersey has no general standard deduction; it offers a personal exemption ($1,000) and various credits.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1868,49 +3165,124 @@
         "pct": 0.37,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "New Jersey has no general standard deduction; it offers a personal exemption ($1,000) and various credits."
   },
   "NM": {
     "name": "New Mexico",
     "year": 2025,
     "source": "https://www.tax.newmexico.gov/individuals/",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 14600,
-    "brackets": [
-      {
-        "rate": 0.015,
-        "min": 0,
-        "max": 5500
+    "byStatus": {
+      "single": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0.015,
+            "min": 0,
+            "max": 5500
+          },
+          {
+            "rate": 0.032,
+            "min": 5500,
+            "max": 16500
+          },
+          {
+            "rate": 0.043,
+            "min": 16500,
+            "max": 33500
+          },
+          {
+            "rate": 0.047,
+            "min": 33500,
+            "max": 66500
+          },
+          {
+            "rate": 0.049,
+            "min": 66500,
+            "max": 210000
+          },
+          {
+            "rate": 0.059,
+            "min": 210000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.032,
-        "min": 5500,
-        "max": 16500
+      "mfj": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0.015,
+            "min": 0,
+            "max": 5500
+          },
+          {
+            "rate": 0.032,
+            "min": 5500,
+            "max": 16500
+          },
+          {
+            "rate": 0.043,
+            "min": 16500,
+            "max": 33500
+          },
+          {
+            "rate": 0.047,
+            "min": 33500,
+            "max": 66500
+          },
+          {
+            "rate": 0.049,
+            "min": 66500,
+            "max": 210000
+          },
+          {
+            "rate": 0.059,
+            "min": 210000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.043,
-        "min": 16500,
-        "max": 33500
-      },
-      {
-        "rate": 0.047,
-        "min": 33500,
-        "max": 66500
-      },
-      {
-        "rate": 0.049,
-        "min": 66500,
-        "max": 210000
-      },
-      {
-        "rate": 0.059,
-        "min": 210000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0.015,
+            "min": 0,
+            "max": 5500
+          },
+          {
+            "rate": 0.032,
+            "min": 5500,
+            "max": 16500
+          },
+          {
+            "rate": 0.043,
+            "min": 16500,
+            "max": 33500
+          },
+          {
+            "rate": 0.047,
+            "min": 33500,
+            "max": 66500
+          },
+          {
+            "rate": 0.049,
+            "min": 66500,
+            "max": 210000
+          },
+          {
+            "rate": 0.059,
+            "min": 210000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "New Mexico restructured its brackets effective 2025, adding new lower brackets that benefit low-income filers.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -1947,7 +3319,9 @@
         "pct": 0.2,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "New Mexico restructured its brackets effective 2025, adding new lower brackets that benefit low-income filers."
   },
   "NV": {
     "name": "Nevada",
@@ -1961,58 +3335,161 @@
     "name": "New York",
     "year": 2025,
     "source": "https://www.tax.ny.gov/pit/file/tax_tables.htm",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 8000,
-    "brackets": [
-      {
-        "rate": 0.04,
-        "min": 0,
-        "max": 8500
+    "byStatus": {
+      "single": {
+        "standardDeduction": 8000,
+        "brackets": [
+          {
+            "rate": 0.04,
+            "min": 0,
+            "max": 8500
+          },
+          {
+            "rate": 0.045,
+            "min": 8500,
+            "max": 11700
+          },
+          {
+            "rate": 0.0525,
+            "min": 11700,
+            "max": 13900
+          },
+          {
+            "rate": 0.055,
+            "min": 13900,
+            "max": 80650
+          },
+          {
+            "rate": 0.06,
+            "min": 80650,
+            "max": 215400
+          },
+          {
+            "rate": 0.0685,
+            "min": 215400,
+            "max": 1077550
+          },
+          {
+            "rate": 0.0965,
+            "min": 1077550,
+            "max": 5000000
+          },
+          {
+            "rate": 0.103,
+            "min": 5000000,
+            "max": 25000000
+          },
+          {
+            "rate": 0.109,
+            "min": 25000000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.045,
-        "min": 8500,
-        "max": 11700
+      "mfj": {
+        "standardDeduction": 8000,
+        "brackets": [
+          {
+            "rate": 0.04,
+            "min": 0,
+            "max": 8500
+          },
+          {
+            "rate": 0.045,
+            "min": 8500,
+            "max": 11700
+          },
+          {
+            "rate": 0.0525,
+            "min": 11700,
+            "max": 13900
+          },
+          {
+            "rate": 0.055,
+            "min": 13900,
+            "max": 80650
+          },
+          {
+            "rate": 0.06,
+            "min": 80650,
+            "max": 215400
+          },
+          {
+            "rate": 0.0685,
+            "min": 215400,
+            "max": 1077550
+          },
+          {
+            "rate": 0.0965,
+            "min": 1077550,
+            "max": 5000000
+          },
+          {
+            "rate": 0.103,
+            "min": 5000000,
+            "max": 25000000
+          },
+          {
+            "rate": 0.109,
+            "min": 25000000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0525,
-        "min": 11700,
-        "max": 13900
-      },
-      {
-        "rate": 0.055,
-        "min": 13900,
-        "max": 80650
-      },
-      {
-        "rate": 0.06,
-        "min": 80650,
-        "max": 215400
-      },
-      {
-        "rate": 0.0685,
-        "min": 215400,
-        "max": 1077550
-      },
-      {
-        "rate": 0.0965,
-        "min": 1077550,
-        "max": 5000000
-      },
-      {
-        "rate": 0.103,
-        "min": 5000000,
-        "max": 25000000
-      },
-      {
-        "rate": 0.109,
-        "min": 25000000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 8000,
+        "brackets": [
+          {
+            "rate": 0.04,
+            "min": 0,
+            "max": 8500
+          },
+          {
+            "rate": 0.045,
+            "min": 8500,
+            "max": 11700
+          },
+          {
+            "rate": 0.0525,
+            "min": 11700,
+            "max": 13900
+          },
+          {
+            "rate": 0.055,
+            "min": 13900,
+            "max": 80650
+          },
+          {
+            "rate": 0.06,
+            "min": 80650,
+            "max": 215400
+          },
+          {
+            "rate": 0.0685,
+            "min": 215400,
+            "max": 1077550
+          },
+          {
+            "rate": 0.0965,
+            "min": 1077550,
+            "max": 5000000
+          },
+          {
+            "rate": 0.103,
+            "min": 5000000,
+            "max": 25000000
+          },
+          {
+            "rate": 0.109,
+            "min": 25000000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "New York City and Yonkers impose additional local income taxes on residents.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2049,34 +3526,79 @@
         "pct": 0.27,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "New York City and Yonkers impose additional local income taxes on residents."
   },
   "OH": {
     "name": "Ohio",
     "year": 2025,
     "source": "https://tax.ohio.gov/individual/resources/annual-tax-rates",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 0,
-    "brackets": [
-      {
-        "rate": 0,
-        "min": 0,
-        "max": 26050
+    "byStatus": {
+      "single": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 26050
+          },
+          {
+            "rate": 0.0275,
+            "min": 26050,
+            "max": 100000
+          },
+          {
+            "rate": 0.035,
+            "min": 100000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0275,
-        "min": 26050,
-        "max": 100000
+      "mfj": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 26050
+          },
+          {
+            "rate": 0.0275,
+            "min": 26050,
+            "max": 100000
+          },
+          {
+            "rate": 0.035,
+            "min": 100000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.035,
-        "min": 100000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 26050
+          },
+          {
+            "rate": 0.0275,
+            "min": 26050,
+            "max": 100000
+          },
+          {
+            "rate": 0.035,
+            "min": 100000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Ohio consolidated to two non-zero brackets in 2024; the first $26,050 of taxable income is exempt. Many cities levy additional local income taxes.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2113,48 +3635,124 @@
         "pct": 0.21,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Ohio consolidated to two non-zero brackets in 2024; the first $26,050 of taxable income is exempt. Many cities levy additional local income taxes."
   },
   "OK": {
     "name": "Oklahoma",
     "year": 2025,
     "source": "https://oklahoma.gov/tax/individuals.html",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 6350,
-    "brackets": [
-      {
-        "rate": 0.0025,
-        "min": 0,
-        "max": 1000
+    "byStatus": {
+      "single": {
+        "standardDeduction": 6350,
+        "brackets": [
+          {
+            "rate": 0.0025,
+            "min": 0,
+            "max": 1000
+          },
+          {
+            "rate": 0.0075,
+            "min": 1000,
+            "max": 2500
+          },
+          {
+            "rate": 0.0175,
+            "min": 2500,
+            "max": 3750
+          },
+          {
+            "rate": 0.0275,
+            "min": 3750,
+            "max": 4900
+          },
+          {
+            "rate": 0.0375,
+            "min": 4900,
+            "max": 7200
+          },
+          {
+            "rate": 0.0475,
+            "min": 7200,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0075,
-        "min": 1000,
-        "max": 2500
+      "mfj": {
+        "standardDeduction": 6350,
+        "brackets": [
+          {
+            "rate": 0.0025,
+            "min": 0,
+            "max": 1000
+          },
+          {
+            "rate": 0.0075,
+            "min": 1000,
+            "max": 2500
+          },
+          {
+            "rate": 0.0175,
+            "min": 2500,
+            "max": 3750
+          },
+          {
+            "rate": 0.0275,
+            "min": 3750,
+            "max": 4900
+          },
+          {
+            "rate": 0.0375,
+            "min": 4900,
+            "max": 7200
+          },
+          {
+            "rate": 0.0475,
+            "min": 7200,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0175,
-        "min": 2500,
-        "max": 3750
-      },
-      {
-        "rate": 0.0275,
-        "min": 3750,
-        "max": 4900
-      },
-      {
-        "rate": 0.0375,
-        "min": 4900,
-        "max": 7200
-      },
-      {
-        "rate": 0.0475,
-        "min": 7200,
-        "max": null
+      "hoh": {
+        "standardDeduction": 6350,
+        "brackets": [
+          {
+            "rate": 0.0025,
+            "min": 0,
+            "max": 1000
+          },
+          {
+            "rate": 0.0075,
+            "min": 1000,
+            "max": 2500
+          },
+          {
+            "rate": 0.0175,
+            "min": 2500,
+            "max": 3750
+          },
+          {
+            "rate": 0.0275,
+            "min": 3750,
+            "max": 4900
+          },
+          {
+            "rate": 0.0375,
+            "min": 4900,
+            "max": 7200
+          },
+          {
+            "rate": 0.0475,
+            "min": 7200,
+            "max": null
+          }
+        ]
       }
-    ],
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2191,39 +3789,93 @@
         "pct": 0.28,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
   },
   "OR": {
     "name": "Oregon",
     "year": 2025,
     "source": "https://www.oregon.gov/dor/programs/individuals/Pages/PIT.aspx",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 2745,
-    "brackets": [
-      {
-        "rate": 0.0475,
-        "min": 0,
-        "max": 4300
+    "byStatus": {
+      "single": {
+        "standardDeduction": 2745,
+        "brackets": [
+          {
+            "rate": 0.0475,
+            "min": 0,
+            "max": 4300
+          },
+          {
+            "rate": 0.0675,
+            "min": 4300,
+            "max": 10750
+          },
+          {
+            "rate": 0.0875,
+            "min": 10750,
+            "max": 125000
+          },
+          {
+            "rate": 0.099,
+            "min": 125000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0675,
-        "min": 4300,
-        "max": 10750
+      "mfj": {
+        "standardDeduction": 2745,
+        "brackets": [
+          {
+            "rate": 0.0475,
+            "min": 0,
+            "max": 4300
+          },
+          {
+            "rate": 0.0675,
+            "min": 4300,
+            "max": 10750
+          },
+          {
+            "rate": 0.0875,
+            "min": 10750,
+            "max": 125000
+          },
+          {
+            "rate": 0.099,
+            "min": 125000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0875,
-        "min": 10750,
-        "max": 125000
-      },
-      {
-        "rate": 0.099,
-        "min": 125000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 2745,
+        "brackets": [
+          {
+            "rate": 0.0475,
+            "min": 0,
+            "max": 4300
+          },
+          {
+            "rate": 0.0675,
+            "min": 4300,
+            "max": 10750
+          },
+          {
+            "rate": 0.0875,
+            "min": 10750,
+            "max": 125000
+          },
+          {
+            "rate": 0.099,
+            "min": 125000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Oregon has no general sales tax; some counties and the Portland metro impose additional local income surtaxes.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2260,18 +3912,31 @@
         "pct": 0.33,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Oregon has no general sales tax; some counties and the Portland metro impose additional local income surtaxes."
   },
   "PA": {
     "name": "Pennsylvania",
     "year": 2025,
     "source": "https://www.revenue.pa.gov/TaxTypes/PIT/",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 0,
-    "flatRate": 0.0307,
-    "note": "Pennsylvania has no standard deduction or personal exemption; many municipalities levy additional Earned Income Taxes.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 0,
+        "flatRate": 0.0307
+      },
+      "mfj": {
+        "standardDeduction": 0,
+        "flatRate": 0.0307
+      },
+      "hoh": {
+        "standardDeduction": 0,
+        "flatRate": 0.0307
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2308,33 +3973,79 @@
         "pct": 0.22,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Pennsylvania has no standard deduction or personal exemption; many municipalities levy additional Earned Income Taxes."
   },
   "RI": {
     "name": "Rhode Island",
     "year": 2025,
     "source": "https://tax.ri.gov/tax-sections/personal-income-tax",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 10900,
-    "brackets": [
-      {
-        "rate": 0.0375,
-        "min": 0,
-        "max": 79900
+    "byStatus": {
+      "single": {
+        "standardDeduction": 10900,
+        "brackets": [
+          {
+            "rate": 0.0375,
+            "min": 0,
+            "max": 79900
+          },
+          {
+            "rate": 0.0475,
+            "min": 79900,
+            "max": 181650
+          },
+          {
+            "rate": 0.0599,
+            "min": 181650,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0475,
-        "min": 79900,
-        "max": 181650
+      "mfj": {
+        "standardDeduction": 10900,
+        "brackets": [
+          {
+            "rate": 0.0375,
+            "min": 0,
+            "max": 79900
+          },
+          {
+            "rate": 0.0475,
+            "min": 79900,
+            "max": 181650
+          },
+          {
+            "rate": 0.0599,
+            "min": 181650,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0599,
-        "min": 181650,
-        "max": null
+      "hoh": {
+        "standardDeduction": 10900,
+        "brackets": [
+          {
+            "rate": 0.0375,
+            "min": 0,
+            "max": 79900
+          },
+          {
+            "rate": 0.0475,
+            "min": 79900,
+            "max": 181650
+          },
+          {
+            "rate": 0.0599,
+            "min": 181650,
+            "max": null
+          }
+        ]
       }
-    ],
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2371,34 +4082,78 @@
         "pct": 0.38,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
   },
   "SC": {
     "name": "South Carolina",
     "year": 2025,
     "source": "https://dor.sc.gov/tax/individual-income",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 14600,
-    "brackets": [
-      {
-        "rate": 0,
-        "min": 0,
-        "max": 3460
+    "byStatus": {
+      "single": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 3460
+          },
+          {
+            "rate": 0.03,
+            "min": 3460,
+            "max": 17330
+          },
+          {
+            "rate": 0.062,
+            "min": 17330,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.03,
-        "min": 3460,
-        "max": 17330
+      "mfj": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 3460
+          },
+          {
+            "rate": 0.03,
+            "min": 3460,
+            "max": 17330
+          },
+          {
+            "rate": 0.062,
+            "min": 17330,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.062,
-        "min": 17330,
-        "max": null
+      "hoh": {
+        "standardDeduction": 14600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 3460
+          },
+          {
+            "rate": 0.03,
+            "min": 3460,
+            "max": 17330
+          },
+          {
+            "rate": 0.062,
+            "min": 17330,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "South Carolina's top rate was reduced to 6.2% for 2025 and is scheduled to continue stepping down; uses federal taxable income as its base.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2435,7 +4190,9 @@
         "pct": 0.4,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "South Carolina's top rate was reduced to 6.2% for 2025 and is scheduled to continue stepping down; uses federal taxable income as its base."
   },
   "SD": {
     "name": "South Dakota",
@@ -2465,12 +4222,23 @@
     "name": "Utah",
     "year": 2025,
     "source": "https://tax.utah.gov/income",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "flat",
     "noIncomeTax": false,
-    "standardDeduction": 0,
-    "flatRate": 0.0455,
-    "note": "Utah's flat rate dropped to 4.55% for 2025; the state offers a taxpayer tax credit that phases out with income rather than a standard deduction.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    "byStatus": {
+      "single": {
+        "standardDeduction": 0,
+        "flatRate": 0.0455
+      },
+      "mfj": {
+        "standardDeduction": 0,
+        "flatRate": 0.0455
+      },
+      "hoh": {
+        "standardDeduction": 0,
+        "flatRate": 0.0455
+      }
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2507,38 +4275,94 @@
         "pct": 0.26,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Utah's flat rate dropped to 4.55% for 2025; the state offers a taxpayer tax credit that phases out with income rather than a standard deduction."
   },
   "VA": {
     "name": "Virginia",
     "year": 2025,
     "source": "https://www.tax.virginia.gov/individual-income-tax-filing",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 8500,
-    "brackets": [
-      {
-        "rate": 0.02,
-        "min": 0,
-        "max": 3000
+    "byStatus": {
+      "single": {
+        "standardDeduction": 8500,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 3000
+          },
+          {
+            "rate": 0.03,
+            "min": 3000,
+            "max": 5000
+          },
+          {
+            "rate": 0.05,
+            "min": 5000,
+            "max": 17000
+          },
+          {
+            "rate": 0.0575,
+            "min": 17000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.03,
-        "min": 3000,
-        "max": 5000
+      "mfj": {
+        "standardDeduction": 8500,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 3000
+          },
+          {
+            "rate": 0.03,
+            "min": 3000,
+            "max": 5000
+          },
+          {
+            "rate": 0.05,
+            "min": 5000,
+            "max": 17000
+          },
+          {
+            "rate": 0.0575,
+            "min": 17000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.05,
-        "min": 5000,
-        "max": 17000
-      },
-      {
-        "rate": 0.0575,
-        "min": 17000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 8500,
+        "brackets": [
+          {
+            "rate": 0.02,
+            "min": 0,
+            "max": 3000
+          },
+          {
+            "rate": 0.03,
+            "min": 3000,
+            "max": 5000
+          },
+          {
+            "rate": 0.05,
+            "min": 5000,
+            "max": 17000
+          },
+          {
+            "rate": 0.0575,
+            "min": 17000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2575,39 +4399,93 @@
         "pct": 0.3,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
   },
   "VT": {
     "name": "Vermont",
     "year": 2025,
     "source": "https://tax.vermont.gov/individuals",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 7400,
-    "brackets": [
-      {
-        "rate": 0.0335,
-        "min": 0,
-        "max": 47900
+    "byStatus": {
+      "single": {
+        "standardDeduction": 7400,
+        "brackets": [
+          {
+            "rate": 0.0335,
+            "min": 0,
+            "max": 47900
+          },
+          {
+            "rate": 0.066,
+            "min": 47900,
+            "max": 116000
+          },
+          {
+            "rate": 0.076,
+            "min": 116000,
+            "max": 242000
+          },
+          {
+            "rate": 0.0875,
+            "min": 242000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.066,
-        "min": 47900,
-        "max": 116000
+      "mfj": {
+        "standardDeduction": 7400,
+        "brackets": [
+          {
+            "rate": 0.0335,
+            "min": 0,
+            "max": 47900
+          },
+          {
+            "rate": 0.066,
+            "min": 47900,
+            "max": 116000
+          },
+          {
+            "rate": 0.076,
+            "min": 116000,
+            "max": 242000
+          },
+          {
+            "rate": 0.0875,
+            "min": 242000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.076,
-        "min": 116000,
-        "max": 242000
-      },
-      {
-        "rate": 0.0875,
-        "min": 242000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 7400,
+        "brackets": [
+          {
+            "rate": 0.0335,
+            "min": 0,
+            "max": 47900
+          },
+          {
+            "rate": 0.066,
+            "min": 47900,
+            "max": 116000
+          },
+          {
+            "rate": 0.076,
+            "min": 116000,
+            "max": 242000
+          },
+          {
+            "rate": 0.0875,
+            "min": 242000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "K-12 spending shown is General-Fund only — most K-12 funding flows through Vermont's separate Education Fund.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2644,7 +4522,9 @@
         "pct": 0.49,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "K-12 spending shown is General-Fund only — most K-12 funding flows through Vermont's separate Education Fund."
   },
   "WA": {
     "name": "Washington",
@@ -2658,33 +4538,86 @@
     "name": "Wisconsin",
     "year": 2025,
     "source": "https://www.revenue.wi.gov/Pages/Individuals/home.aspx",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 13230,
-    "brackets": [
-      {
-        "rate": 0.035,
-        "min": 0,
-        "max": 14680
+    "byStatus": {
+      "single": {
+        "standardDeduction": 13230,
+        "brackets": [
+          {
+            "rate": 0.035,
+            "min": 0,
+            "max": 14680
+          },
+          {
+            "rate": 0.044,
+            "min": 14680,
+            "max": 29370
+          },
+          {
+            "rate": 0.053,
+            "min": 29370,
+            "max": 323290
+          },
+          {
+            "rate": 0.0765,
+            "min": 323290,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.044,
-        "min": 14680,
-        "max": 29370
+      "mfj": {
+        "standardDeduction": 13230,
+        "brackets": [
+          {
+            "rate": 0.035,
+            "min": 0,
+            "max": 14680
+          },
+          {
+            "rate": 0.044,
+            "min": 14680,
+            "max": 29370
+          },
+          {
+            "rate": 0.053,
+            "min": 29370,
+            "max": 323290
+          },
+          {
+            "rate": 0.0765,
+            "min": 323290,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.053,
-        "min": 29370,
-        "max": 323290
-      },
-      {
-        "rate": 0.0765,
-        "min": 323290,
-        "max": null
+      "hoh": {
+        "standardDeduction": 13230,
+        "brackets": [
+          {
+            "rate": 0.035,
+            "min": 0,
+            "max": 14680
+          },
+          {
+            "rate": 0.044,
+            "min": 14680,
+            "max": 29370
+          },
+          {
+            "rate": 0.053,
+            "min": 29370,
+            "max": 323290
+          },
+          {
+            "rate": 0.0765,
+            "min": 323290,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "Wisconsin's standard deduction phases out at higher income levels and reaches zero for high earners.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2721,44 +4654,109 @@
         "pct": 0.24,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "Wisconsin's standard deduction phases out at higher income levels and reaches zero for high earners."
   },
   "WV": {
     "name": "West Virginia",
     "year": 2025,
     "source": "https://tax.wv.gov/Individuals/Pages/Individuals.aspx",
+    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
-    "standardDeduction": 0,
-    "brackets": [
-      {
-        "rate": 0.0222,
-        "min": 0,
-        "max": 10000
+    "byStatus": {
+      "single": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0.0222,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.0296,
+            "min": 10000,
+            "max": 25000
+          },
+          {
+            "rate": 0.0333,
+            "min": 25000,
+            "max": 40000
+          },
+          {
+            "rate": 0.0444,
+            "min": 40000,
+            "max": 60000
+          },
+          {
+            "rate": 0.0482,
+            "min": 60000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0296,
-        "min": 10000,
-        "max": 25000
+      "mfj": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0.0222,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.0296,
+            "min": 10000,
+            "max": 25000
+          },
+          {
+            "rate": 0.0333,
+            "min": 25000,
+            "max": 40000
+          },
+          {
+            "rate": 0.0444,
+            "min": 40000,
+            "max": 60000
+          },
+          {
+            "rate": 0.0482,
+            "min": 60000,
+            "max": null
+          }
+        ]
       },
-      {
-        "rate": 0.0333,
-        "min": 25000,
-        "max": 40000
-      },
-      {
-        "rate": 0.0444,
-        "min": 40000,
-        "max": 60000
-      },
-      {
-        "rate": 0.0482,
-        "min": 60000,
-        "max": null
+      "hoh": {
+        "standardDeduction": 0,
+        "brackets": [
+          {
+            "rate": 0.0222,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.0296,
+            "min": 10000,
+            "max": 25000
+          },
+          {
+            "rate": 0.0333,
+            "min": 25000,
+            "max": 40000
+          },
+          {
+            "rate": 0.0444,
+            "min": 40000,
+            "max": 60000
+          },
+          {
+            "rate": 0.0482,
+            "min": 60000,
+            "max": null
+          }
+        ]
       }
-    ],
-    "note": "West Virginia has no standard deduction but offers a $2,000 personal exemption; rates were reduced again in 2025 via revenue-triggered cuts.",
-    "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
+    },
     "allocations": [
       {
         "category": "K-12 Education",
@@ -2795,7 +4793,9 @@
         "pct": 0.05,
         "icon": "📦"
       }
-    ]
+    ],
+    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
+    "note": "West Virginia has no standard deduction but offers a $2,000 personal exemption; rates were reduced again in 2025 via revenue-triggered cuts."
   },
   "WY": {
     "name": "Wyoming",

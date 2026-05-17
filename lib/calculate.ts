@@ -84,7 +84,7 @@ function computeFederal(income: number, status: FilingStatus, numKids: number): 
   };
 }
 
-function computeState(income: number, stateCode: string): LevelBreakdown {
+function computeState(income: number, stateCode: string, filingStatus: FilingStatus): LevelBreakdown {
   const s = STATES[stateCode];
   if (!s) {
     return {
@@ -108,24 +108,22 @@ function computeState(income: number, stateCode: string): LevelBreakdown {
       items: [],
     };
   }
-  const taxable = Math.max(0, income - s.standardDeduction);
+  const block = s.byStatus[filingStatus];
+  const taxable = Math.max(0, income - block.standardDeduction);
   let tax = 0;
-  if (s.taxType === "flat" && typeof s.flatRate === "number") {
-    tax = taxable * s.flatRate;
-  } else if (s.taxType === "progressive" && s.brackets) {
-    tax = applyBrackets(taxable, s.brackets).tax;
+  if (s.taxType === "flat" && typeof block.flatRate === "number") {
+    tax = taxable * block.flatRate;
+  } else if (s.taxType === "progressive" && block.brackets) {
+    tax = applyBrackets(taxable, block.brackets).tax;
   }
-  const note = [
-    s.note,
-    "State tax computed with single-filer brackets — filing status only affects federal in V1.",
-  ].filter(Boolean).join(" ");
+  const note = [s.note, s.statusNote].filter(Boolean).join(" ");
   return {
     level: "State",
     total: tax,
     effectiveRate: income > 0 ? tax / income : 0,
     jurisdiction: s.name,
     source: s.allocationsSource,
-    note,
+    note: note || undefined,
     items: allocate(tax, s.allocations),
   };
 }
@@ -206,7 +204,7 @@ export function calculate(
   const housing: LocalInput = opts.housing ?? { mode: "skip" };
 
   const fed = computeFederal(income, filingStatus, numKids);
-  const st = computeState(income, stateCode);
+  const st = computeState(income, stateCode, filingStatus);
   const loc = computeLocal(income, zip, stateCode, housing);
 
   const totalTax = fed.total + st.total + loc.total;
