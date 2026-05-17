@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { isValidZip, zipToState } from "@/lib/zip";
 import { isSupportedState } from "@/lib/calculate";
@@ -228,7 +229,10 @@ export default function Home() {
         </form>
 
         <footer className="mt-8 text-center text-xs text-neutral-500">
-          Estimates only. Not tax advice. 2025 brackets, all 50 states + DC.
+          Estimates only. Not tax advice. 2025 brackets, all 50 states + DC.{" "}
+          <Link href="/sources" className="underline hover:text-neutral-700 dark:hover:text-neutral-300">
+            Where the data came from →
+          </Link>
         </footer>
       </div>
     </main>

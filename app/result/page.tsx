@@ -104,8 +104,12 @@ function ResultBody() {
         <BreakdownChart level={result.local} />
 
         <footer className="text-xs text-neutral-500 pb-10 space-y-1">
-          <p>Estimates only. Not tax advice. Filing single. Standard deductions applied where applicable.</p>
-          <p>Sanity check against <a className="underline" href="https://www.nationalpriorities.org" target="_blank" rel="noreferrer">nationalpriorities.org</a>.</p>
+          <p>Estimates only. Not tax advice. Standard deductions applied where applicable.</p>
+          <p>
+            <Link href="/sources" className="underline">Where the data came from →</Link>
+            {" · "}
+            Sanity check against <a className="underline" href="https://www.nationalpriorities.org" target="_blank" rel="noreferrer">nationalpriorities.org</a>.
+          </p>
         </footer>
       </div>
     </main>
