@@ -333,7 +333,7 @@
   "CA": {
     "name": "California",
     "year": 2025,
-    "source": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.html",
+    "source": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf",
     "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
     "taxType": "progressive",
     "noIncomeTax": false,
