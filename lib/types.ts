@@ -7,12 +7,17 @@ export type Allocation = {
   examples?: string[];
 };
 
+export type FilingStatus = "single" | "mfj" | "hoh";
+
 export type FederalData = {
   year: number;
   source: string;
-  filingStatus: string;
-  standardDeduction: number;
-  brackets: Bracket[];
+  filingStatus: Record<FilingStatus, { standardDeduction: number; brackets: Bracket[] }>;
+  childTaxCredit: {
+    perChild: number;
+    phaseOutStart: Record<FilingStatus, number>;
+    phaseOutPerThousand: number;
+  };
   allocations: Allocation[];
 };
 
@@ -67,6 +72,8 @@ export type CalculationResult = {
   income: number;
   state: string;
   cityKey: string;
+  filingStatus: FilingStatus;
+  numKids: number;
   housing: { mode: HousingMode; homeValue?: number; monthlyRent?: number };
   totalTax: number;
   effectiveRate: number;

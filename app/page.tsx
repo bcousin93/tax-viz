@@ -4,12 +4,20 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { isValidZip, zipToState } from "@/lib/zip";
 import { isSupportedState } from "@/lib/calculate";
-import type { HousingMode } from "@/lib/types";
+import type { FilingStatus, HousingMode } from "@/lib/types";
+
+const FILING_LABEL: Record<FilingStatus, string> = {
+  single: "Single",
+  mfj: "Married — joint",
+  hoh: "Head of household",
+};
 
 export default function Home() {
   const router = useRouter();
   const [zip, setZip] = useState("");
   const [income, setIncome] = useState("");
+  const [filing, setFiling] = useState<FilingStatus>("single");
+  const [kids, setKids] = useState("0");
   const [mode, setMode] = useState<HousingMode>("owner");
   const [homeValue, setHomeValue] = useState("");
   const [rent, setRent] = useState("");
@@ -26,8 +34,15 @@ export default function Home() {
       setError("Enter a positive income amount.");
       return;
     }
+    const k = Math.max(0, Math.floor(Number(kids) || 0));
 
-    const params = new URLSearchParams({ zip, income: String(n), mode });
+    const params = new URLSearchParams({
+      zip,
+      income: String(n),
+      filing,
+      kids: String(k),
+      mode,
+    });
     if (mode === "owner") {
       const v = Number(homeValue.replace(/[,$\s]/g, ""));
       if (!homeValue) {
@@ -103,7 +118,41 @@ export default function Home() {
                 className="w-full rounded-lg border border-neutral-300 dark:border-neutral-700 bg-transparent pl-8 pr-4 py-3 text-lg outline-none focus:border-neutral-900 dark:focus:border-neutral-200"
               />
             </div>
-            <p className="mt-1 text-xs text-neutral-500">Filing single. Approximate, 2025 brackets.</p>
+            <p className="mt-1 text-xs text-neutral-500">Use your AGI for the closest match to your tax return.</p>
+          </div>
+
+          <div>
+            <span className="block text-sm font-medium mb-2">Filing status</span>
+            <div className="grid grid-cols-3 gap-2">
+              {(["single", "mfj", "hoh"] as FilingStatus[]).map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => setFiling(s)}
+                  className={`rounded-lg border px-3 py-2 text-sm font-medium transition ${
+                    filing === s
+                      ? "border-neutral-900 dark:border-neutral-100 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900"
+                      : "border-neutral-300 dark:border-neutral-700 hover:border-neutral-500"
+                  }`}
+                >
+                  {FILING_LABEL[s]}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="kids" className="block text-sm font-medium mb-1">Children under 17 (for Child Tax Credit)</label>
+            <input
+              id="kids"
+              inputMode="numeric"
+              pattern="\d*"
+              placeholder="0"
+              value={kids}
+              onChange={(e) => setKids(e.target.value.replace(/\D/g, ""))}
+              className="w-full rounded-lg border border-neutral-300 dark:border-neutral-700 bg-transparent px-4 py-3 text-lg outline-none focus:border-neutral-900 dark:focus:border-neutral-200"
+            />
+            <p className="mt-1 text-xs text-neutral-500">$2,000 per child, phases out above $200k single / $400k joint.</p>
           </div>
 
           <div>

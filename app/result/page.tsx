@@ -6,7 +6,13 @@ import { useSearchParams } from "next/navigation";
 import { calculate } from "@/lib/calculate";
 import { BreakdownChart, fmt, pct } from "@/components/BreakdownChart";
 import { ShareCard } from "@/components/ShareCard";
-import type { HousingMode } from "@/lib/types";
+import type { FilingStatus, HousingMode } from "@/lib/types";
+
+const FILING_LABEL: Record<FilingStatus, string> = {
+  single: "single",
+  mfj: "married — joint",
+  hoh: "head of household",
+};
 
 function parseHousing(get: (k: string) => string | null): { mode: HousingMode; homeValue?: number; monthlyRent?: number } {
   const m = get("mode");
@@ -21,12 +27,18 @@ function parseHousing(get: (k: string) => string | null): { mode: HousingMode; h
   return { mode: "skip" };
 }
 
+function parseFiling(v: string | null): FilingStatus {
+  return v === "mfj" || v === "hoh" ? v : "single";
+}
+
 function ResultBody() {
   const sp = useSearchParams();
   const zip = (sp.get("zip") ?? "").trim();
   const income = Number(sp.get("income") ?? "0");
+  const filingStatus = parseFiling(sp.get("filing"));
+  const numKids = Math.max(0, Math.floor(Number(sp.get("kids") ?? "0")));
   const housing = parseHousing((k) => sp.get(k));
-  const result = calculate(zip, income, housing);
+  const result = calculate(zip, income, { filingStatus, numKids, housing });
 
   if ("error" in result) {
     return (
@@ -50,7 +62,9 @@ function ResultBody() {
 
         <section className="rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 p-6 sm:p-8">
           <p className="text-sm text-neutral-500">
-            ZIP <span className="font-mono">{result.zip}</span> · {result.state} · income {fmt(result.income)}
+            ZIP <span className="font-mono">{result.zip}</span> · {result.state} · {FILING_LABEL[result.filingStatus]}
+            {result.numKids > 0 ? ` · ${result.numKids} child${result.numKids === 1 ? "" : "ren"}` : null}
+            {" · "}income {fmt(result.income)}
             {result.housing.mode === "owner" && result.housing.homeValue ? ` · home ${fmt(result.housing.homeValue)}` : null}
             {result.housing.mode === "renter" && result.housing.monthlyRent ? ` · rent ${fmt(result.housing.monthlyRent)}/mo` : null}
           </p>

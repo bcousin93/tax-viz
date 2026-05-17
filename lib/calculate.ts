@@ -2,7 +2,7 @@ import federal from "@/data/federal.json";
 import states from "@/data/states.json";
 import cities from "@/data/cities.json";
 import property from "@/data/property-tax.json";
-import type { Bracket, CalculationResult, FederalData, HousingMode, LevelBreakdown, StateData, CityData, LineItem } from "./types";
+import type { Bracket, CalculationResult, FederalData, FilingStatus, HousingMode, LevelBreakdown, StateData, CityData, LineItem } from "./types";
 import { zipToState } from "./zip";
 import { allocate } from "./allocate";
 
@@ -46,18 +46,41 @@ function effectiveRateFor(stateCode: string, city: CityData, cityKey: string): n
   return PROP.states[stateCode] ?? PROP.national;
 }
 
-function computeFederal(income: number): LevelBreakdown & { marginal: number } {
-  const taxable = Math.max(0, income - FED.standardDeduction);
-  const { tax, marginal } = applyBrackets(taxable, FED.brackets);
+function childTaxCredit(income: number, status: FilingStatus, numKids: number): number {
+  if (numKids <= 0) return 0;
+  const ctc = FED.childTaxCredit;
+  const gross = numKids * ctc.perChild;
+  const threshold = ctc.phaseOutStart[status];
+  if (income <= threshold) return gross;
+  // $50 reduction per $1,000 (or fraction) over threshold
+  const over = Math.ceil((income - threshold) / 1000) * 1000;
+  const reduction = (over / 1000) * ctc.phaseOutPerThousand;
+  return Math.max(0, gross - reduction);
+}
+
+function computeFederal(income: number, status: FilingStatus, numKids: number): LevelBreakdown & { marginal: number; preCredit: number; credits: number } {
+  const cfg = FED.filingStatus[status];
+  const taxable = Math.max(0, income - cfg.standardDeduction);
+  const { tax: preCredit, marginal } = applyBrackets(taxable, cfg.brackets);
+  const credits = Math.min(preCredit, childTaxCredit(income, status, numKids));
+  const tax = Math.max(0, preCredit - credits);
   const items: LineItem[] = allocate(tax, FED.allocations);
+  const noteParts: string[] = [];
+  noteParts.push(`Filing ${status === "mfj" ? "MFJ" : status === "hoh" ? "HoH" : "single"}, standard deduction ${cfg.standardDeduction.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })}.`);
+  if (credits > 0) {
+    noteParts.push(`Child Tax Credit: −${credits.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })} (${numKids} child${numKids === 1 ? "" : "ren"}).`);
+  }
   return {
     level: "Federal",
     total: tax,
     effectiveRate: income > 0 ? tax / income : 0,
     jurisdiction: "United States",
     source: FED.source,
+    note: noteParts.join(" "),
     items,
     marginal,
+    preCredit,
+    credits,
   };
 }
 
@@ -92,13 +115,17 @@ function computeState(income: number, stateCode: string): LevelBreakdown {
   } else if (s.taxType === "progressive" && s.brackets) {
     tax = applyBrackets(taxable, s.brackets).tax;
   }
+  const note = [
+    s.note,
+    "State tax computed with single-filer brackets — filing status only affects federal in V1.",
+  ].filter(Boolean).join(" ");
   return {
     level: "State",
     total: tax,
     effectiveRate: income > 0 ? tax / income : 0,
     jurisdiction: s.name,
     source: s.allocationsSource,
-    note: s.note,
+    note,
     items: allocate(tax, s.allocations),
   };
 }
@@ -164,25 +191,35 @@ function computeLocal(income: number, zip: string, stateCode: string, housing: L
 export function calculate(
   zip: string,
   income: number,
-  housing: LocalInput = { mode: "skip" }
+  opts: {
+    filingStatus?: FilingStatus;
+    numKids?: number;
+    housing?: LocalInput;
+  } = {}
 ): CalculationResult | { error: string } {
   if (!Number.isFinite(income) || income < 0) return { error: "Income must be a non-negative number." };
   const stateCode = zipToState(zip);
   if (!stateCode) return { error: "We couldn't map that ZIP code to a state." };
 
-  const fed = computeFederal(income);
+  const filingStatus: FilingStatus = opts.filingStatus ?? "single";
+  const numKids = Math.max(0, Math.floor(opts.numKids ?? 0));
+  const housing: LocalInput = opts.housing ?? { mode: "skip" };
+
+  const fed = computeFederal(income, filingStatus, numKids);
   const st = computeState(income, stateCode);
   const loc = computeLocal(income, zip, stateCode, housing);
 
   const totalTax = fed.total + st.total + loc.total;
   const { cityKey, ...localOut } = loc;
-  const { marginal, ...fedOut } = fed;
+  const { marginal, preCredit, credits, ...fedOut } = fed;
 
   return {
     zip,
     income,
     state: stateCode,
     cityKey,
+    filingStatus,
+    numKids,
     housing,
     totalTax,
     effectiveRate: income > 0 ? totalTax / income : 0,
