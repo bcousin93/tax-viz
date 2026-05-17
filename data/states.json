@@ -5,7 +5,8 @@
     "source": "https://taxfoundation.org/data/all/state/state-income-tax-rates/",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "Alaska has no state income tax; revenue comes primarily from oil and gas severance taxes, federal transfers, and investment earnings from the Permanent Fund."
+    "note": "Alaska has no state income tax; revenue comes primarily from oil and gas severance taxes, federal transfers, and investment earnings from the Permanent Fund.",
+    "statusNote": "No state income tax."
   },
   "AL": {
     "name": "Alabama",
@@ -36,27 +37,27 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 3000,
+        "standardDeduction": 8500,
         "brackets": [
           {
             "rate": 0.02,
             "min": 0,
-            "max": 500
+            "max": 1000
           },
           {
             "rate": 0.04,
-            "min": 500,
-            "max": 3000
+            "min": 1000,
+            "max": 6000
           },
           {
             "rate": 0.05,
-            "min": 3000,
+            "min": 6000,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 3000,
+        "standardDeduction": 5200,
         "brackets": [
           {
             "rate": 0.02,
@@ -113,7 +114,12 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
+    "statusNote": "Alabama's MFJ brackets are exactly 2x the single brackets. HOH uses the same brackets as single. Standard deduction is income-phased; maximum amounts shown.",
+    "statusSources": {
+      "single": "https://www.revenue.alabama.gov/faqs/what-is-alabamas-individual-income-tax-rate/",
+      "mfj": "https://www.revenue.alabama.gov/faqs/what-is-alabamas-individual-income-tax-rate/",
+      "hoh": "https://www.revenue.alabama.gov/faqs/what-is-alabamas-individual-income-tax-rate/"
+    }
   },
   "AR": {
     "name": "Arkansas",
@@ -124,61 +130,91 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 2340,
+        "standardDeduction": 2410,
         "brackets": [
           {
-            "rate": 0.02,
+            "rate": 0,
             "min": 0,
-            "max": 4500
+            "max": 5500
+          },
+          {
+            "rate": 0.02,
+            "min": 5500,
+            "max": 10900
           },
           {
             "rate": 0.03,
-            "min": 4500,
-            "max": 8900
+            "min": 10900,
+            "max": 15100
+          },
+          {
+            "rate": 0.034,
+            "min": 15100,
+            "max": 25700
           },
           {
             "rate": 0.039,
-            "min": 8900,
+            "min": 25700,
             "max": null
           }
         ]
       },
       "mfj": {
-        "standardDeduction": 2340,
+        "standardDeduction": 4820,
         "brackets": [
           {
-            "rate": 0.02,
+            "rate": 0,
             "min": 0,
-            "max": 4500
+            "max": 5500
+          },
+          {
+            "rate": 0.02,
+            "min": 5500,
+            "max": 10900
           },
           {
             "rate": 0.03,
-            "min": 4500,
-            "max": 8900
+            "min": 10900,
+            "max": 15100
+          },
+          {
+            "rate": 0.034,
+            "min": 15100,
+            "max": 25700
           },
           {
             "rate": 0.039,
-            "min": 8900,
+            "min": 25700,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 2340,
+        "standardDeduction": 2410,
         "brackets": [
           {
-            "rate": 0.02,
+            "rate": 0,
             "min": 0,
-            "max": 4500
+            "max": 5500
+          },
+          {
+            "rate": 0.02,
+            "min": 5500,
+            "max": 10900
           },
           {
             "rate": 0.03,
-            "min": 4500,
-            "max": 8900
+            "min": 10900,
+            "max": 15100
+          },
+          {
+            "rate": 0.034,
+            "min": 15100,
+            "max": 25700
           },
           {
             "rate": 0.039,
-            "min": 8900,
+            "min": 25700,
             "max": null
           }
         ]
@@ -221,8 +257,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Arkansas uses a tiered structure with different schedules by income range; the top rate was reduced to 3.9% effective 2025."
+    "statusNote": "Arkansas uses one bracket schedule for all filing statuses (each spouse on a joint return computes tax separately on a combined form). MFJ gets a doubled standard deduction; HOH uses the single standard deduction.",
+    "note": "Arkansas uses a tiered structure with different schedules by income range; the top rate was reduced to 3.9% effective 2025.",
+    "statusSources": {
+      "single": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_TaxTables.pdf",
+      "mfj": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_TaxTables.pdf",
+      "hoh": "https://www.dfa.arkansas.gov/wp-content/uploads/2025_TaxTables.pdf"
+    }
   },
   "AZ": {
     "name": "Arizona",
@@ -233,15 +274,15 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 14600,
+        "standardDeduction": 15750,
         "flatRate": 0.025
       },
       "mfj": {
-        "standardDeduction": 14600,
+        "standardDeduction": 31500,
         "flatRate": 0.025
       },
       "hoh": {
-        "standardDeduction": 14600,
+        "standardDeduction": 23625,
         "flatRate": 0.025
       }
     },
@@ -282,7 +323,12 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
+    "statusNote": "Arizona's flat 2.5% rate applies regardless of filing status. Arizona conforms to the federal standard deduction, which differs by filing status.",
+    "statusSources": {
+      "single": "https://azdor.gov/forms/individual-income-tax-highlights",
+      "mfj": "https://azdor.gov/forms/individual-income-tax-highlights",
+      "hoh": "https://azdor.gov/forms/individual-income-tax-highlights"
+    }
   },
   "CA": {
     "name": "California",
@@ -293,151 +339,151 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 5540,
+        "standardDeduction": 5706,
         "brackets": [
           {
             "rate": 0.01,
             "min": 0,
-            "max": 10756
+            "max": 11079
           },
           {
             "rate": 0.02,
-            "min": 10756,
-            "max": 25499
+            "min": 11079,
+            "max": 26264
           },
           {
             "rate": 0.04,
-            "min": 25499,
-            "max": 40245
+            "min": 26264,
+            "max": 41452
           },
           {
             "rate": 0.06,
-            "min": 40245,
-            "max": 55866
+            "min": 41452,
+            "max": 57542
           },
           {
             "rate": 0.08,
-            "min": 55866,
-            "max": 70606
+            "min": 57542,
+            "max": 72724
           },
           {
             "rate": 0.093,
-            "min": 70606,
-            "max": 360659
+            "min": 72724,
+            "max": 371479
           },
           {
             "rate": 0.103,
-            "min": 360659,
-            "max": 432787
+            "min": 371479,
+            "max": 445771
           },
           {
             "rate": 0.113,
-            "min": 432787,
-            "max": 721314
+            "min": 445771,
+            "max": 742953
           },
           {
             "rate": 0.123,
-            "min": 721314,
+            "min": 742953,
             "max": null
           }
         ]
       },
       "mfj": {
-        "standardDeduction": 5540,
+        "standardDeduction": 11412,
         "brackets": [
           {
             "rate": 0.01,
             "min": 0,
-            "max": 10756
+            "max": 22158
           },
           {
             "rate": 0.02,
-            "min": 10756,
-            "max": 25499
+            "min": 22158,
+            "max": 52528
           },
           {
             "rate": 0.04,
-            "min": 25499,
-            "max": 40245
+            "min": 52528,
+            "max": 82904
           },
           {
             "rate": 0.06,
-            "min": 40245,
-            "max": 55866
+            "min": 82904,
+            "max": 115084
           },
           {
             "rate": 0.08,
-            "min": 55866,
-            "max": 70606
+            "min": 115084,
+            "max": 145448
           },
           {
             "rate": 0.093,
-            "min": 70606,
-            "max": 360659
+            "min": 145448,
+            "max": 742958
           },
           {
             "rate": 0.103,
-            "min": 360659,
-            "max": 432787
+            "min": 742958,
+            "max": 891542
           },
           {
             "rate": 0.113,
-            "min": 432787,
-            "max": 721314
+            "min": 891542,
+            "max": 1485906
           },
           {
             "rate": 0.123,
-            "min": 721314,
+            "min": 1485906,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 5540,
+        "standardDeduction": 11412,
         "brackets": [
           {
             "rate": 0.01,
             "min": 0,
-            "max": 10756
+            "max": 22158
           },
           {
             "rate": 0.02,
-            "min": 10756,
-            "max": 25499
+            "min": 22158,
+            "max": 52528
           },
           {
             "rate": 0.04,
-            "min": 25499,
-            "max": 40245
+            "min": 52528,
+            "max": 82904
           },
           {
             "rate": 0.06,
-            "min": 40245,
-            "max": 55866
+            "min": 82904,
+            "max": 115084
           },
           {
             "rate": 0.08,
-            "min": 55866,
-            "max": 70606
+            "min": 115084,
+            "max": 145448
           },
           {
             "rate": 0.093,
-            "min": 70606,
-            "max": 360659
+            "min": 145448,
+            "max": 742958
           },
           {
             "rate": 0.103,
-            "min": 360659,
-            "max": 432787
+            "min": 742958,
+            "max": 891542
           },
           {
             "rate": 0.113,
-            "min": 432787,
-            "max": 721314
+            "min": 891542,
+            "max": 1485906
           },
           {
             "rate": 0.123,
-            "min": 721314,
+            "min": 1485906,
             "max": null
           }
         ]
@@ -480,8 +526,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "An additional 1% Mental Health Services Tax applies to taxable income over $1,000,000."
+    "statusNote": "California publishes Schedule X (Single/MFS), Schedule Y (MFJ/QSS, exactly 2x single brackets), and Schedule Z (HOH). HOH brackets sit between single and MFJ. A 1% Mental Health Services Tax adds on income over $1M (not modeled here).",
+    "note": "An additional 1% Mental Health Services Tax applies to taxable income over $1,000,000.",
+    "statusSources": {
+      "single": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf",
+      "mfj": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf",
+      "hoh": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf"
+    }
   },
   "CO": {
     "name": "Colorado",
@@ -492,15 +543,15 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 15000,
+        "standardDeduction": 0,
         "flatRate": 0.044
       },
       "mfj": {
-        "standardDeduction": 15000,
+        "standardDeduction": 0,
         "flatRate": 0.044
       },
       "hoh": {
-        "standardDeduction": 15000,
+        "standardDeduction": 0,
         "flatRate": 0.044
       }
     },
@@ -541,8 +592,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Colorado conforms to the federal standard deduction; rate may be temporarily reduced via TABOR refunds."
+    "statusNote": "Colorado applies a flat 4.4% rate to all filers. Colorado has no state standard deduction — it starts from federal taxable income, which already incorporates the federal standard deduction (which varies by filing status).",
+    "note": "Colorado conforms to the federal standard deduction; rate may be temporarily reduced via TABOR refunds.",
+    "statusSources": {
+      "single": "https://tax.colorado.gov/individual-income-tax-information",
+      "mfj": "https://tax.colorado.gov/individual-income-tax-information",
+      "hoh": "https://tax.colorado.gov/individual-income-tax-information"
+    }
   },
   "CT": {
     "name": "Connecticut",
@@ -598,36 +654,36 @@
           {
             "rate": 0.02,
             "min": 0,
-            "max": 10000
+            "max": 20000
           },
           {
             "rate": 0.045,
-            "min": 10000,
-            "max": 50000
-          },
-          {
-            "rate": 0.055,
-            "min": 50000,
+            "min": 20000,
             "max": 100000
           },
           {
-            "rate": 0.06,
+            "rate": 0.055,
             "min": 100000,
             "max": 200000
           },
           {
-            "rate": 0.065,
+            "rate": 0.06,
             "min": 200000,
-            "max": 250000
+            "max": 400000
           },
           {
-            "rate": 0.069,
-            "min": 250000,
+            "rate": 0.065,
+            "min": 400000,
             "max": 500000
           },
           {
-            "rate": 0.0699,
+            "rate": 0.069,
             "min": 500000,
+            "max": 1000000
+          },
+          {
+            "rate": 0.0699,
+            "min": 1000000,
             "max": null
           }
         ]
@@ -638,36 +694,36 @@
           {
             "rate": 0.02,
             "min": 0,
-            "max": 10000
+            "max": 16000
           },
           {
             "rate": 0.045,
-            "min": 10000,
-            "max": 50000
+            "min": 16000,
+            "max": 80000
           },
           {
             "rate": 0.055,
-            "min": 50000,
-            "max": 100000
+            "min": 80000,
+            "max": 160000
           },
           {
             "rate": 0.06,
-            "min": 100000,
-            "max": 200000
+            "min": 160000,
+            "max": 320000
           },
           {
             "rate": 0.065,
-            "min": 200000,
-            "max": 250000
+            "min": 320000,
+            "max": 400000
           },
           {
             "rate": 0.069,
-            "min": 250000,
-            "max": 500000
+            "min": 400000,
+            "max": 800000
           },
           {
             "rate": 0.0699,
-            "min": 500000,
+            "min": 800000,
             "max": null
           }
         ]
@@ -710,8 +766,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Connecticut has no standard deduction but offers a personal exemption that phases out with income; high earners are subject to a recapture provision."
+    "statusNote": "Connecticut publishes distinct rate schedules for single, MFJ, and HOH. MFJ thresholds are 2x single; HOH thresholds are 1.6x single. CT has no standard deduction (uses personal exemption + tax credits instead). A tax benefit recapture also applies at higher incomes (not modeled here).",
+    "note": "Connecticut has no standard deduction but offers a personal exemption that phases out with income; high earners are subject to a recapture provision.",
+    "statusSources": {
+      "single": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-income-tax-tables.pdf",
+      "mfj": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-income-tax-tables.pdf",
+      "hoh": "https://portal.ct.gov/-/media/drs/forms/2025/income/2025-income-tax-tables.pdf"
+    }
   },
   "DC": {
     "name": "District of Columbia",
@@ -722,7 +783,7 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 14600,
+        "standardDeduction": 15750,
         "brackets": [
           {
             "rate": 0.04,
@@ -762,7 +823,7 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 14600,
+        "standardDeduction": 31500,
         "brackets": [
           {
             "rate": 0.04,
@@ -802,7 +863,7 @@
         ]
       },
       "hoh": {
-        "standardDeduction": 14600,
+        "standardDeduction": 23625,
         "brackets": [
           {
             "rate": 0.04,
@@ -879,7 +940,12 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
+    "statusNote": "DC uses the same income tax brackets for all filing statuses. The standard deduction is set equal to the federal standard deduction, which varies by filing status.",
+    "statusSources": {
+      "single": "https://otr.cfo.dc.gov/page/dc-individual-and-fiduciary-income-tax-rates",
+      "mfj": "https://otr.cfo.dc.gov/page/dc-individual-and-fiduciary-income-tax-rates",
+      "hoh": "https://otr.cfo.dc.gov/page/dc-individual-and-fiduciary-income-tax-rates"
+    }
   },
   "DE": {
     "name": "Delaware",
@@ -930,7 +996,7 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 3250,
+        "standardDeduction": 6500,
         "brackets": [
           {
             "rate": 0,
@@ -1047,7 +1113,12 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
+    "statusNote": "Delaware uses the same income tax brackets for all filing statuses. MFJ gets a doubled standard deduction; HOH uses the single standard deduction.",
+    "statusSources": {
+      "single": "https://revenuefiles.delaware.gov/2025/TY25_taxtable.pdf",
+      "mfj": "https://revenuefiles.delaware.gov/2025/TY25_taxtable.pdf",
+      "hoh": "https://revenuefiles.delaware.gov/2025/TY25_taxtable.pdf"
+    }
   },
   "FL": {
     "name": "Florida",
@@ -1055,7 +1126,8 @@
     "source": "https://floridarevenue.com/taxes/Pages/default.aspx",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "Florida has no state income tax; revenue comes primarily from sales tax, tourism-related taxes, and property taxes."
+    "note": "Florida has no state income tax; revenue comes primarily from sales tax, tourism-related taxes, and property taxes.",
+    "statusNote": "No state income tax."
   },
   "GA": {
     "name": "Georgia",
@@ -1067,15 +1139,15 @@
     "byStatus": {
       "single": {
         "standardDeduction": 12000,
-        "flatRate": 0.0519
+        "flatRate": 0.0539
       },
       "mfj": {
-        "standardDeduction": 12000,
-        "flatRate": 0.0519
+        "standardDeduction": 24000,
+        "flatRate": 0.0539
       },
       "hoh": {
         "standardDeduction": 12000,
-        "flatRate": 0.0519
+        "flatRate": 0.0539
       }
     },
     "allocations": [
@@ -1115,8 +1187,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Georgia moved to a flat tax in 2024; the rate is scheduled to step down annually, reaching 5.19% in 2025."
+    "statusNote": "Georgia uses a flat 5.39% rate for all filing statuses in tax year 2025. MFJ gets a doubled standard deduction; single and HOH use the same standard deduction.",
+    "note": "Georgia moved to a flat tax in 2024; the rate is scheduled to step down annually, reaching 5.19% in 2025.",
+    "statusSources": {
+      "single": "https://dor.georgia.gov/taxes/important-tax-updates",
+      "mfj": "https://dor.georgia.gov/taxes/important-tax-updates",
+      "hoh": "https://dor.georgia.gov/taxes/important-tax-updates"
+    }
   },
   "HI": {
     "name": "Hawaii",
@@ -1192,131 +1269,131 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 4400,
+        "standardDeduction": 8800,
         "brackets": [
           {
             "rate": 0.014,
             "min": 0,
-            "max": 9600
-          },
-          {
-            "rate": 0.032,
-            "min": 9600,
-            "max": 14400
-          },
-          {
-            "rate": 0.055,
-            "min": 14400,
             "max": 19200
           },
           {
-            "rate": 0.064,
+            "rate": 0.032,
             "min": 19200,
-            "max": 24000
+            "max": 28800
           },
           {
-            "rate": 0.068,
-            "min": 24000,
-            "max": 36000
+            "rate": 0.055,
+            "min": 28800,
+            "max": 38400
           },
           {
-            "rate": 0.072,
-            "min": 36000,
+            "rate": 0.064,
+            "min": 38400,
             "max": 48000
           },
           {
-            "rate": 0.076,
+            "rate": 0.068,
             "min": 48000,
-            "max": 125000
+            "max": 72000
+          },
+          {
+            "rate": 0.072,
+            "min": 72000,
+            "max": 96000
+          },
+          {
+            "rate": 0.076,
+            "min": 96000,
+            "max": 250000
           },
           {
             "rate": 0.079,
-            "min": 125000,
-            "max": 175000
+            "min": 250000,
+            "max": 350000
           },
           {
             "rate": 0.0825,
-            "min": 175000,
-            "max": 225000
+            "min": 350000,
+            "max": 450000
           },
           {
             "rate": 0.09,
-            "min": 225000,
-            "max": 275000
+            "min": 450000,
+            "max": 550000
           },
           {
             "rate": 0.1,
-            "min": 275000,
-            "max": 325000
+            "min": 550000,
+            "max": 650000
           },
           {
             "rate": 0.11,
-            "min": 325000,
+            "min": 650000,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 4400,
+        "standardDeduction": 6424,
         "brackets": [
           {
             "rate": 0.014,
             "min": 0,
-            "max": 9600
-          },
-          {
-            "rate": 0.032,
-            "min": 9600,
             "max": 14400
           },
           {
-            "rate": 0.055,
+            "rate": 0.032,
             "min": 14400,
-            "max": 19200
+            "max": 21600
+          },
+          {
+            "rate": 0.055,
+            "min": 21600,
+            "max": 28800
           },
           {
             "rate": 0.064,
-            "min": 19200,
-            "max": 24000
-          },
-          {
-            "rate": 0.068,
-            "min": 24000,
+            "min": 28800,
             "max": 36000
           },
           {
-            "rate": 0.072,
+            "rate": 0.068,
             "min": 36000,
-            "max": 48000
+            "max": 54000
+          },
+          {
+            "rate": 0.072,
+            "min": 54000,
+            "max": 72000
           },
           {
             "rate": 0.076,
-            "min": 48000,
-            "max": 125000
+            "min": 72000,
+            "max": 187500
           },
           {
             "rate": 0.079,
-            "min": 125000,
-            "max": 175000
+            "min": 187500,
+            "max": 262500
           },
           {
             "rate": 0.0825,
-            "min": 175000,
-            "max": 225000
+            "min": 262500,
+            "max": 337500
           },
           {
             "rate": 0.09,
-            "min": 225000,
-            "max": 275000
+            "min": 337500,
+            "max": 412500
           },
           {
             "rate": 0.1,
-            "min": 275000,
-            "max": 325000
+            "min": 412500,
+            "max": 487500
           },
           {
             "rate": 0.11,
-            "min": 325000,
+            "min": 487500,
             "max": null
           }
         ]
@@ -1359,8 +1436,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Hawaii enacted Act 46 (2024) which boosts the standard deduction and widens brackets on a multi-year schedule starting 2025."
+    "statusNote": "Hawaii publishes separate bracket schedules for single, MFJ, and HOH. MFJ thresholds are 2x single; HOH thresholds are 1.5x single. Brackets were substantially widened starting 2025 under Act 46, SLH 2024.",
+    "note": "Hawaii enacted Act 46 (2024) which boosts the standard deduction and widens brackets on a multi-year schedule starting 2025.",
+    "statusSources": {
+      "single": "https://files.hawaii.gov/tax/forms/2025/25table-on.pdf",
+      "mfj": "https://files.hawaii.gov/tax/forms/2025/25table-on.pdf",
+      "hoh": "https://files.hawaii.gov/tax/forms/2025/25table-on.pdf"
+    }
   },
   "IA": {
     "name": "Iowa",
@@ -1371,15 +1453,15 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 0,
+        "standardDeduction": 15750,
         "flatRate": 0.038
       },
       "mfj": {
-        "standardDeduction": 0,
+        "standardDeduction": 31500,
         "flatRate": 0.038
       },
       "hoh": {
-        "standardDeduction": 0,
+        "standardDeduction": 23625,
         "flatRate": 0.038
       }
     },
@@ -1420,8 +1502,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Iowa accelerated its move to a flat tax; the 2025 rate is 3.8% for all filers."
+    "statusNote": "Iowa moved to a flat 3.8% rate in 2025 for all filing statuses. Iowa starts from federal taxable income and conforms to the federal standard deduction, which varies by filing status.",
+    "note": "Iowa accelerated its move to a flat tax; the 2025 rate is 3.8% for all filers.",
+    "statusSources": {
+      "single": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/iowa-tax",
+      "mfj": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/iowa-tax",
+      "hoh": "https://revenue.iowa.gov/taxes/tax-guidance/individual-income-tax/iowa-tax"
+    }
   },
   "ID": {
     "name": "Idaho",
@@ -1432,15 +1519,15 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 14600,
+        "standardDeduction": 15750,
         "flatRate": 0.053
       },
       "mfj": {
-        "standardDeduction": 14600,
+        "standardDeduction": 31500,
         "flatRate": 0.053
       },
       "hoh": {
-        "standardDeduction": 14600,
+        "standardDeduction": 23625,
         "flatRate": 0.053
       }
     },
@@ -1481,8 +1568,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Idaho conforms to the federal standard deduction; the flat rate was reduced from 5.695% to 5.3% for 2025."
+    "statusNote": "Idaho's flat 5.3% rate applies to all filing statuses (only on taxable income above $4,811 single / $9,622 MFJ — effectively a zero bracket below that). Idaho conforms to the federal standard deduction.",
+    "note": "Idaho conforms to the federal standard deduction; the flat rate was reduced from 5.695% to 5.3% for 2025.",
+    "statusSources": {
+      "single": "https://tax.idaho.gov/taxes/income-tax/individual-income/individual-income-tax-rate-schedule/",
+      "mfj": "https://tax.idaho.gov/taxes/income-tax/individual-income/individual-income-tax-rate-schedule/",
+      "hoh": "https://tax.idaho.gov/taxes/income-tax/individual-income/individual-income-tax-rate-schedule/"
+    }
   },
   "IL": {
     "name": "Illinois",
@@ -1493,15 +1585,15 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 2775,
+        "standardDeduction": 2850,
         "flatRate": 0.0495
       },
       "mfj": {
-        "standardDeduction": 2775,
+        "standardDeduction": 5700,
         "flatRate": 0.0495
       },
       "hoh": {
-        "standardDeduction": 2775,
+        "standardDeduction": 2850,
         "flatRate": 0.0495
       }
     },
@@ -1542,8 +1634,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Illinois uses a personal exemption ($2,775 for 2025) rather than a true standard deduction; it phases out at higher incomes."
+    "statusNote": "Illinois's flat 4.95% rate applies to all filing statuses. Illinois has no standard deduction — instead it uses a personal exemption allowance ($2,850 per person in 2025; doubled for MFJ); shown here in the standardDeduction field for compatibility.",
+    "note": "Illinois uses a personal exemption ($2,775 for 2025) rather than a true standard deduction; it phases out at higher incomes.",
+    "statusSources": {
+      "single": "https://tax.illinois.gov/forms/incometax/currentyear/individual/il-1040-instr/what-is-new.html",
+      "mfj": "https://tax.illinois.gov/forms/incometax/currentyear/individual/il-1040-instr/what-is-new.html",
+      "hoh": "https://tax.illinois.gov/forms/incometax/currentyear/individual/il-1040-instr/what-is-new.html"
+    }
   },
   "IN": {
     "name": "Indiana",
@@ -1558,7 +1655,7 @@
         "flatRate": 0.03
       },
       "mfj": {
-        "standardDeduction": 1000,
+        "standardDeduction": 2000,
         "flatRate": 0.03
       },
       "hoh": {
@@ -1603,8 +1700,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Indiana offers a $1,000 personal exemption rather than a standard deduction; counties levy additional local income taxes."
+    "statusNote": "Indiana's flat 3.00% state rate applies to all filing statuses (additional county-level income taxes vary by county and are not modeled). Indiana has no standard deduction — uses $1,000 per-person exemptions (doubled for MFJ); shown here in the standardDeduction field.",
+    "note": "Indiana offers a $1,000 personal exemption rather than a standard deduction; counties levy additional local income taxes.",
+    "statusSources": {
+      "single": "https://www.in.gov/dor/files/tax-chapter.pdf",
+      "mfj": "https://www.in.gov/dor/files/tax-chapter.pdf",
+      "hoh": "https://www.in.gov/dor/files/tax-chapter.pdf"
+    }
   },
   "KS": {
     "name": "Kansas",
@@ -1630,22 +1732,22 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 3605,
+        "standardDeduction": 8240,
         "brackets": [
           {
             "rate": 0.052,
             "min": 0,
-            "max": 23000
+            "max": 46000
           },
           {
             "rate": 0.0558,
-            "min": 23000,
+            "min": 46000,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 3605,
+        "standardDeduction": 6180,
         "brackets": [
           {
             "rate": 0.052,
@@ -1697,8 +1799,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Kansas consolidated to two brackets effective 2024; standard deduction is indexed to inflation."
+    "statusNote": "Kansas publishes a two-bracket schedule. MFJ thresholds are exactly 2x single. HOH uses the single bracket thresholds with a larger standard deduction.",
+    "note": "Kansas consolidated to two brackets effective 2024; standard deduction is indexed to inflation.",
+    "statusSources": {
+      "single": "https://www.ksrevenue.gov/incomebook25.html",
+      "mfj": "https://www.ksrevenue.gov/incomebook25.html",
+      "hoh": "https://www.ksrevenue.gov/incomebook25.html"
+    }
   },
   "KY": {
     "name": "Kentucky",
@@ -1758,8 +1865,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Kentucky's flat rate dropped to 4.0% in 2025; further reductions are conditional on revenue triggers."
+    "statusNote": "Kentucky's flat 4.00% rate applies to all filing statuses. The standard deduction is the same ($3,270) for every status — each spouse on a joint return claims it separately.",
+    "note": "Kentucky's flat rate dropped to 4.0% in 2025; further reductions are conditional on revenue triggers.",
+    "statusSources": {
+      "single": "https://revenue.ky.gov/Forms/Withholding%20Computer%20Formula.pdf",
+      "mfj": "https://revenue.ky.gov/Forms/Withholding%20Computer%20Formula.pdf",
+      "hoh": "https://revenue.ky.gov/Forms/Withholding%20Computer%20Formula.pdf"
+    }
   },
   "LA": {
     "name": "Louisiana",
@@ -1774,7 +1886,7 @@
         "flatRate": 0.03
       },
       "mfj": {
-        "standardDeduction": 12500,
+        "standardDeduction": 25000,
         "flatRate": 0.03
       },
       "hoh": {
@@ -1819,28 +1931,66 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Louisiana adopted a flat 3% rate effective January 1, 2025, replacing its prior three-bracket system; combined with a new $12,500 standard deduction."
+    "statusNote": "Louisiana switched to a flat 3% rate effective 2025 (Act 11 of the 2024 Third Extraordinary Session). MFJ standard deduction is exactly 2x single; HOH uses the single amount.",
+    "note": "Louisiana adopted a flat 3% rate effective January 1, 2025, replacing its prior three-bracket system; combined with a new $12,500 standard deduction.",
+    "statusSources": {
+      "single": "https://revenue.louisiana.gov/tax-education-and-faqs/faqs/income-tax-reform/what-are-the-individual-income-tax-rates-and-brackets/",
+      "mfj": "https://revenue.louisiana.gov/tax-education-and-faqs/faqs/income-tax-reform/what-are-the-individual-income-tax-rates-and-brackets/",
+      "hoh": "https://revenue.louisiana.gov/tax-education-and-faqs/faqs/income-tax-reform/what-are-the-individual-income-tax-rates-and-brackets/"
+    }
   },
   "MA": {
     "name": "Massachusetts",
     "year": 2025,
     "source": "https://www.mass.gov/info-details/massachusetts-personal-income-tax-rates",
     "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
-    "taxType": "flat",
+    "taxType": "progressive",
     "noIncomeTax": false,
     "byStatus": {
       "single": {
         "standardDeduction": 0,
-        "flatRate": 0.05
+        "brackets": [
+          {
+            "rate": 0.05,
+            "min": 0,
+            "max": 1083150
+          },
+          {
+            "rate": 0.09,
+            "min": 1083150,
+            "max": null
+          }
+        ]
       },
       "mfj": {
         "standardDeduction": 0,
-        "flatRate": 0.05
+        "brackets": [
+          {
+            "rate": 0.05,
+            "min": 0,
+            "max": 1083150
+          },
+          {
+            "rate": 0.09,
+            "min": 1083150,
+            "max": null
+          }
+        ]
       },
       "hoh": {
         "standardDeduction": 0,
-        "flatRate": 0.05
+        "brackets": [
+          {
+            "rate": 0.05,
+            "min": 0,
+            "max": 1083150
+          },
+          {
+            "rate": 0.09,
+            "min": 1083150,
+            "max": null
+          }
+        ]
       }
     },
     "allocations": [
@@ -1880,8 +2030,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Massachusetts levies a flat 5% on most income, plus an additional 4% surtax on taxable income over $1,083,150 (Fair Share / millionaire's tax)."
+    "statusNote": "Massachusetts has a flat 5% rate plus a 4% millionaire surtax above $1,083,150 (the 2025 inflation-indexed threshold), applied identically to all filing statuses. MA has no standard deduction (uses personal exemptions instead — $4,400 single / $8,800 MFJ — not modeled here).",
+    "note": "Massachusetts levies a flat 5% on most income, plus an additional 4% surtax on taxable income over $1,083,150 (Fair Share / millionaire's tax).",
+    "statusSources": {
+      "single": "https://www.mass.gov/info-details/massachusetts-4-surtax-on-taxable-income",
+      "mfj": "https://www.mass.gov/info-details/massachusetts-4-surtax-on-taxable-income",
+      "hoh": "https://www.mass.gov/info-details/massachusetts-4-surtax-on-taxable-income"
+    }
   },
   "MD": {
     "name": "Maryland",
@@ -1892,7 +2047,7 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 2700,
+        "standardDeduction": 3350,
         "brackets": [
           {
             "rate": 0.02,
@@ -1932,12 +2087,22 @@
           {
             "rate": 0.0575,
             "min": 250000,
+            "max": 500000
+          },
+          {
+            "rate": 0.0625,
+            "min": 500000,
+            "max": 1000000
+          },
+          {
+            "rate": 0.065,
+            "min": 1000000,
             "max": null
           }
         ]
       },
       "mfj": {
-        "standardDeduction": 2700,
+        "standardDeduction": 6700,
         "brackets": [
           {
             "rate": 0.02,
@@ -1957,32 +2122,42 @@
           {
             "rate": 0.0475,
             "min": 3000,
-            "max": 100000
-          },
-          {
-            "rate": 0.05,
-            "min": 100000,
-            "max": 125000
-          },
-          {
-            "rate": 0.0525,
-            "min": 125000,
             "max": 150000
           },
           {
-            "rate": 0.055,
+            "rate": 0.05,
             "min": 150000,
-            "max": 250000
+            "max": 175000
+          },
+          {
+            "rate": 0.0525,
+            "min": 175000,
+            "max": 225000
+          },
+          {
+            "rate": 0.055,
+            "min": 225000,
+            "max": 300000
           },
           {
             "rate": 0.0575,
-            "min": 250000,
+            "min": 300000,
+            "max": 600000
+          },
+          {
+            "rate": 0.0625,
+            "min": 600000,
+            "max": 1200000
+          },
+          {
+            "rate": 0.065,
+            "min": 1200000,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 2700,
+        "standardDeduction": 6700,
         "brackets": [
           {
             "rate": 0.02,
@@ -2002,26 +2177,36 @@
           {
             "rate": 0.0475,
             "min": 3000,
-            "max": 100000
-          },
-          {
-            "rate": 0.05,
-            "min": 100000,
-            "max": 125000
-          },
-          {
-            "rate": 0.0525,
-            "min": 125000,
             "max": 150000
           },
           {
-            "rate": 0.055,
+            "rate": 0.05,
             "min": 150000,
-            "max": 250000
+            "max": 175000
+          },
+          {
+            "rate": 0.0525,
+            "min": 175000,
+            "max": 225000
+          },
+          {
+            "rate": 0.055,
+            "min": 225000,
+            "max": 300000
           },
           {
             "rate": 0.0575,
-            "min": 250000,
+            "min": 300000,
+            "max": 600000
+          },
+          {
+            "rate": 0.0625,
+            "min": 600000,
+            "max": 1200000
+          },
+          {
+            "rate": 0.065,
+            "min": 1200000,
             "max": null
           }
         ]
@@ -2064,8 +2249,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Maryland counties impose additional local income taxes ranging from 2.25% to 3.20%."
+    "statusNote": "Maryland uses two distinct schedules in 2025 (Schedule I for single/MFS/dependent; Schedule II for MFJ/HOH/QSS). Two new top brackets (6.25% and 6.5%) were added for 2025. Local county income tax (2.25%-3.30%) is layered on top and is not modeled here.",
+    "note": "Maryland counties impose additional local income taxes ranging from 2.25% to 3.20%.",
+    "statusSources": {
+      "single": "https://www.marylandtaxes.gov/individual/income/tax-info/tax-rates.php",
+      "mfj": "https://www.marylandtaxes.gov/individual/income/tax-info/tax-rates.php",
+      "hoh": "https://www.marylandtaxes.gov/individual/income/tax-info/tax-rates.php"
+    }
   },
   "ME": {
     "name": "Maine",
@@ -2076,7 +2266,7 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 15150,
+        "standardDeduction": 15000,
         "brackets": [
           {
             "rate": 0.058,
@@ -2096,41 +2286,41 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 15150,
+        "standardDeduction": 30000,
         "brackets": [
           {
             "rate": 0.058,
             "min": 0,
-            "max": 26800
+            "max": 53600
           },
           {
             "rate": 0.0675,
-            "min": 26800,
-            "max": 63450
+            "min": 53600,
+            "max": 126900
           },
           {
             "rate": 0.0715,
-            "min": 63450,
+            "min": 126900,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 15150,
+        "standardDeduction": 22500,
         "brackets": [
           {
             "rate": 0.058,
             "min": 0,
-            "max": 26800
+            "max": 40200
           },
           {
             "rate": 0.0675,
-            "min": 26800,
-            "max": 63450
+            "min": 40200,
+            "max": 95150
           },
           {
             "rate": 0.0715,
-            "min": 63450,
+            "min": 95150,
             "max": null
           }
         ]
@@ -2173,7 +2363,12 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
+    "statusNote": "Maine publishes distinct bracket schedules for single, MFJ, and HOH. MFJ thresholds are 2x single; HOH thresholds are roughly 1.5x single. Standard deduction phases out at higher incomes (max values shown).",
+    "statusSources": {
+      "single": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/ind_tax_rate_sched_2025.pdf",
+      "mfj": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/ind_tax_rate_sched_2025.pdf",
+      "hoh": "https://www.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/ind_tax_rate_sched_2025.pdf"
+    }
   },
   "MI": {
     "name": "Michigan",
@@ -2184,15 +2379,15 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 0,
+        "standardDeduction": 5800,
         "flatRate": 0.0425
       },
       "mfj": {
-        "standardDeduction": 0,
+        "standardDeduction": 11600,
         "flatRate": 0.0425
       },
       "hoh": {
-        "standardDeduction": 0,
+        "standardDeduction": 5800,
         "flatRate": 0.0425
       }
     },
@@ -2233,8 +2428,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Michigan offers a personal exemption ($5,800 for 2025) rather than a standard deduction; some cities levy additional income taxes. K-12 spending shown is General-Fund only — most K-12 funding flows through Michigan's separate School Aid Fund."
+    "statusNote": "Michigan's flat 4.25% rate applies to all filing statuses. Michigan has no standard deduction — uses $5,800 per-person personal exemptions (doubled for MFJ on a joint return); shown here in the standardDeduction field.",
+    "note": "Michigan offers a personal exemption ($5,800 for 2025) rather than a standard deduction; some cities levy additional income taxes. K-12 spending shown is General-Fund only — most K-12 funding flows through Michigan's separate School Aid Fund.",
+    "statusSources": {
+      "single": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2025/446_Withholding-Guide_2025.pdf",
+      "mfj": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2025/446_Withholding-Guide_2025.pdf",
+      "hoh": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2025/446_Withholding-Guide_2025.pdf"
+    }
   },
   "MN": {
     "name": "Minnesota",
@@ -2270,51 +2470,51 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 14950,
+        "standardDeduction": 29900,
         "brackets": [
           {
             "rate": 0.0535,
             "min": 0,
-            "max": 32570
+            "max": 47620
           },
           {
             "rate": 0.068,
-            "min": 32570,
-            "max": 106990
+            "min": 47620,
+            "max": 189180
           },
           {
             "rate": 0.0785,
-            "min": 106990,
-            "max": 198630
+            "min": 189180,
+            "max": 330410
           },
           {
             "rate": 0.0985,
-            "min": 198630,
+            "min": 330410,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 14950,
+        "standardDeduction": 22500,
         "brackets": [
           {
             "rate": 0.0535,
             "min": 0,
-            "max": 32570
+            "max": 40100
           },
           {
             "rate": 0.068,
-            "min": 32570,
-            "max": 106990
+            "min": 40100,
+            "max": 161130
           },
           {
             "rate": 0.0785,
-            "min": 106990,
-            "max": 198630
+            "min": 161130,
+            "max": 264050
           },
           {
             "rate": 0.0985,
-            "min": 198630,
+            "min": 264050,
             "max": null
           }
         ]
@@ -2357,7 +2557,12 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
+    "statusNote": "Minnesota publishes distinct bracket schedules for single, MFJ, and HOH. MFJ is not a simple doubling of single; thresholds are state-specific. HOH thresholds sit between single and MFJ.",
+    "statusSources": {
+      "single": "https://www.revenue.state.mn.us/minnesota-income-tax-rates-and-brackets",
+      "mfj": "https://www.revenue.state.mn.us/minnesota-income-tax-rates-and-brackets",
+      "hoh": "https://www.revenue.state.mn.us/minnesota-income-tax-rates-and-brackets"
+    }
   },
   "MO": {
     "name": "Missouri",
@@ -2368,7 +2573,7 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 14600,
+        "standardDeduction": 15750,
         "brackets": [
           {
             "rate": 0,
@@ -2413,7 +2618,7 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 14600,
+        "standardDeduction": 31500,
         "brackets": [
           {
             "rate": 0,
@@ -2458,7 +2663,7 @@
         ]
       },
       "hoh": {
-        "standardDeduction": 14600,
+        "standardDeduction": 23625,
         "brackets": [
           {
             "rate": 0,
@@ -2540,28 +2745,66 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Missouri's top rate dropped to 4.7% for 2025; further reductions are tied to revenue triggers. Standard deduction matches federal."
+    "statusNote": "Missouri uses the same bracket schedule for all filing statuses (joint filers compute tax on combined income). Standard deduction is tied to federal amounts, which vary by filing status.",
+    "note": "Missouri's top rate dropped to 4.7% for 2025; further reductions are tied to revenue triggers. Standard deduction matches federal.",
+    "statusSources": {
+      "single": "https://dor.mo.gov/taxation/individual/tax-types/income/year-changes/",
+      "mfj": "https://dor.mo.gov/taxation/individual/tax-types/income/year-changes/",
+      "hoh": "https://dor.mo.gov/taxation/individual/tax-types/income/year-changes/"
+    }
   },
   "MS": {
     "name": "Mississippi",
     "year": 2025,
     "source": "https://www.dor.ms.gov/individual/individual-income-tax",
     "allocationsSource": "https://www.nasbo.org/reports-data/state-expenditure-report",
-    "taxType": "flat",
+    "taxType": "progressive",
     "noIncomeTax": false,
     "byStatus": {
       "single": {
         "standardDeduction": 2300,
-        "flatRate": 0.044
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.044,
+            "min": 10000,
+            "max": null
+          }
+        ]
       },
       "mfj": {
-        "standardDeduction": 2300,
-        "flatRate": 0.044
+        "standardDeduction": 4600,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.044,
+            "min": 10000,
+            "max": null
+          }
+        ]
       },
       "hoh": {
-        "standardDeduction": 2300,
-        "flatRate": 0.044
+        "standardDeduction": 3400,
+        "brackets": [
+          {
+            "rate": 0,
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "rate": 0.044,
+            "min": 10000,
+            "max": null
+          }
+        ]
       }
     },
     "allocations": [
@@ -2601,8 +2844,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Mississippi taxes income above $10,000 at a flat 4.4% in 2025; the rate steps down to 4.0% by 2026."
+    "statusNote": "Mississippi exempts the first $10,000 of taxable income for everyone and taxes income above that at a flat 4.4% in 2025. The $10,000 exemption applies per taxpayer; standard deductions differ by filing status.",
+    "note": "Mississippi taxes income above $10,000 at a flat 4.4% in 2025; the rate steps down to 4.0% by 2026.",
+    "statusSources": {
+      "single": "https://www.dor.ms.gov/general-information",
+      "mfj": "https://www.dor.ms.gov/general-information",
+      "hoh": "https://www.dor.ms.gov/general-information"
+    }
   },
   "MT": {
     "name": "Montana",
@@ -2613,7 +2861,7 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 15000,
+        "standardDeduction": 15750,
         "brackets": [
           {
             "rate": 0.047,
@@ -2628,31 +2876,31 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 15000,
+        "standardDeduction": 31500,
         "brackets": [
           {
             "rate": 0.047,
             "min": 0,
-            "max": 21100
+            "max": 42200
           },
           {
             "rate": 0.059,
-            "min": 21100,
+            "min": 42200,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 15000,
+        "standardDeduction": 23625,
         "brackets": [
           {
             "rate": 0.047,
             "min": 0,
-            "max": 21100
+            "max": 31700
           },
           {
             "rate": 0.059,
-            "min": 21100,
+            "min": 31700,
             "max": null
           }
         ]
@@ -2695,8 +2943,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Montana adopted a two-bracket system in 2024; standard deduction conforms closely to the federal amount."
+    "statusNote": "Montana uses two rates (4.7% and 5.9%). MFJ bracket threshold is 2x single; HOH threshold is approximately 1.5x single. Montana conforms to the federal standard deduction starting tax year 2024.",
+    "note": "Montana adopted a two-bracket system in 2024; standard deduction conforms closely to the federal amount.",
+    "statusSources": {
+      "single": "https://revenue.mt.gov/files/BIT/Montana-Tax-Tables-and-Deductions/2025-Tax-Rates-and-Deductions.pdf",
+      "mfj": "https://revenue.mt.gov/files/BIT/Montana-Tax-Tables-and-Deductions/2025-Tax-Rates-and-Deductions.pdf",
+      "hoh": "https://revenue.mt.gov/files/BIT/Montana-Tax-Tables-and-Deductions/2025-Tax-Rates-and-Deductions.pdf"
+    }
   },
   "NC": {
     "name": "North Carolina",
@@ -2711,11 +2964,11 @@
         "flatRate": 0.0425
       },
       "mfj": {
-        "standardDeduction": 12750,
+        "standardDeduction": 25500,
         "flatRate": 0.0425
       },
       "hoh": {
-        "standardDeduction": 12750,
+        "standardDeduction": 19125,
         "flatRate": 0.0425
       }
     },
@@ -2756,8 +3009,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "North Carolina's flat rate is scheduled to step down to 3.99% by 2026."
+    "statusNote": "North Carolina's flat 4.25% rate applies to all filing statuses. Standard deduction varies: MFJ is 2x single; HOH is 1.5x single.",
+    "note": "North Carolina's flat rate is scheduled to step down to 3.99% by 2026.",
+    "statusSources": {
+      "single": "https://www.ncdor.gov/taxes-forms/individual-income-tax/individual-income-filing-requirements",
+      "mfj": "https://www.ncdor.gov/taxes-forms/individual-income-tax/individual-income-filing-requirements",
+      "hoh": "https://www.ncdor.gov/taxes-forms/individual-income-tax/individual-income-filing-requirements"
+    }
   },
   "ND": {
     "name": "North Dakota",
@@ -2768,7 +3026,7 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 14600,
+        "standardDeduction": 15750,
         "brackets": [
           {
             "rate": 0,
@@ -2788,41 +3046,41 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 14600,
+        "standardDeduction": 31500,
         "brackets": [
           {
             "rate": 0,
             "min": 0,
-            "max": 48475
+            "max": 80850
           },
           {
             "rate": 0.0195,
-            "min": 48475,
-            "max": 244825
+            "min": 80850,
+            "max": 297350
           },
           {
             "rate": 0.025,
-            "min": 244825,
+            "min": 297350,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 14600,
+        "standardDeduction": 23625,
         "brackets": [
           {
             "rate": 0,
             "min": 0,
-            "max": 48475
+            "max": 64850
           },
           {
             "rate": 0.0195,
-            "min": 48475,
-            "max": 244825
+            "min": 64850,
+            "max": 271050
           },
           {
             "rate": 0.025,
-            "min": 244825,
+            "min": 271050,
             "max": null
           }
         ]
@@ -2865,8 +3123,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "North Dakota uses federal taxable income as its base, with a 0% bracket effectively exempting low and middle earners."
+    "statusNote": "North Dakota uses three brackets (0%, 1.95%, 2.5%) with thresholds tied to federal levels and indexed by filing status. ND conforms to the federal standard deduction, which varies by filing status.",
+    "note": "North Dakota uses federal taxable income as its base, with a 0% bracket effectively exempting low and middle earners.",
+    "statusSources": {
+      "single": "https://www.tax.nd.gov/sites/www/files/documents/forms/individual/2025-iit/tax-tables-2025.pdf",
+      "mfj": "https://www.tax.nd.gov/sites/www/files/documents/forms/individual/2025-iit/tax-tables-2025.pdf",
+      "hoh": "https://www.tax.nd.gov/sites/www/files/documents/forms/individual/2025-iit/tax-tables-2025.pdf"
+    }
   },
   "NE": {
     "name": "Nebraska",
@@ -2877,76 +3140,76 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 8350,
+        "standardDeduction": 8600,
         "brackets": [
           {
             "rate": 0.0246,
             "min": 0,
-            "max": 3700
+            "max": 3000
           },
           {
             "rate": 0.0351,
-            "min": 3700,
-            "max": 22170
+            "min": 3000,
+            "max": 18000
           },
           {
             "rate": 0.0501,
-            "min": 22170,
-            "max": 35730
+            "min": 18000,
+            "max": 29000
           },
           {
             "rate": 0.052,
-            "min": 35730,
+            "min": 29000,
             "max": null
           }
         ]
       },
       "mfj": {
-        "standardDeduction": 8350,
+        "standardDeduction": 17200,
         "brackets": [
           {
             "rate": 0.0246,
             "min": 0,
-            "max": 3700
+            "max": 6000
           },
           {
             "rate": 0.0351,
-            "min": 3700,
-            "max": 22170
+            "min": 6000,
+            "max": 36000
           },
           {
             "rate": 0.0501,
-            "min": 22170,
-            "max": 35730
+            "min": 36000,
+            "max": 58000
           },
           {
             "rate": 0.052,
-            "min": 35730,
+            "min": 58000,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 8350,
+        "standardDeduction": 12600,
         "brackets": [
           {
             "rate": 0.0246,
             "min": 0,
-            "max": 3700
+            "max": 5600
           },
           {
             "rate": 0.0351,
-            "min": 3700,
-            "max": 22170
+            "min": 5600,
+            "max": 28800
           },
           {
             "rate": 0.0501,
-            "min": 22170,
-            "max": 35730
+            "min": 28800,
+            "max": 43000
           },
           {
             "rate": 0.052,
-            "min": 35730,
+            "min": 43000,
             "max": null
           }
         ]
@@ -2989,8 +3252,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Nebraska's top rate dropped to 5.20% for 2025; further reductions are scheduled in coming years."
+    "statusNote": "Nebraska publishes distinct bracket schedules for single, MFJ, and HOH (statute §77-2715.03). MFJ thresholds are 2x single; HOH thresholds sit between single and MFJ.",
+    "note": "Nebraska's top rate dropped to 5.20% for 2025; further reductions are scheduled in coming years.",
+    "statusSources": {
+      "single": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/2025_Tax_Tables.pdf",
+      "mfj": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/2025_Tax_Tables.pdf",
+      "hoh": "https://revenue.nebraska.gov/sites/default/files/doc/tax-forms/2025/2025_Tax_Tables.pdf"
+    }
   },
   "NH": {
     "name": "New Hampshire",
@@ -2998,7 +3266,8 @@
     "source": "https://www.revenue.nh.gov/",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "New Hampshire phased out its tax on interest and dividends as of January 1, 2025; revenue comes primarily from property taxes and business taxes."
+    "note": "New Hampshire phased out its tax on interest and dividends as of January 1, 2025; revenue comes primarily from property taxes and business taxes.",
+    "statusNote": "No tax on wage or earned income. The Interest & Dividends tax was repealed effective January 1, 2025, leaving NH with no individual income tax."
   },
   "NJ": {
     "name": "New Jersey",
@@ -3027,7 +3296,7 @@
             "max": 40000
           },
           {
-            "rate": 0.0553,
+            "rate": 0.05525,
             "min": 40000,
             "max": 75000
           },
@@ -3059,21 +3328,26 @@
           {
             "rate": 0.0175,
             "min": 20000,
-            "max": 35000
+            "max": 50000
+          },
+          {
+            "rate": 0.0245,
+            "min": 50000,
+            "max": 70000
           },
           {
             "rate": 0.035,
-            "min": 35000,
-            "max": 40000
+            "min": 70000,
+            "max": 80000
           },
           {
-            "rate": 0.0553,
-            "min": 40000,
-            "max": 75000
+            "rate": 0.05525,
+            "min": 80000,
+            "max": 150000
           },
           {
             "rate": 0.0637,
-            "min": 75000,
+            "min": 150000,
             "max": 500000
           },
           {
@@ -3099,21 +3373,26 @@
           {
             "rate": 0.0175,
             "min": 20000,
-            "max": 35000
+            "max": 50000
+          },
+          {
+            "rate": 0.0245,
+            "min": 50000,
+            "max": 70000
           },
           {
             "rate": 0.035,
-            "min": 35000,
-            "max": 40000
+            "min": 70000,
+            "max": 80000
           },
           {
-            "rate": 0.0553,
-            "min": 40000,
-            "max": 75000
+            "rate": 0.05525,
+            "min": 80000,
+            "max": 150000
           },
           {
             "rate": 0.0637,
-            "min": 75000,
+            "min": 150000,
             "max": 500000
           },
           {
@@ -3166,8 +3445,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "New Jersey has no general standard deduction; it offers a personal exemption ($1,000) and various credits."
+    "statusNote": "New Jersey has a 7-bracket schedule for single/MFS and an 8-bracket schedule for MFJ, HOH, and QSS (the extra bracket is 2.45% from $50K-$70K). HOH uses the same schedule as MFJ. NJ has no standard deduction; uses personal exemptions instead (not modeled here).",
+    "note": "New Jersey has no general standard deduction; it offers a personal exemption ($1,000) and various credits.",
+    "statusSources": {
+      "single": "https://www.nj.gov/treasury/taxation/taxtables.shtml",
+      "mfj": "https://www.nj.gov/treasury/taxation/taxtables.shtml",
+      "hoh": "https://www.nj.gov/treasury/taxation/taxtables.shtml"
+    }
   },
   "NM": {
     "name": "New Mexico",
@@ -3178,7 +3462,7 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 14600,
+        "standardDeduction": 15750,
         "brackets": [
           {
             "rate": 0.015,
@@ -3213,71 +3497,71 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 14600,
+        "standardDeduction": 31500,
         "brackets": [
           {
             "rate": 0.015,
             "min": 0,
-            "max": 5500
+            "max": 8000
           },
           {
             "rate": 0.032,
-            "min": 5500,
-            "max": 16500
+            "min": 8000,
+            "max": 25000
           },
           {
             "rate": 0.043,
-            "min": 16500,
-            "max": 33500
+            "min": 25000,
+            "max": 50000
           },
           {
             "rate": 0.047,
-            "min": 33500,
-            "max": 66500
+            "min": 50000,
+            "max": 100000
           },
           {
             "rate": 0.049,
-            "min": 66500,
-            "max": 210000
+            "min": 100000,
+            "max": 315000
           },
           {
             "rate": 0.059,
-            "min": 210000,
+            "min": 315000,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 14600,
+        "standardDeduction": 23625,
         "brackets": [
           {
             "rate": 0.015,
             "min": 0,
-            "max": 5500
+            "max": 8000
           },
           {
             "rate": 0.032,
-            "min": 5500,
-            "max": 16500
+            "min": 8000,
+            "max": 25000
           },
           {
             "rate": 0.043,
-            "min": 16500,
-            "max": 33500
+            "min": 25000,
+            "max": 50000
           },
           {
             "rate": 0.047,
-            "min": 33500,
-            "max": 66500
+            "min": 50000,
+            "max": 100000
           },
           {
             "rate": 0.049,
-            "min": 66500,
-            "max": 210000
+            "min": 100000,
+            "max": 315000
           },
           {
             "rate": 0.059,
-            "min": 210000,
+            "min": 315000,
             "max": null
           }
         ]
@@ -3320,8 +3604,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "New Mexico restructured its brackets effective 2025, adding new lower brackets that benefit low-income filers."
+    "statusNote": "New Mexico restructured to six brackets in 2025 (HB 252, 2024). HOH uses the same brackets as MFJ. NM conforms to the federal standard deduction, which varies by filing status.",
+    "note": "New Mexico restructured its brackets effective 2025, adding new lower brackets that benefit low-income filers.",
+    "statusSources": {
+      "single": "https://www.tax.newmexico.gov/all-nm-taxes/current-historic-tax-rates-overview/personal-income-tax-rates/",
+      "mfj": "https://www.tax.newmexico.gov/all-nm-taxes/current-historic-tax-rates-overview/personal-income-tax-rates/",
+      "hoh": "https://www.tax.newmexico.gov/all-nm-taxes/current-historic-tax-rates-overview/personal-income-tax-rates/"
+    }
   },
   "NV": {
     "name": "Nevada",
@@ -3329,7 +3618,8 @@
     "source": "https://tax.nv.gov/",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "Nevada has no state income tax; revenue comes primarily from sales tax, gaming taxes, and tourism-related levies."
+    "note": "Nevada has no state income tax; revenue comes primarily from sales tax, gaming taxes, and tourism-related levies.",
+    "statusNote": "No state income tax."
   },
   "NY": {
     "name": "New York",
@@ -3390,41 +3680,41 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 8000,
+        "standardDeduction": 16050,
         "brackets": [
           {
             "rate": 0.04,
             "min": 0,
-            "max": 8500
+            "max": 17150
           },
           {
             "rate": 0.045,
-            "min": 8500,
-            "max": 11700
+            "min": 17150,
+            "max": 23600
           },
           {
             "rate": 0.0525,
-            "min": 11700,
-            "max": 13900
+            "min": 23600,
+            "max": 27900
           },
           {
             "rate": 0.055,
-            "min": 13900,
-            "max": 80650
+            "min": 27900,
+            "max": 161550
           },
           {
             "rate": 0.06,
-            "min": 80650,
-            "max": 215400
+            "min": 161550,
+            "max": 323200
           },
           {
             "rate": 0.0685,
-            "min": 215400,
-            "max": 1077550
+            "min": 323200,
+            "max": 2155350
           },
           {
             "rate": 0.0965,
-            "min": 1077550,
+            "min": 2155350,
             "max": 5000000
           },
           {
@@ -3440,41 +3730,41 @@
         ]
       },
       "hoh": {
-        "standardDeduction": 8000,
+        "standardDeduction": 11200,
         "brackets": [
           {
             "rate": 0.04,
             "min": 0,
-            "max": 8500
+            "max": 12800
           },
           {
             "rate": 0.045,
-            "min": 8500,
-            "max": 11700
+            "min": 12800,
+            "max": 17650
           },
           {
             "rate": 0.0525,
-            "min": 11700,
-            "max": 13900
+            "min": 17650,
+            "max": 20900
           },
           {
             "rate": 0.055,
-            "min": 13900,
-            "max": 80650
+            "min": 20900,
+            "max": 107650
           },
           {
             "rate": 0.06,
-            "min": 80650,
-            "max": 215400
+            "min": 107650,
+            "max": 269300
           },
           {
             "rate": 0.0685,
-            "min": 215400,
-            "max": 1077550
+            "min": 269300,
+            "max": 1616450
           },
           {
             "rate": 0.0965,
-            "min": 1077550,
+            "min": 1616450,
             "max": 5000000
           },
           {
@@ -3527,8 +3817,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "New York City and Yonkers impose additional local income taxes on residents."
+    "statusNote": "New York publishes distinct bracket schedules for single, MFJ, and HOH. MFJ thresholds are roughly 2x single in lower brackets but compress at higher levels. HOH thresholds sit between single and MFJ. A tax-table benefit recapture also applies at higher AGI levels (not modeled). NYC adds a separate local tax (not modeled).",
+    "note": "New York City and Yonkers impose additional local income taxes on residents.",
+    "statusSources": {
+      "single": "https://www.tax.ny.gov/pit/file/tax-tables/it201i-2025.htm",
+      "mfj": "https://www.tax.ny.gov/pit/file/tax-tables/it201i-2025.htm",
+      "hoh": "https://www.tax.ny.gov/pit/file/tax-tables/it201i-2025.htm"
+    }
   },
   "OH": {
     "name": "Ohio",
@@ -3552,7 +3847,7 @@
             "max": 100000
           },
           {
-            "rate": 0.035,
+            "rate": 0.03125,
             "min": 100000,
             "max": null
           }
@@ -3572,7 +3867,7 @@
             "max": 100000
           },
           {
-            "rate": 0.035,
+            "rate": 0.03125,
             "min": 100000,
             "max": null
           }
@@ -3592,7 +3887,7 @@
             "max": 100000
           },
           {
-            "rate": 0.035,
+            "rate": 0.03125,
             "min": 100000,
             "max": null
           }
@@ -3636,8 +3931,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Ohio consolidated to two non-zero brackets in 2024; the first $26,050 of taxable income is exempt. Many cities levy additional local income taxes."
+    "statusNote": "Ohio uses the same bracket schedule for all filing statuses (no doubling for MFJ). Ohio has no state standard deduction; instead, it uses personal/dependent exemptions (not modeled here).",
+    "note": "Ohio consolidated to two non-zero brackets in 2024; the first $26,050 of taxable income is exempt. Many cities levy additional local income taxes.",
+    "statusSources": {
+      "single": "https://tax.ohio.gov/individual/resources/annual-tax-rates",
+      "mfj": "https://tax.ohio.gov/individual/resources/annual-tax-rates",
+      "hoh": "https://tax.ohio.gov/individual/resources/annual-tax-rates"
+    }
   },
   "OK": {
     "name": "Oklahoma",
@@ -3683,71 +3983,71 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 6350,
+        "standardDeduction": 12700,
         "brackets": [
           {
             "rate": 0.0025,
             "min": 0,
-            "max": 1000
+            "max": 2000
           },
           {
             "rate": 0.0075,
-            "min": 1000,
-            "max": 2500
+            "min": 2000,
+            "max": 5000
           },
           {
             "rate": 0.0175,
-            "min": 2500,
-            "max": 3750
+            "min": 5000,
+            "max": 7500
           },
           {
             "rate": 0.0275,
-            "min": 3750,
-            "max": 4900
+            "min": 7500,
+            "max": 9800
           },
           {
             "rate": 0.0375,
-            "min": 4900,
-            "max": 7200
+            "min": 9800,
+            "max": 12200
           },
           {
             "rate": 0.0475,
-            "min": 7200,
+            "min": 12200,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 6350,
+        "standardDeduction": 9350,
         "brackets": [
           {
             "rate": 0.0025,
             "min": 0,
-            "max": 1000
+            "max": 2000
           },
           {
             "rate": 0.0075,
-            "min": 1000,
-            "max": 2500
+            "min": 2000,
+            "max": 5000
           },
           {
             "rate": 0.0175,
-            "min": 2500,
-            "max": 3750
+            "min": 5000,
+            "max": 7500
           },
           {
             "rate": 0.0275,
-            "min": 3750,
-            "max": 4900
+            "min": 7500,
+            "max": 9800
           },
           {
             "rate": 0.0375,
-            "min": 4900,
-            "max": 7200
+            "min": 9800,
+            "max": 12200
           },
           {
             "rate": 0.0475,
-            "min": 7200,
+            "min": 12200,
             "max": null
           }
         ]
@@ -3790,7 +4090,12 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
+    "statusNote": "Oklahoma publishes separate schedules — MFJ thresholds are roughly 2x single (not exactly). HOH uses the MFJ thresholds. Standard deductions differ across all three statuses.",
+    "statusSources": {
+      "single": "https://oklahoma.gov/content/dam/ok/en/tax/documents/resources/publications/businesses/withholding-tables/WHTables-2025.pdf",
+      "mfj": "https://oklahoma.gov/content/dam/ok/en/tax/documents/resources/publications/businesses/withholding-tables/WHTables-2025.pdf",
+      "hoh": "https://oklahoma.gov/content/dam/ok/en/tax/documents/resources/publications/businesses/withholding-tables/WHTables-2025.pdf"
+    }
   },
   "OR": {
     "name": "Oregon",
@@ -3801,21 +4106,21 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 2745,
+        "standardDeduction": 2835,
         "brackets": [
           {
             "rate": 0.0475,
             "min": 0,
-            "max": 4300
+            "max": 4400
           },
           {
             "rate": 0.0675,
-            "min": 4300,
-            "max": 10750
+            "min": 4400,
+            "max": 11050
           },
           {
             "rate": 0.0875,
-            "min": 10750,
+            "min": 11050,
             "max": 125000
           },
           {
@@ -3826,51 +4131,51 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 2745,
+        "standardDeduction": 5670,
         "brackets": [
           {
             "rate": 0.0475,
             "min": 0,
-            "max": 4300
+            "max": 8800
           },
           {
             "rate": 0.0675,
-            "min": 4300,
-            "max": 10750
+            "min": 8800,
+            "max": 22100
           },
           {
             "rate": 0.0875,
-            "min": 10750,
-            "max": 125000
+            "min": 22100,
+            "max": 250000
           },
           {
             "rate": 0.099,
-            "min": 125000,
+            "min": 250000,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 2745,
+        "standardDeduction": 4560,
         "brackets": [
           {
             "rate": 0.0475,
             "min": 0,
-            "max": 4300
+            "max": 8800
           },
           {
             "rate": 0.0675,
-            "min": 4300,
-            "max": 10750
+            "min": 8800,
+            "max": 22100
           },
           {
             "rate": 0.0875,
-            "min": 10750,
-            "max": 125000
+            "min": 22100,
+            "max": 250000
           },
           {
             "rate": 0.099,
-            "min": 125000,
+            "min": 250000,
             "max": null
           }
         ]
@@ -3913,8 +4218,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Oregon has no general sales tax; some counties and the Portland metro impose additional local income surtaxes."
+    "statusNote": "Oregon publishes two rate charts: one for single/MFS, one for MFJ/HOH/QSS. MFJ/HOH bracket thresholds are exactly 2x single. Standard deductions differ by status.",
+    "note": "Oregon has no general sales tax; some counties and the Portland metro impose additional local income surtaxes.",
+    "statusSources": {
+      "single": "https://www.oregon.gov/dor/programs/individuals/Documents/Part-year%20and%20nonresident%20tax%20rate%20charts.pdf",
+      "mfj": "https://www.oregon.gov/dor/programs/individuals/Documents/Part-year%20and%20nonresident%20tax%20rate%20charts.pdf",
+      "hoh": "https://www.oregon.gov/dor/programs/individuals/Documents/Part-year%20and%20nonresident%20tax%20rate%20charts.pdf"
+    }
   },
   "PA": {
     "name": "Pennsylvania",
@@ -3974,8 +4284,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Pennsylvania has no standard deduction or personal exemption; many municipalities levy additional Earned Income Taxes."
+    "statusNote": "Pennsylvania's flat 3.07% rate applies regardless of filing status; no standard deduction or personal exemption. (Local Earned Income Tax applies separately and is not modeled here.)",
+    "note": "Pennsylvania has no standard deduction or personal exemption; many municipalities levy additional Earned Income Taxes.",
+    "statusSources": {
+      "single": "https://www.revenue.pa.gov/TaxTypes/PIT/Pages/default.aspx",
+      "mfj": "https://www.revenue.pa.gov/TaxTypes/PIT/Pages/default.aspx",
+      "hoh": "https://www.revenue.pa.gov/TaxTypes/PIT/Pages/default.aspx"
+    }
   },
   "RI": {
     "name": "Rhode Island",
@@ -4006,7 +4321,7 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 10900,
+        "standardDeduction": 21800,
         "brackets": [
           {
             "rate": 0.0375,
@@ -4026,7 +4341,7 @@
         ]
       },
       "hoh": {
-        "standardDeduction": 10900,
+        "standardDeduction": 16350,
         "brackets": [
           {
             "rate": 0.0375,
@@ -4083,7 +4398,12 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
+    "statusNote": "Rhode Island uses one bracket schedule that applies identically to all filing statuses. Standard deductions differ: MFJ is 2x single; HOH is 1.5x single. Standard deduction phases out at higher incomes (not modeled).",
+    "statusSources": {
+      "single": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-10/2025%20Tax%20Rate%20and%20Worksheets_d.pdf",
+      "mfj": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-10/2025%20Tax%20Rate%20and%20Worksheets_d.pdf",
+      "hoh": "https://tax.ri.gov/sites/g/files/xkgbur541/files/2025-10/2025%20Tax%20Rate%20and%20Worksheets_d.pdf"
+    }
   },
   "SC": {
     "name": "South Carolina",
@@ -4094,61 +4414,61 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 14600,
+        "standardDeduction": 15750,
         "brackets": [
           {
             "rate": 0,
             "min": 0,
-            "max": 3460
+            "max": 3560
           },
           {
             "rate": 0.03,
-            "min": 3460,
-            "max": 17330
+            "min": 3560,
+            "max": 17830
           },
           {
-            "rate": 0.062,
-            "min": 17330,
+            "rate": 0.06,
+            "min": 17830,
             "max": null
           }
         ]
       },
       "mfj": {
-        "standardDeduction": 14600,
+        "standardDeduction": 31500,
         "brackets": [
           {
             "rate": 0,
             "min": 0,
-            "max": 3460
+            "max": 3560
           },
           {
             "rate": 0.03,
-            "min": 3460,
-            "max": 17330
+            "min": 3560,
+            "max": 17830
           },
           {
-            "rate": 0.062,
-            "min": 17330,
+            "rate": 0.06,
+            "min": 17830,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 14600,
+        "standardDeduction": 23625,
         "brackets": [
           {
             "rate": 0,
             "min": 0,
-            "max": 3460
+            "max": 3560
           },
           {
             "rate": 0.03,
-            "min": 3460,
-            "max": 17330
+            "min": 3560,
+            "max": 17830
           },
           {
-            "rate": 0.062,
-            "min": 17330,
+            "rate": 0.06,
+            "min": 17830,
             "max": null
           }
         ]
@@ -4191,8 +4511,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "South Carolina's top rate was reduced to 6.2% for 2025 and is scheduled to continue stepping down; uses federal taxable income as its base."
+    "statusNote": "South Carolina uses one bracket schedule for all filing statuses (top rate dropped from 6.2% to 6% mid-2025; 6% is the operative rate for the full 2025 tax year). SC conforms to the federal standard deduction, which varies by filing status.",
+    "note": "South Carolina's top rate was reduced to 6.2% for 2025 and is scheduled to continue stepping down; uses federal taxable income as its base.",
+    "statusSources": {
+      "single": "https://dor.sc.gov/sites/dor/files/forms/SC1040TT_2025.pdf",
+      "mfj": "https://dor.sc.gov/sites/dor/files/forms/SC1040TT_2025.pdf",
+      "hoh": "https://dor.sc.gov/sites/dor/files/forms/SC1040TT_2025.pdf"
+    }
   },
   "SD": {
     "name": "South Dakota",
@@ -4200,7 +4525,8 @@
     "source": "https://dor.sd.gov/",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "South Dakota has no state income tax; revenue comes primarily from sales tax, excise taxes, and tourism."
+    "note": "South Dakota has no state income tax; revenue comes primarily from sales tax, excise taxes, and tourism.",
+    "statusNote": "No state income tax."
   },
   "TN": {
     "name": "Tennessee",
@@ -4208,7 +4534,8 @@
     "source": "https://www.tn.gov/revenue/taxes.html",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "Tennessee has no state income tax (the Hall tax on interest and dividends was fully repealed in 2021); revenue comes primarily from a high state sales tax."
+    "note": "Tennessee has no state income tax (the Hall tax on interest and dividends was fully repealed in 2021); revenue comes primarily from a high state sales tax.",
+    "statusNote": "No state income tax."
   },
   "TX": {
     "name": "Texas",
@@ -4216,7 +4543,8 @@
     "source": "https://comptroller.texas.gov/taxes/",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "Texas has no state income tax; revenue comes primarily from sales tax, property taxes (locally administered), and oil/gas severance taxes."
+    "note": "Texas has no state income tax; revenue comes primarily from sales tax, property taxes (locally administered), and oil/gas severance taxes.",
+    "statusNote": "No state income tax."
   },
   "UT": {
     "name": "Utah",
@@ -4228,15 +4556,15 @@
     "byStatus": {
       "single": {
         "standardDeduction": 0,
-        "flatRate": 0.0455
+        "flatRate": 0.045
       },
       "mfj": {
         "standardDeduction": 0,
-        "flatRate": 0.0455
+        "flatRate": 0.045
       },
       "hoh": {
         "standardDeduction": 0,
-        "flatRate": 0.0455
+        "flatRate": 0.045
       }
     },
     "allocations": [
@@ -4276,8 +4604,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Utah's flat rate dropped to 4.55% for 2025; the state offers a taxpayer tax credit that phases out with income rather than a standard deduction."
+    "statusNote": "Utah's flat 4.5% rate (reduced from 4.55% effective for tax year 2025) applies to all filing statuses. Utah has no state standard deduction but offers a taxpayer tax credit that varies by filing status (not modeled here).",
+    "note": "Utah's flat rate dropped to 4.55% for 2025; the state offers a taxpayer tax credit that phases out with income rather than a standard deduction.",
+    "statusSources": {
+      "single": "https://incometax.utah.gov/paying/tax-rates",
+      "mfj": "https://incometax.utah.gov/paying/tax-rates",
+      "hoh": "https://incometax.utah.gov/paying/tax-rates"
+    }
   },
   "VA": {
     "name": "Virginia",
@@ -4288,7 +4621,7 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 8500,
+        "standardDeduction": 8750,
         "brackets": [
           {
             "rate": 0.02,
@@ -4313,7 +4646,7 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 8500,
+        "standardDeduction": 17500,
         "brackets": [
           {
             "rate": 0.02,
@@ -4338,7 +4671,7 @@
         ]
       },
       "hoh": {
-        "standardDeduction": 8500,
+        "standardDeduction": 8750,
         "brackets": [
           {
             "rate": 0.02,
@@ -4400,7 +4733,12 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh."
+    "statusNote": "Virginia uses the same bracket schedule for all filing statuses. MFJ gets a doubled standard deduction; HOH uses the single standard deduction.",
+    "statusSources": {
+      "single": "https://www.tax.virginia.gov/individual-income-tax",
+      "mfj": "https://www.tax.virginia.gov/individual-income-tax",
+      "hoh": "https://www.tax.virginia.gov/individual-income-tax"
+    }
   },
   "VT": {
     "name": "Vermont",
@@ -4436,51 +4774,51 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 7400,
+        "standardDeduction": 14850,
         "brackets": [
           {
             "rate": 0.0335,
             "min": 0,
-            "max": 47900
+            "max": 79950
           },
           {
             "rate": 0.066,
-            "min": 47900,
-            "max": 116000
+            "min": 79950,
+            "max": 193350
           },
           {
             "rate": 0.076,
-            "min": 116000,
-            "max": 242000
+            "min": 193350,
+            "max": 294650
           },
           {
             "rate": 0.0875,
-            "min": 242000,
+            "min": 294650,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 7400,
+        "standardDeduction": 11125,
         "brackets": [
           {
             "rate": 0.0335,
             "min": 0,
-            "max": 47900
+            "max": 64250
           },
           {
             "rate": 0.066,
-            "min": 47900,
-            "max": 116000
+            "min": 64250,
+            "max": 165900
           },
           {
             "rate": 0.076,
-            "min": 116000,
-            "max": 242000
+            "min": 165900,
+            "max": 268550
           },
           {
             "rate": 0.0875,
-            "min": 242000,
+            "min": 268550,
             "max": null
           }
         ]
@@ -4523,8 +4861,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "K-12 spending shown is General-Fund only — most K-12 funding flows through Vermont's separate Education Fund."
+    "statusNote": "Vermont publishes distinct bracket schedules for single, MFJ, and HOH. HOH bracket thresholds sit between single and MFJ.",
+    "note": "K-12 spending shown is General-Fund only — most K-12 funding flows through Vermont's separate Education Fund.",
+    "statusSources": {
+      "single": "https://tax.vermont.gov/document/tax-year-2025-vermont-tax-rate-schedules",
+      "mfj": "https://tax.vermont.gov/document/tax-year-2025-vermont-tax-rate-schedules",
+      "hoh": "https://tax.vermont.gov/document/tax-year-2025-vermont-tax-rate-schedules"
+    }
   },
   "WA": {
     "name": "Washington",
@@ -4532,7 +4875,8 @@
     "source": "https://dor.wa.gov/",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "Washington has no state income tax on wages (a 7% capital gains tax applies to long-term gains over a threshold but not wage income); revenue comes primarily from sales tax and business and occupation taxes."
+    "note": "Washington has no state income tax on wages (a 7% capital gains tax applies to long-term gains over a threshold but not wage income); revenue comes primarily from sales tax and business and occupation taxes.",
+    "statusNote": "No state income tax on wages. (A 7% capital gains tax applies above a high threshold but is not a general income tax.)"
   },
   "WI": {
     "name": "Wisconsin",
@@ -4543,7 +4887,7 @@
     "noIncomeTax": false,
     "byStatus": {
       "single": {
-        "standardDeduction": 13230,
+        "standardDeduction": 14260,
         "brackets": [
           {
             "rate": 0.035,
@@ -4553,11 +4897,11 @@
           {
             "rate": 0.044,
             "min": 14680,
-            "max": 29370
+            "max": 50480
           },
           {
             "rate": 0.053,
-            "min": 29370,
+            "min": 50480,
             "max": 323290
           },
           {
@@ -4568,32 +4912,32 @@
         ]
       },
       "mfj": {
-        "standardDeduction": 13230,
+        "standardDeduction": 26510,
         "brackets": [
           {
             "rate": 0.035,
             "min": 0,
-            "max": 14680
+            "max": 19580
           },
           {
             "rate": 0.044,
-            "min": 14680,
-            "max": 29370
+            "min": 19580,
+            "max": 67300
           },
           {
             "rate": 0.053,
-            "min": 29370,
-            "max": 323290
+            "min": 67300,
+            "max": 431060
           },
           {
             "rate": 0.0765,
-            "min": 323290,
+            "min": 431060,
             "max": null
           }
         ]
       },
       "hoh": {
-        "standardDeduction": 13230,
+        "standardDeduction": 14260,
         "brackets": [
           {
             "rate": 0.035,
@@ -4603,11 +4947,11 @@
           {
             "rate": 0.044,
             "min": 14680,
-            "max": 29370
+            "max": 50480
           },
           {
             "rate": 0.053,
-            "min": 29370,
+            "min": 50480,
             "max": 323290
           },
           {
@@ -4655,8 +4999,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "Wisconsin's standard deduction phases out at higher income levels and reaches zero for high earners."
+    "statusNote": "Wisconsin publishes distinct bracket schedules. Single and HOH use the same brackets; MFJ thresholds are wider but not a simple doubling (2025 Wisconsin Act 15 expanded the 4.4% bracket). Wisconsin's standard deduction phases out at higher incomes (max values shown).",
+    "note": "Wisconsin's standard deduction phases out at higher income levels and reaches zero for high earners.",
+    "statusSources": {
+      "single": "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx",
+      "mfj": "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx",
+      "hoh": "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx"
+    }
   },
   "WV": {
     "name": "West Virginia",
@@ -4794,8 +5143,13 @@
         "icon": "📦"
       }
     ],
-    "statusNote": "PLACEHOLDER: same brackets used for all filing statuses — awaiting per-status data refresh.",
-    "note": "West Virginia has no standard deduction but offers a $2,000 personal exemption; rates were reduced again in 2025 via revenue-triggered cuts."
+    "statusNote": "West Virginia uses Rate Schedule I (single, MFJ, HOH, surviving spouse) with identical brackets for those statuses. WV has no standard deduction; uses $2,000 per-person exemptions instead (not modeled here).",
+    "note": "West Virginia has no standard deduction but offers a $2,000 personal exemption; rates were reduced again in 2025 via revenue-triggered cuts.",
+    "statusSources": {
+      "single": "https://tax.wv.gov/Documents/PIT/2025/it140.TaxRateSchedules.2025.pdf",
+      "mfj": "https://tax.wv.gov/Documents/PIT/2025/it140.TaxRateSchedules.2025.pdf",
+      "hoh": "https://tax.wv.gov/Documents/PIT/2025/it140.TaxRateSchedules.2025.pdf"
+    }
   },
   "WY": {
     "name": "Wyoming",
@@ -4803,6 +5157,7 @@
     "source": "https://revenue.wyo.gov/",
     "taxType": "none",
     "noIncomeTax": true,
-    "note": "Wyoming has no state income tax; revenue comes primarily from mineral severance taxes, federal mineral royalties, and sales tax."
+    "note": "Wyoming has no state income tax; revenue comes primarily from mineral severance taxes, federal mineral royalties, and sales tax.",
+    "statusNote": "No state income tax."
   }
 }
